@@ -11,7 +11,7 @@
 <title>Home</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Expanded:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Expanded:wght@500;600;700;800&family=Creepster&family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#0E161B;
@@ -22,21 +22,49 @@
   --chalk-dim:#93A6B0;
   --chalk-faint:#5B7280;
   --now:#FFB020;
-  --sky:#54B6DC;
-  --rose:#EC7099;
-  --lime:#A9D84E;
-  --violet:#B69CFF;
-  --accent:#FFB020;
+  --btnbg:#FFB020;--btntext:#241700;
+  --grabs:#5ED6B5;--grabstext:#0E161B;
+  --danger:#EC7099;--dangertext:#0E161B;
+  --ok:#A9D84E;
+  --past:.32;
   --scrim:rgba(6,11,14,.82);
   --pad:22px;
   --display:'Archivo Expanded','Archivo',-apple-system,sans-serif;
 }
-html[data-theme="paper"]{--ink:#F3EFE6;--ink-2:#FBF9F4;--ink-3:#ECE6D9;--rule:#E0D8C8;--chalk:#1B2328;--chalk-dim:#56636A;--chalk-faint:#7F8A8F;--now:#A85C00;--rose:#B8305F;--scrim:rgba(40,34,24,.45);}
-html[data-theme="daylight"]{--ink:#E9EEF1;--ink-2:#FFFFFF;--ink-3:#F2F5F7;--rule:#DCE3E7;--chalk:#0E161B;--chalk-dim:#4F6069;--chalk-faint:#7C8C95;--now:#A85C00;--rose:#B8305F;--scrim:rgba(14,22,27,.4);}
+html[data-theme="paper"]{--ink:#F3EFE6;--ink-2:#FBF9F4;--ink-3:#ECE6D9;--rule:#E0D8C8;--chalk:#1B2328;--chalk-dim:#56636A;--chalk-faint:#7F8A8F;--now:#A85C00;--grabs:#8A4A00;--grabstext:#FFFFFF;--danger:#B8305F;--dangertext:#FFFFFF;--ok:#4E7A0C;--scrim:rgba(40,34,24,.45);}
+html[data-theme="daylight"]{--ink:#E9EEF1;--ink-2:#FFFFFF;--ink-3:#F2F5F7;--rule:#DCE3E7;--chalk:#0E161B;--chalk-dim:#4F6069;--chalk-faint:#7C8C95;--now:#A85C00;--grabs:#8A4A00;--grabstext:#FFFFFF;--danger:#B8305F;--dangertext:#FFFFFF;--ok:#4E7A0C;--scrim:rgba(14,22,27,.4);}
 html[data-theme="daylight"] .card,html[data-theme="daylight"] .cardlink,html[data-theme="daylight"] .col,html[data-theme="daylight"] .cell:not(.out),html[data-theme="daylight"] .panel,html[data-theme="daylight"] .pcard,html[data-theme="daylight"] .sbtn{box-shadow:0 1px 2px rgba(14,22,27,.06),0 4px 14px rgba(14,22,27,.05);}
 html[data-theme="daylight"] .col.today,html[data-theme="daylight"] .cell.now{box-shadow:inset 0 0 0 1.5px #E39A12;}
+
+/* ---- Sea glass ---- */
+html[data-theme="seaglass"]{--ink:#CFECE9;--ink-2:#F6FCFB;--ink-3:#E1F4F2;--rule:#A9D3CF;--chalk:#0C3338;--chalk-dim:#2A5A5F;--chalk-faint:#3A6A6C;--now:#B3321F;--btnbg:#B3321F;--btntext:#FFFFFF;--grabs:#8A4A00;--grabstext:#FFFFFF;--danger:#B3321F;--dangertext:#FFFFFF;--ok:#3F6F0F;--past:.5;--scrim:rgba(12,51,56,.4);}
+html[data-theme="seaglass"] .card,html[data-theme="seaglass"] .cardlink,html[data-theme="seaglass"] .col,html[data-theme="seaglass"] .cell:not(.out),html[data-theme="seaglass"] .panel,html[data-theme="seaglass"] .pcard,html[data-theme="seaglass"] .sbtn{box-shadow:0 1px 2px rgba(12,51,56,.07),0 4px 14px rgba(12,51,56,.06);}
+html[data-theme="seaglass"] .col.today,html[data-theme="seaglass"] .cell.now{box-shadow:inset 0 0 0 1.5px var(--now);}
+html[data-theme="seaglass"] body::before{content:'';position:fixed;right:-70px;bottom:-90px;width:460px;height:460px;border-radius:50%;pointer-events:none;z-index:0;opacity:.55;
+  background:repeating-radial-gradient(circle at 50% 50%,transparent 0 62px,var(--rule) 62px 64px);-webkit-mask-image:radial-gradient(circle,#000 30%,transparent 72%);mask-image:radial-gradient(circle,#000 30%,transparent 72%);}
+
+/* ---- Halloween ---- */
+html[data-theme="halloween"]{--ink:#150B21;--ink-2:#21132F;--ink-3:#2D1A42;--rule:#44296A;--chalk:#F6EAD8;--chalk-dim:#C4B3D6;--chalk-faint:#A894C2;--now:#FF8A1F;--btnbg:#FF8A1F;--btntext:#1D0C00;--grabs:#7CE04A;--grabstext:#150B21;--danger:#FF82B0;--dangertext:#150B21;--ok:#9DE766;--past:.5;--scrim:rgba(10,4,20,.82);}
+html[data-theme="halloween"] body{background-image:radial-gradient(900px 520px at 78% 105%,#3B1D5C 0%,transparent 70%),radial-gradient(700px 400px at 5% -10%,#2A1450 0%,transparent 70%);}
+html[data-theme="halloween"] .datestamp{font-family:'Creepster','Archivo',sans-serif;font-weight:400;letter-spacing:.06em;font-size:34px;}
+html[data-theme="halloween"] .datestamp .rest{font-weight:400;}
+
+/* ---- Christmas (sage + cranberry) ---- */
+html[data-theme="christmas"]{--ink:#CCDBC5;--ink-2:#F4F8EE;--ink-3:#E3EDDB;--rule:#A9C1A1;--chalk:#14301E;--chalk-dim:#2F4D38;--chalk-faint:#3C5A45;--now:#A81C2B;--btnbg:#A81C2B;--btntext:#FFFFFF;--grabs:#E3B23C;--grabstext:#14301E;--danger:#A81C2B;--dangertext:#FFFFFF;--ok:#356006;--past:.5;--scrim:rgba(20,48,30,.45);}
+html[data-theme="christmas"] body{background-image:radial-gradient(900px 500px at 85% 0%,#DCE8D4 0%,transparent 65%);}
+html[data-theme="christmas"] .datestamp{font-family:'Mountains of Christmas','Archivo',sans-serif;font-weight:700;font-size:36px;letter-spacing:.01em;}
+html[data-theme="christmas"] .datestamp .rest{font-weight:700;}
+html[data-theme="christmas"] .top{padding-top:18px;padding-bottom:2px;}
+html[data-theme="christmas"] nav{padding-bottom:8px;}
+html[data-theme="christmas"] .card,html[data-theme="christmas"] .cardlink{box-shadow:0 2px 0 rgba(20,48,30,.12);}
+html[data-theme="christmas"] .stepper{border-top:none;position:relative;padding-top:18px;}
+html[data-theme="christmas"] .stepper::before{content:'';position:absolute;left:0;right:0;top:2px;height:7px;border-radius:4px;background:repeating-linear-gradient(135deg,#A81C2B 0 9px,#F4F8EE 9px 18px);}
+html[data-theme="christmas"] .rail{padding-top:22px;margin-top:-22px;}
+html[data-theme="christmas"] .nowline .bar{height:2px;opacity:.8;}
+html[data-theme="christmas"] .addbtn{box-shadow:0 2px 0 #7C1020;}
+
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-html,body{height:100%;overflow:hidden;background:var(--ink);}
+html,body{height:100%;overflow:hidden;background-color:var(--ink);}
 body{
   color:var(--chalk);
   font-family:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
@@ -44,10 +72,22 @@ body{
   -webkit-user-select:none;user-select:none;
   display:flex;flex-direction:column;
   padding-top:env(safe-area-inset-top);
+  position:relative;
 }
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;}
 input{font:inherit;color:inherit;background:none;border:none;outline:none;-webkit-user-select:text;user-select:text;border-radius:0;}
-button:focus-visible,input:focus-visible{outline:2px solid var(--now);outline-offset:2px;}
+button:focus-visible,input:focus-visible,[role=button]:focus-visible{outline:2px solid var(--now);outline-offset:2px;}
+
+/* ---------- seasonal overlays ---------- */
+.ov{position:fixed;pointer-events:none;display:none;}
+html[data-theme="halloween"] #ovHW,html[data-theme="christmas"] #ovXM{display:block;}
+body.phone .ov{display:none !important;}
+#ovHW .ov-stars,#ovXM .ov-snow{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;}
+#ovXM .ov-snow{opacity:.75;}
+#ovHW .ov-bats{position:fixed;right:0;top:0;width:min(700px,65vw);height:auto;z-index:10;}
+#ovHW .ov-web{position:fixed;right:0;top:0;width:min(470px,44vw);height:auto;z-index:10;}
+#ovXM .ov-garland{position:fixed;left:0;top:0;width:100%;height:46px;z-index:8;}
+.top,nav,main,.pnav{position:relative;z-index:2;}
 
 /* ---------- chrome ---------- */
 .top{display:flex;align-items:center;gap:14px;padding:14px var(--pad) 10px;}
@@ -58,14 +98,14 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--now);outline-of
 .iconbtn{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;color:var(--chalk-faint);}
 .iconbtn svg{width:22px;height:22px;}
 .sdot{width:11px;height:11px;border-radius:50%;background:var(--chalk-faint);}
-.sdot.ok{background:var(--lime);}
+.sdot.ok{background:var(--ok);}
 .sdot.wait{background:var(--now);}
-.sdot.err{background:var(--rose);box-shadow:0 0 0 4px rgba(236,112,153,.18);}
+.sdot.err{background:var(--danger);box-shadow:0 0 0 4px rgba(236,112,153,.22);}
 
 nav{display:flex;gap:6px;padding:0 var(--pad) 12px;align-items:center;}
 .tab{flex:0 0 auto;padding:9px 15px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.03em;color:var(--chalk-faint);min-height:42px;}
 .tab.on{color:var(--ink);background:var(--chalk);}
-.addbtn{margin-left:auto;flex:0 0 auto;padding:9px 20px;border-radius:999px;background:var(--accent);color:#241700;font-weight:700;font-size:15px;letter-spacing:.03em;min-height:44px;}
+.addbtn{margin-left:auto;flex:0 0 auto;padding:9px 20px;border-radius:999px;background:var(--btnbg);color:var(--btntext);font-weight:700;font-size:15px;letter-spacing:.03em;min-height:44px;}
 
 main{flex:1;min-height:0;padding:0 var(--pad) var(--pad);}
 .view{display:none;height:100%;}
@@ -87,27 +127,38 @@ main{flex:1;min-height:0;padding:0 var(--pad) var(--pad);}
 .themes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
 .tcard{border-radius:14px;padding:10px;border:2px solid var(--rule);text-align:left;}
 .tcard.on{border-color:var(--now);box-shadow:0 0 0 2px var(--now);}
-.tprev{height:92px;border-radius:9px;padding:10px;display:flex;flex-direction:column;gap:7px;}
-.tprev i{display:block;height:9px;border-radius:5px;}
-.tcard span{display:block;font-weight:700;margin-top:9px;font-size:15px;}
-.setrow{display:flex;align-items:center;justify-content:space-between;padding:16px 0 4px;border-top:1px solid var(--rule);margin-top:16px;font-size:17px;}
+.tprev{height:70px;border-radius:9px;padding:9px;display:flex;flex-direction:column;gap:6px;}
+.tprev i{display:block;height:8px;border-radius:5px;}
+.tcard span{display:block;font-weight:700;margin-top:8px;font-size:15px;}
+.setrow{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 0 4px;border-top:1px solid var(--rule);margin-top:16px;font-size:17px;}
+.setrow small{display:block;font-size:13px;color:var(--chalk-faint);margin-top:3px;line-height:1.35;font-weight:400;}
 .switch{width:58px;height:34px;border-radius:999px;background:var(--rule);position:relative;flex:0 0 auto;}
 .switch::after{content:'';position:absolute;top:3px;left:3px;width:28px;height:28px;border-radius:50%;background:#fff;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3);}
-.switch.on{background:var(--lime);} .switch.on::after{left:27px;}
+.switch.on{background:var(--ok);} .switch.on::after{left:27px;}
 body.shake main{animation:shake .5s cubic-bezier(.36,.07,.19,.97);}
 @keyframes shake{10%,90%{transform:translate(-2px,1px)}20%,80%{transform:translate(5px,-3px)}30%,50%,70%{transform:translate(-9px,4px)}40%,60%{transform:translate(9px,-4px)}}
 .pcard.flash{animation:pflash .7s ease-out;}
-@keyframes pflash{0%{box-shadow:none}15%{box-shadow:inset 0 0 0 5px var(--accent),0 0 60px var(--accent)}100%{box-shadow:inset 0 0 0 0 transparent,0 0 0 transparent}}
-.spine{flex:1 1 auto;min-height:0;min-width:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-right:4px;}
+@keyframes pflash{0%{box-shadow:none}15%{box-shadow:inset 0 0 0 5px var(--now),0 0 60px var(--now)}100%{box-shadow:inset 0 0 0 0 transparent,0 0 0 transparent}}
+
+.spine{flex:1 1 auto;min-height:0;min-width:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-right:4px;display:flex;flex-direction:column;}
+.evs{flex:0 0 auto;}
+.scene{display:none;flex:1 1 0;min-height:0;margin-top:auto;position:relative;}
+html[data-theme="halloween"] .scene,html[data-theme="christmas"] .scene{display:block;}
+body.phone .scene{display:none !important;}
+.scene svg{position:absolute;inset:0;width:100%;height:100%;display:none;}
+html[data-theme="halloween"] .scene .sc-hw,html[data-theme="christmas"] .scene .sc-xm{display:block;}
 .anytime{border-bottom:1px solid var(--rule);padding-bottom:6px;margin-bottom:6px;}
 .ev{display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid var(--rule);}
+.ev[data-ev]{cursor:pointer;}
+.ev[data-ev]:active{background:var(--ink-3);}
 .anytime .ev:last-child{border-bottom:none;}
 .ev .t{font-family:var(--display);font-weight:600;font-size:21px;font-variant-numeric:tabular-nums;color:var(--chalk-dim);min-width:92px;padding-top:2px;}
 .anytime .ev .t{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--chalk-faint);padding-top:7px;}
 .ev .body{flex:1;min-width:0;}
 .ev .title{font-size:23px;font-weight:500;line-height:1.15;}
 .who{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;margin-top:4px;}
-.ev.past{opacity:.32;}
+.amp{color:var(--chalk-faint);}
+.ev.past{opacity:var(--past);}
 .ev.past .title{text-decoration:line-through;text-decoration-thickness:1px;}
 .ev.next{border-left:3px solid var(--now);padding-left:14px;margin-left:-17px;}
 .ev.next .title{font-size:33px;font-weight:600;line-height:1.08;}
@@ -118,10 +169,15 @@ body.shake main{animation:shake .5s cubic-bezier(.36,.07,.19,.97);}
 .nowline .lbl{font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--now);text-transform:uppercase;font-variant-numeric:tabular-nums;}
 
 .rail{flex:1 1 40%;min-width:0;display:flex;flex-direction:column;gap:12px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
-.card{background:var(--ink-2);border-radius:14px;padding:14px 16px;}
+.card{background:var(--ink-2);border-radius:14px;padding:14px 16px;position:relative;}
 .card h2,.cardlink h2{font-size:24px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--chalk-faint);margin-bottom:10px;line-height:1.1;display:flex;align-items:center;gap:8px;}
 .card h2 .count,.cardlink h2 .count{margin-left:auto;color:var(--chalk-dim);font-size:15px;letter-spacing:.02em;}
-.cardlink{display:block;width:100%;text-align:left;background:var(--ink-2);border-radius:14px;padding:14px 16px;}
+.hplus{flex:0 0 auto;width:40px;height:40px;border-radius:999px;display:grid;place-items:center;background:var(--ink-3);color:var(--chalk);font-size:26px;line-height:1;letter-spacing:0;font-weight:500;}
+.hplus:active{transform:scale(.92);}
+.cardlink{display:block;width:100%;text-align:left;background:var(--ink-2);border-radius:14px;padding:14px 16px;cursor:pointer;}
+.bow{display:none;position:absolute;left:150px;top:-22px;z-index:3;pointer-events:none;}
+html[data-theme="christmas"] .bow{display:block;}
+body.phone .bow{display:none !important;}
 
 .row{display:flex;align-items:center;gap:12px;padding:9px 0;min-height:48px;border-bottom:1px solid var(--rule);width:100%;text-align:left;}
 .row:last-child{border-bottom:none;}
@@ -131,7 +187,8 @@ body.shake main{animation:shake .5s cubic-bezier(.36,.07,.19,.97);}
 .row.done .box svg{opacity:1;}
 .row .txt{flex:1;font-size:17px;line-height:1.2;min-width:0;overflow-wrap:anywhere;}
 .row.done .txt{opacity:.4;text-decoration:line-through;}
-.tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;flex:0 0 auto;}
+.tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;flex:0 0 auto;text-align:right;}
+.grabs{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;flex:0 0 auto;background:var(--grabs);color:var(--grabstext);padding:5px 10px;border-radius:999px;}
 .more{font-size:14px;color:var(--chalk-faint);padding-top:8px;}
 
 .mini{display:flex;gap:10px;}
@@ -182,6 +239,8 @@ body.shake main{animation:shake .5s cubic-bezier(.36,.07,.19,.97);}
 .newline input{flex:1;font-size:17px;min-height:48px;}
 .newline input::placeholder{color:var(--chalk-faint);}
 .newline button{font-weight:700;color:var(--now);padding:10px 4px;font-size:15px;}
+.panel .chips{margin:6px 16px 4px;display:flex;gap:6px;flex-wrap:wrap;}
+.panel .chips .wchip{padding:6px 12px;min-height:38px;font-size:14px;}
 .panel .items{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:4px 16px 12px;}
 #lists[data-only="shop"] #pTodo,#lists[data-only="todo"] #pShop{display:none;}
 
@@ -211,9 +270,14 @@ body.shake main{animation:shake .5s cubic-bezier(.36,.07,.19,.97);}
 .dayl .dr span{flex:1;min-width:0;}
 .dayl .dr .x{width:40px;height:36px;border-radius:9px;color:var(--chalk-faint);font-size:18px;}
 .dayl .dr .conf{font-size:13px;font-weight:700;padding:8px 12px;border-radius:999px;}
-.dayl .dr .conf.y{background:var(--rose);color:var(--ink);}
+.dayl .dr .conf.y{background:var(--danger);color:var(--dangertext);}
 .dayl .dr .conf.n{color:var(--chalk-dim);}
 .dayl .dr .rep{font-size:11px;color:var(--chalk-faint);letter-spacing:.08em;text-transform:uppercase;}
+.daystep{display:flex;align-items:center;gap:8px;margin:-2px 0 14px;}
+.daystep[hidden]{display:none;}
+.daystep button{width:52px;height:44px;border-radius:12px;background:var(--ink-3);font-size:22px;color:var(--chalk-dim);}
+.daystep .dl{flex:1;text-align:center;font-family:var(--display);font-weight:700;font-size:17px;}
+.daystep .note{flex:1;font-size:13px;color:var(--chalk-dim);line-height:1.35;}
 input.big:focus-visible{outline:none;border-bottom-color:var(--now);}
 input.big{width:100%;font-size:29px;font-weight:500;border-bottom:2px solid var(--rule);padding-bottom:12px;}
 input.big::placeholder,.field input::placeholder{color:var(--chalk-faint);}
@@ -222,19 +286,26 @@ input.big::placeholder,.field input::placeholder{color:var(--chalk-faint);}
 .whorow{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
 .wchip{padding:9px 16px;border-radius:999px;font-size:15px;font-weight:600;border:1.5px solid var(--rule);color:var(--chalk-dim);min-height:44px;}
 .wchip.on{color:var(--ink);}
+.wchip.grabsc{border-color:var(--grabs);color:var(--chalk);}
+.wchip.grabsc.on{background:var(--grabs);color:var(--grabstext);border-color:var(--grabs);font-weight:800;}
 .acts{display:flex;gap:10px;margin-top:20px;align-items:center;}
 .acts button{padding:13px 22px;border-radius:999px;font-size:16px;font-weight:700;min-height:48px;}
 .cancel{color:var(--chalk-faint);}
-.save{background:var(--accent);color:#241700;margin-left:auto;padding:13px 30px;}
-.danger{background:var(--rose);color:var(--ink);margin-left:auto;}
+.save{background:var(--btnbg);color:var(--btntext);margin-left:auto;padding:13px 30px;}
+.danger{background:var(--danger);color:var(--dangertext);margin-left:auto;}
+.delbtn{color:var(--danger);margin-left:auto;}
+.delbtn.armed{background:var(--danger);color:var(--dangertext);}
+.delbtn[hidden]{display:none;}
+.delbtn + .save{margin-left:0;}
 .mtitle{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:8px;}
 .mtext{font-size:17px;color:var(--chalk-dim);line-height:1.45;}
 .field{margin-top:14px;}
 .field label{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--chalk-faint);margin-bottom:6px;}
 .field input{width:100%;font-size:16px;padding:12px 14px;background:var(--ink-3);border-radius:10px;}
-.err{color:var(--rose);font-size:14px;margin-top:10px;min-height:18px;}
+.err{color:var(--danger);font-size:14px;margin-top:10px;min-height:18px;}
 .stat{font-size:15px;color:var(--chalk-dim);line-height:1.7;}
 .stat b{color:var(--chalk);}
+.warnbox{margin-top:12px;padding:10px 12px;border-radius:10px;background:var(--ink-3);font-size:14px;line-height:1.4;color:var(--chalk);}
 
 /* ---------- toast ---------- */
 .toast{position:fixed;left:50%;bottom:calc(26px + env(safe-area-inset-bottom));transform:translate(-50%,30px);opacity:0;pointer-events:none;
@@ -244,17 +315,41 @@ input.big::placeholder,.field input::placeholder{color:var(--chalk-faint);}
 .toast span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .toast button{background:var(--ink);color:var(--chalk);border-radius:999px;padding:10px 16px;font-weight:700;font-size:14px;min-height:40px;}
 .toast button[hidden]{display:none;}
+.toast:not(:has(button:not([hidden]))){padding-right:20px;}
 
 /* ---------- fx + night ---------- */
-#fx,#fxlo{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50;}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50;}
 #night{position:fixed;inset:0;background:#000;z-index:60;display:none;}
 #night.on{display:block;}
+
+/* ---------- seasonal animation ---------- */
+.flk-a{animation:flkA 3.7s linear infinite;}
+.flk-b{animation:flkB 2.9s linear infinite;}
+@keyframes flkA{0%{opacity:.9}6%{opacity:.6}9%{opacity:.95}22%{opacity:.8}25%{opacity:.48}28%{opacity:.92}47%{opacity:.85}52%{opacity:.58}55%{opacity:.95}78%{opacity:.78}82%{opacity:.52}86%{opacity:.9}100%{opacity:.9}}
+@keyframes flkB{0%{opacity:1}8%{opacity:.82}11%{opacity:1}30%{opacity:.9}34%{opacity:.74}37%{opacity:1}61%{opacity:.88}64%{opacity:.76}67%{opacity:1}90%{opacity:.86}93%{opacity:1}100%{opacity:1}}
+.tstar,.spk{transform-box:fill-box;transform-origin:center;}
+.tstar{animation:tstar 2.4s ease-in-out infinite;}
+@keyframes tstar{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.spk{opacity:0;animation:spk 2.4s ease-in-out infinite;}
+.spk2{animation-delay:1.2s;}
+@keyframes spk{0%,55%,100%{opacity:0;transform:scale(.2) rotate(0deg)}72%{opacity:1;transform:scale(1.1) rotate(45deg)}}
+body.night .flk-a,body.night .flk-b,body.night .tstar,body.night .spk{animation-play-state:paused;}
+
+/* ---------- elf ---------- */
+#elf{position:fixed;z-index:9;display:none;padding:0;line-height:0;touch-action:manipulation;transition:opacity .18s ease,transform .18s ease;}
+#elf.on{display:block;}
+#elf.vanish{opacity:0;transform:scale(.4) !important;}
+#elf svg{display:block;}
+.elfsay{position:fixed;z-index:55;pointer-events:none;background:#fff;color:#A81C2B;font-family:'Mountains of Christmas','Archivo',sans-serif;font-weight:700;font-size:26px;padding:8px 16px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,.3);white-space:nowrap;animation:elfsay 1.7s ease forwards;}
+.elfsay::after{content:'';position:absolute;left:50%;bottom:-8px;margin-left:-8px;border:8px solid transparent;border-top-color:#fff;border-bottom:0;}
+@keyframes elfsay{0%{opacity:0;transform:translate(-50%,10px) scale(.7)}12%{opacity:1;transform:translate(-50%,0) scale(1.08)}22%{transform:translate(-50%,0) scale(1)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-14px)}}
 
 /* ---------- phone ---------- */
 .pnav{display:none;}
 body.phone{--pad:14px;}
 body.phone .top{padding-top:10px;}
 body.phone .datestamp{font-size:18px;overflow:hidden;text-overflow:ellipsis;min-width:0;}
+html[data-theme="halloween"] body.phone .datestamp,html[data-theme="christmas"] body.phone .datestamp{font-size:22px;}
 body.phone .topr{gap:0;}
 body.phone .iconbtn{width:40px;}
 .newline input:focus-visible{outline:none;}
@@ -272,12 +367,14 @@ body.phone .ev .title{font-size:19px;}
 body.phone .ev.next .title{font-size:24px;}
 body.phone .ev .t{min-width:70px;font-size:17px;}
 body.phone .panel{border-radius:12px;}
+body.phone .themes{grid-template-columns:repeat(2,1fr);}
 
 ::-webkit-scrollbar{width:0;height:0;}
-@media (prefers-reduced-motion:reduce){.bump,.slide-l,.slide-r,.pcard.flash,body.shake main{animation:none;}.toast{transition:none;}}
+@media (prefers-reduced-motion:reduce){.bump,.slide-l,.slide-r,.pcard.flash,body.shake main,.flk-a,.flk-b,.tstar,.spk,.elfsay{animation:none;}.toast,#elf{transition:none;}.spk{opacity:0;}.elfsay{opacity:1;}}
 </style>
 </head>
 <body>
+<div class="ov" id="ovHW" aria-hidden="true"><svg class="ov-stars" viewBox="0 0 1080 810" preserveAspectRatio="xMidYMid slice"><circle cx="60" cy="12" r="1.4" fill="#F6EAD8" opacity=".5"/><circle cx="210" cy="22" r="1" fill="#F6EAD8" opacity=".5"/><circle cx="330" cy="8" r="1.2" fill="#F6EAD8" opacity=".5"/><circle cx="470" cy="26" r="1" fill="#F6EAD8" opacity=".5"/><circle cx="560" cy="10" r="1.5" fill="#F6EAD8" opacity=".5"/><circle cx="640" cy="34" r="1" fill="#F6EAD8" opacity=".5"/></svg><svg class="ov-bats" viewBox="380 0 700 100" preserveAspectRatio="xMaxYMin meet"><g transform="translate(430 10) rotate(-14) scale(0.62)"><path d="M50 12 L53 6 L55 13 C62 10 72 6 90 4 C86 10 87 14 85 19 C82 16 79 17 77 22 C74 19 70 20 68 25 C65 22 60 23 57 28 C55 25 53 24 50 32 C47 24 45 25 43 28 C40 23 35 22 32 25 C30 20 26 19 23 22 C21 17 18 16 15 19 C13 14 14 10 10 4 C28 6 38 10 45 13 L47 6 Z" fill="#B9A3DA"/></g><g transform="translate(520 44) rotate(8) scale(0.46)"><path d="M50 12 L53 6 L55 13 C62 10 72 6 90 4 C86 10 87 14 85 19 C82 16 79 17 77 22 C74 19 70 20 68 25 C65 22 60 23 57 28 C55 25 53 24 50 32 C47 24 45 25 43 28 C40 23 35 22 32 25 C30 20 26 19 23 22 C21 17 18 16 15 19 C13 14 14 10 10 4 C28 6 38 10 45 13 L47 6 Z" fill="#B9A3DA"/></g><g opacity=".95"><g transform="translate(585 8) rotate(-6) scale(0.38)"><path d="M50 12 L53 6 L55 13 C62 10 72 6 90 4 C86 10 87 14 85 19 C82 16 79 17 77 22 C74 19 70 20 68 25 C65 22 60 23 57 28 C55 25 53 24 50 32 C47 24 45 25 43 28 C40 23 35 22 32 25 C30 20 26 19 23 22 C21 17 18 16 15 19 C13 14 14 10 10 4 C28 6 38 10 45 13 L47 6 Z" fill="#FF8A1F"/></g></g><g transform="translate(470 70) rotate(12) scale(0.3)"><path d="M50 12 L53 6 L55 13 C62 10 72 6 90 4 C86 10 87 14 85 19 C82 16 79 17 77 22 C74 19 70 20 68 25 C65 22 60 23 57 28 C55 25 53 24 50 32 C47 24 45 25 43 28 C40 23 35 22 32 25 C30 20 26 19 23 22 C21 17 18 16 15 19 C13 14 14 10 10 4 C28 6 38 10 45 13 L47 6 Z" fill="#B9A3DA"/></g><g transform="translate(640 50) rotate(-10) scale(0.26)"><path d="M50 12 L53 6 L55 13 C62 10 72 6 90 4 C86 10 87 14 85 19 C82 16 79 17 77 22 C74 19 70 20 68 25 C65 22 60 23 57 28 C55 25 53 24 50 32 C47 24 45 25 43 28 C40 23 35 22 32 25 C30 20 26 19 23 22 C21 17 18 16 15 19 C13 14 14 10 10 4 C28 6 38 10 45 13 L47 6 Z" fill="#B9A3DA"/></g></svg><svg class="ov-web" viewBox="610 0 470 470" preserveAspectRatio="xMaxYMin meet"><g fill="none" stroke="#E6DAF5" stroke-opacity="0.5" stroke-linecap="round"><path stroke-width="1.8" d="M1080 0 L1080.0 470.0"/><path stroke-width="1.8" d="M1080 0 L942.6 449.5"/><path stroke-width="1.8" d="M1080 0 L817.2 389.6"/><path stroke-width="1.8" d="M1080 0 L714.7 295.8"/><path stroke-width="1.8" d="M1080 0 L644.2 176.1"/><path stroke-width="1.8" d="M1080 0 L611.8 41.0"/><path stroke-width="1.8" d="M1080 0 L610.0 0.0"/><path stroke-width="1.3" d="M1080.0 47.2 Q1074.6 36.6 1066.5 44.3"/><path stroke-width="1.3" d="M1065.8 46.6 Q1064.0 33.9 1054.3 38.1"/><path stroke-width="1.3" d="M1053.1 39.9 Q1054.5 27.9 1043.2 29.8"/><path stroke-width="1.3" d="M1044.3 28.9 Q1047.9 18.7 1035.5 18.0"/><path stroke-width="1.3" d="M1037.6 17.1 Q1044.0 8.5 1032.5 4.2"/><path stroke-width="1.3" d="M1034.2 4.0 Q1043.3 1.6 1034.0 0.0"/><path stroke-width="1.3" d="M1080.0 94.3 Q1068.5 75.2 1051.3 93.8"/><path stroke-width="1.3" d="M1053.3 87.4 Q1048.6 65.6 1028.3 76.6"/><path stroke-width="1.3" d="M1026.2 79.8 Q1027.6 56.9 1002.9 62.5"/><path stroke-width="1.3" d="M1005.6 60.2 Q1015.4 38.2 992.8 35.2"/><path stroke-width="1.3" d="M987.7 37.3 Q1007.0 18.1 989.7 7.9"/><path stroke-width="1.3" d="M982.0 8.6 Q1003.6 3.4 987.0 0.0"/><path stroke-width="1.3" d="M1080.0 144.7 Q1063.1 113.1 1037.8 138.0"/><path stroke-width="1.3" d="M1037.0 140.7 Q1028.2 107.6 993.5 128.3"/><path stroke-width="1.3" d="M998.8 120.4 Q1000.5 86.2 962.5 95.2"/><path stroke-width="1.3" d="M961.8 95.7 Q977.8 60.5 942.7 55.5"/><path stroke-width="1.3" d="M940.3 56.5 Q966.9 27.6 937.1 12.5"/><path stroke-width="1.3" d="M937.2 12.5 Q964.6 5.0 934.4 0.0"/><path stroke-width="1.3" d="M1080.0 218.9 Q1055.0 169.2 1017.6 204.1"/><path stroke-width="1.3" d="M1018.3 201.8 Q1006.8 152.6 958.7 179.8"/><path stroke-width="1.3" d="M960.3 177.4 Q966.6 124.0 916.3 132.6"/><path stroke-width="1.3" d="M908.0 139.3 Q929.9 88.6 876.7 82.1"/><path stroke-width="1.3" d="M885.8 78.5 Q916.0 38.9 864.2 18.9"/><path stroke-width="1.3" d="M865.3 18.8 Q904.9 7.5 856.9 0.0"/><path stroke-width="1.3" d="M1080.0 291.5 Q1047.4 223.3 998.4 266.8"/><path stroke-width="1.3" d="M992.7 285.6 Q983.8 205.2 926.7 227.3"/><path stroke-width="1.3" d="M921.9 234.3 Q925.9 167.3 852.8 184.0"/><path stroke-width="1.3" d="M866.2 173.1 Q888.9 111.9 816.0 106.6"/><path stroke-width="1.3" d="M827.9 101.8 Q863.7 50.8 791.3 25.3"/><path stroke-width="1.3" d="M788.6 25.5 Q848.6 10.2 792.9 0.0"/><path stroke-width="1.3" d="M1080.0 373.5 Q1038.7 284.5 976.7 337.9"/><path stroke-width="1.3" d="M972.7 351.0 Q955.8 260.9 876.8 301.3"/><path stroke-width="1.3" d="M877.1 300.8 Q887.4 210.6 801.5 225.6"/><path stroke-width="1.3" d="M790.7 234.3 Q824.8 150.0 731.4 140.9"/><path stroke-width="1.3" d="M747.1 134.5 Q801.0 66.6 715.5 31.9"/><path stroke-width="1.3" d="M737.1 30.0 Q795.9 12.0 712.7 0.0"/><path stroke-width="1.3" d="M1080.0 446.5 Q1026.0 355.2 945.0 441.5"/><path stroke-width="1.3" d="M947.2 434.3 Q930.6 316.5 839.3 356.9"/><path stroke-width="1.3" d="M836.8 360.6 Q843.6 256.9 732.3 281.6"/><path stroke-width="1.3" d="M754.4 263.7 Q787.2 171.2 673.6 164.2"/><path stroke-width="1.3" d="M685.6 159.4 Q753.6 78.5 658.5 36.9"/><path stroke-width="1.3" d="M661.0 36.7 Q731.7 14.7 628.2 0.0"/></g><line x1="706" y1="66" x2="706" y2="112" stroke="#D9C9EE" stroke-opacity=".6" stroke-width="1.4"/><g transform="translate(706 112)"><path d="M0 -6.300000000000001 Q-12.600000000000001 -16.8 -21.0 -14.700000000000001" fill="none" stroke="#0B0612" stroke-width="2.3100000000000005" stroke-linecap="round"/><path d="M0 -2.1 Q-12.600000000000001 -12.600000000000001 -25.200000000000003 -4.2" fill="none" stroke="#0B0612" stroke-width="2.3100000000000005" stroke-linecap="round"/><path d="M0 3.1500000000000004 Q-12.600000000000001 -7.3500000000000005 -25.200000000000003 8.4" fill="none" stroke="#0B0612" stroke-width="2.3100000000000005" stroke-linecap="round"/><path d="M0 8.4 Q-12.600000000000001 -2.1 -18.900000000000002 18.900000000000002" fill="none" stroke="#0B0612" stroke-width="2.3100000000000005" stroke-linecap="round"/><path d="M0 -6.300000000000001 Q12.600000000000001 -16.8 21.0 -14.700000000000001" fill="none" stroke="#0B0612" stroke-width="2.3100000000000005" stroke-linecap="round"/><path d="M0 -2.1 Q12.600000000000001 -12.600000000000001 25.200000000000003 -4.2" fill="none" stroke="#0B0612" stroke-width="2.3100000000000005" stroke-linecap="round"/><path d="M0 3.1500000000000004 Q12.600000000000001 -7.3500000000000005 25.200000000000003 8.4" fill="none" stroke="#0B0612" stroke-width="2.3100000000000005" stroke-linecap="round"/><path d="M0 8.4 Q12.600000000000001 -2.1 18.900000000000002 18.900000000000002" fill="none" stroke="#0B0612" stroke-width="2.3100000000000005" stroke-linecap="round"/><ellipse cx="0" cy="4.2" rx="11.55" ry="13.65" fill="#0B0612"/><circle cx="0" cy="-8.4" r="7.3500000000000005" fill="#0B0612"/><circle cx="-3.1500000000000004" cy="-9.450000000000001" r="1.8900000000000001" fill="#FF8A1F"/><circle cx="3.1500000000000004" cy="-9.450000000000001" r="1.8900000000000001" fill="#FF8A1F"/><path d="M0 -2.1 l0 10.5" stroke="#FF8A1F" stroke-width="2.1" opacity=".7"/></g></svg></div><div class="ov" id="ovXM" aria-hidden="true"><svg class="ov-snow" viewBox="0 0 1080 810" preserveAspectRatio="xMidYMid slice"><g transform="translate(673 634)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="8.0" y2="0.0"/><line x1="0" y1="0" x2="4.0" y2="6.9"/><line x1="0" y1="0" x2="-4.0" y2="6.9"/><line x1="-8.0" y1="-0.0" x2="0" y2="0"/><line x1="-4.0" y1="-6.9" x2="0" y2="0"/><line x1="4.0" y1="-6.9" x2="0" y2="0"/></g><g transform="translate(1018 633)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="8.6" y2="0.0"/><line x1="0" y1="0" x2="4.3" y2="7.5"/><line x1="0" y1="0" x2="-4.3" y2="7.5"/><line x1="-8.6" y1="-0.0" x2="0" y2="0"/><line x1="-4.3" y1="-7.5" x2="0" y2="0"/><line x1="4.3" y1="-7.5" x2="0" y2="0"/></g><g transform="translate(31 447)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="8.7" y2="0.0"/><line x1="0" y1="0" x2="4.4" y2="7.5"/><line x1="0" y1="0" x2="-4.4" y2="7.5"/><line x1="-8.7" y1="-0.0" x2="0" y2="0"/><line x1="-4.4" y1="-7.5" x2="0" y2="0"/><line x1="4.4" y1="-7.5" x2="0" y2="0"/></g><g transform="translate(701 743)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="4.6" y2="0.0"/><line x1="0" y1="0" x2="2.3" y2="4.0"/><line x1="0" y1="0" x2="-2.3" y2="4.0"/><line x1="-4.6" y1="-0.0" x2="0" y2="0"/><line x1="-2.3" y1="-4.0" x2="0" y2="0"/><line x1="2.3" y1="-4.0" x2="0" y2="0"/></g><g transform="translate(507 298)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="6.7" y2="0.0"/><line x1="0" y1="0" x2="3.4" y2="5.8"/><line x1="0" y1="0" x2="-3.4" y2="5.8"/><line x1="-6.7" y1="-0.0" x2="0" y2="0"/><line x1="-3.4" y1="-5.8" x2="0" y2="0"/><line x1="3.4" y1="-5.8" x2="0" y2="0"/></g><g transform="translate(620 139)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="5.1" y2="0.0"/><line x1="0" y1="0" x2="2.5" y2="4.4"/><line x1="0" y1="0" x2="-2.5" y2="4.4"/><line x1="-5.1" y1="-0.0" x2="0" y2="0"/><line x1="-2.5" y1="-4.4" x2="0" y2="0"/><line x1="2.5" y1="-4.4" x2="0" y2="0"/></g><g transform="translate(302 753)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="7.8" y2="0.0"/><line x1="0" y1="0" x2="3.9" y2="6.8"/><line x1="0" y1="0" x2="-3.9" y2="6.8"/><line x1="-7.8" y1="-0.0" x2="0" y2="0"/><line x1="-3.9" y1="-6.8" x2="0" y2="0"/><line x1="3.9" y1="-6.8" x2="0" y2="0"/></g><g transform="translate(172 672)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="4.7" y2="0.0"/><line x1="0" y1="0" x2="2.3" y2="4.1"/><line x1="0" y1="0" x2="-2.3" y2="4.1"/><line x1="-4.7" y1="-0.0" x2="0" y2="0"/><line x1="-2.3" y1="-4.1" x2="0" y2="0"/><line x1="2.3" y1="-4.1" x2="0" y2="0"/></g><g transform="translate(667 216)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="4.0" y2="0.0"/><line x1="0" y1="0" x2="2.0" y2="3.5"/><line x1="0" y1="0" x2="-2.0" y2="3.5"/><line x1="-4.0" y1="-0.0" x2="0" y2="0"/><line x1="-2.0" y1="-3.5" x2="0" y2="0"/><line x1="2.0" y1="-3.5" x2="0" y2="0"/></g><g transform="translate(941 272)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="5.1" y2="0.0"/><line x1="0" y1="0" x2="2.5" y2="4.4"/><line x1="0" y1="0" x2="-2.5" y2="4.4"/><line x1="-5.1" y1="-0.0" x2="0" y2="0"/><line x1="-2.5" y1="-4.4" x2="0" y2="0"/><line x1="2.5" y1="-4.4" x2="0" y2="0"/></g><g transform="translate(1061 723)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="5.4" y2="0.0"/><line x1="0" y1="0" x2="2.7" y2="4.7"/><line x1="0" y1="0" x2="-2.7" y2="4.7"/><line x1="-5.4" y1="-0.0" x2="0" y2="0"/><line x1="-2.7" y1="-4.7" x2="0" y2="0"/><line x1="2.7" y1="-4.7" x2="0" y2="0"/></g><g transform="translate(1038 497)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="7.4" y2="0.0"/><line x1="0" y1="0" x2="3.7" y2="6.4"/><line x1="0" y1="0" x2="-3.7" y2="6.4"/><line x1="-7.4" y1="-0.0" x2="0" y2="0"/><line x1="-3.7" y1="-6.4" x2="0" y2="0"/><line x1="3.7" y1="-6.4" x2="0" y2="0"/></g><g transform="translate(221 770)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="7.5" y2="0.0"/><line x1="0" y1="0" x2="3.7" y2="6.5"/><line x1="0" y1="0" x2="-3.7" y2="6.5"/><line x1="-7.5" y1="-0.0" x2="0" y2="0"/><line x1="-3.7" y1="-6.5" x2="0" y2="0"/><line x1="3.7" y1="-6.5" x2="0" y2="0"/></g><g transform="translate(1044 738)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="5.5" y2="0.0"/><line x1="0" y1="0" x2="2.7" y2="4.8"/><line x1="0" y1="0" x2="-2.7" y2="4.8"/><line x1="-5.5" y1="-0.0" x2="0" y2="0"/><line x1="-2.7" y1="-4.8" x2="0" y2="0"/><line x1="2.7" y1="-4.8" x2="0" y2="0"/></g><g transform="translate(390 243)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="4.7" y2="0.0"/><line x1="0" y1="0" x2="2.4" y2="4.1"/><line x1="0" y1="0" x2="-2.4" y2="4.1"/><line x1="-4.7" y1="-0.0" x2="0" y2="0"/><line x1="-2.4" y1="-4.1" x2="0" y2="0"/><line x1="2.4" y1="-4.1" x2="0" y2="0"/></g><g transform="translate(70 335)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="7.0" y2="0.0"/><line x1="0" y1="0" x2="3.5" y2="6.1"/><line x1="0" y1="0" x2="-3.5" y2="6.1"/><line x1="-7.0" y1="-0.0" x2="0" y2="0"/><line x1="-3.5" y1="-6.1" x2="0" y2="0"/><line x1="3.5" y1="-6.1" x2="0" y2="0"/></g><g transform="translate(4 591)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="5.7" y2="0.0"/><line x1="0" y1="0" x2="2.8" y2="4.9"/><line x1="0" y1="0" x2="-2.8" y2="4.9"/><line x1="-5.7" y1="-0.0" x2="0" y2="0"/><line x1="-2.8" y1="-4.9" x2="0" y2="0"/><line x1="2.8" y1="-4.9" x2="0" y2="0"/></g><g transform="translate(335 687)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="6.4" y2="0.0"/><line x1="0" y1="0" x2="3.2" y2="5.5"/><line x1="0" y1="0" x2="-3.2" y2="5.5"/><line x1="-6.4" y1="-0.0" x2="0" y2="0"/><line x1="-3.2" y1="-5.5" x2="0" y2="0"/><line x1="3.2" y1="-5.5" x2="0" y2="0"/></g><g transform="translate(341 457)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="7.5" y2="0.0"/><line x1="0" y1="0" x2="3.8" y2="6.5"/><line x1="0" y1="0" x2="-3.8" y2="6.5"/><line x1="-7.5" y1="-0.0" x2="0" y2="0"/><line x1="-3.8" y1="-6.5" x2="0" y2="0"/><line x1="3.8" y1="-6.5" x2="0" y2="0"/></g><g transform="translate(62 793)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="4.1" y2="0.0"/><line x1="0" y1="0" x2="2.1" y2="3.6"/><line x1="0" y1="0" x2="-2.1" y2="3.6"/><line x1="-4.1" y1="-0.0" x2="0" y2="0"/><line x1="-2.1" y1="-3.6" x2="0" y2="0"/><line x1="2.1" y1="-3.6" x2="0" y2="0"/></g><g transform="translate(810 705)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="4.1" y2="0.0"/><line x1="0" y1="0" x2="2.0" y2="3.5"/><line x1="0" y1="0" x2="-2.0" y2="3.5"/><line x1="-4.1" y1="-0.0" x2="0" y2="0"/><line x1="-2.0" y1="-3.5" x2="0" y2="0"/><line x1="2.0" y1="-3.5" x2="0" y2="0"/></g><g transform="translate(851 379)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="6.9" y2="0.0"/><line x1="0" y1="0" x2="3.4" y2="6.0"/><line x1="0" y1="0" x2="-3.4" y2="6.0"/><line x1="-6.9" y1="-0.0" x2="0" y2="0"/><line x1="-3.4" y1="-6.0" x2="0" y2="0"/><line x1="3.4" y1="-6.0" x2="0" y2="0"/></g><g transform="translate(10 162)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="4.9" y2="0.0"/><line x1="0" y1="0" x2="2.5" y2="4.2"/><line x1="0" y1="0" x2="-2.5" y2="4.2"/><line x1="-4.9" y1="-0.0" x2="0" y2="0"/><line x1="-2.5" y1="-4.2" x2="0" y2="0"/><line x1="2.5" y1="-4.2" x2="0" y2="0"/></g><g transform="translate(1032 264)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="7.8" y2="0.0"/><line x1="0" y1="0" x2="3.9" y2="6.7"/><line x1="0" y1="0" x2="-3.9" y2="6.7"/><line x1="-7.8" y1="-0.0" x2="0" y2="0"/><line x1="-3.9" y1="-6.7" x2="0" y2="0"/><line x1="3.9" y1="-6.7" x2="0" y2="0"/></g><g transform="translate(1004 771)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="5.7" y2="0.0"/><line x1="0" y1="0" x2="2.9" y2="5.0"/><line x1="0" y1="0" x2="-2.9" y2="5.0"/><line x1="-5.7" y1="-0.0" x2="0" y2="0"/><line x1="-2.9" y1="-5.0" x2="0" y2="0"/><line x1="2.9" y1="-5.0" x2="0" y2="0"/></g><g transform="translate(383 487)" stroke="#F4F8EE" stroke-width="1.6" stroke-linecap="round"><line x1="0" y1="0" x2="7.9" y2="0.0"/><line x1="0" y1="0" x2="3.9" y2="6.8"/><line x1="0" y1="0" x2="-3.9" y2="6.8"/><line x1="-7.9" y1="-0.0" x2="0" y2="0"/><line x1="-3.9" y1="-6.8" x2="0" y2="0"/><line x1="3.9" y1="-6.8" x2="0" y2="0"/></g></svg><svg class="ov-garland" viewBox="0 0 1080 46" preserveAspectRatio="xMidYMin slice"><path d="M0 9 L0 9.0 L8 9.5 L16 10.0 L24 10.5 L32 11.0 L40 11.5 L48 11.9 L56 12.3 L64 12.7 L72 13.1 L80 13.5 L88 13.8 L96 14.1 L104 14.3 L112 14.5 L120 14.7 L128 14.9 L136 14.9 L144 15.0 L152 15.0 L160 15.0 L168 14.9 L176 14.8 L184 14.6 L192 14.4 L200 14.2 L208 13.9 L216 13.6 L224 13.2 L232 12.9 L240 12.5 L248 12.0 L256 11.6 L264 11.1 L272 10.6 L280 10.2 L288 9.7 L296 9.2 L304 8.6 L312 8.1 L320 7.7 L328 7.2 L336 6.7 L344 6.2 L352 5.8 L360 5.4 L368 5.0 L376 4.6 L384 4.3 L392 4.0 L400 3.7 L408 3.5 L416 3.3 L424 3.2 L432 3.1 L440 3.0 L448 3.0 L456 3.0 L464 3.1 L472 3.2 L480 3.3 L488 3.5 L496 3.8 L504 4.0 L512 4.3 L520 4.7 L528 5.0 L536 5.4 L544 5.8 L552 6.3 L560 6.7 L568 7.2 L576 7.7 L584 8.2 L592 8.7 L600 9.2 L608 9.7 L616 10.2 L624 10.7 L632 11.2 L640 11.6 L648 12.1 L656 12.5 L664 12.9 L672 13.3 L680 13.6 L688 13.9 L696 14.2 L704 14.4 L712 14.6 L720 14.8 L728 14.9 L736 15.0 L744 15.0 L752 15.0 L760 14.9 L768 14.8 L776 14.7 L784 14.5 L792 14.3 L800 14.1 L808 13.8 L816 13.4 L824 13.1 L832 12.7 L840 12.3 L848 11.9 L856 11.4 L864 10.9 L872 10.5 L880 10.0 L888 9.5 L896 9.0 L904 8.5 L912 8.0 L920 7.5 L928 7.0 L936 6.5 L944 6.1 L952 5.6 L960 5.2 L968 4.8 L976 4.5 L984 4.2 L992 3.9 L1000 3.6 L1008 3.4 L1016 3.3 L1024 3.1 L1032 3.1 L1040 3.0 L1048 3.0 L1056 3.0 L1064 3.1 L1072 3.2 L1080 3.4" fill="none" stroke="#1F5233" stroke-width="13" stroke-linecap="round"/><line x1="0" y1="9.0" x2="-5.8" y2="1.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="0" y1="9.0" x2="-6.9" y2="18.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="5" y1="9.3" x2="7.2" y2="2.3" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="5" y1="9.3" x2="8.5" y2="20.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="10" y1="9.6" x2="5.5" y2="2.8" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="10" y1="9.6" x2="4.8" y2="17.4" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="15" y1="9.9" x2="14.4" y2="-0.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="15" y1="9.9" x2="14.5" y2="18.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="20" y1="10.3" x2="27.5" y2="4.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="20" y1="10.3" x2="25.5" y2="14.7" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="25" y1="10.6" x2="16.3" y2="2.6" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="25" y1="10.6" x2="18.7" y2="16.3" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="30" y1="10.9" x2="35.9" y2="5.0" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="30" y1="10.9" x2="37.5" y2="18.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="35" y1="11.2" x2="40.8" y2="1.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="35" y1="11.2" x2="40.3" y2="20.4" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="40" y1="11.5" x2="38.4" y2="-0.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="40" y1="11.5" x2="39.0" y2="18.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="45" y1="11.7" x2="44.9" y2="3.4" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="45" y1="11.7" x2="44.9" y2="20.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="50" y1="12.0" x2="56.9" y2="6.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="50" y1="12.0" x2="57.5" y2="18.4" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="55" y1="12.3" x2="57.0" y2="2.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="55" y1="12.3" x2="57.1" y2="22.5" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="60" y1="12.5" x2="69.1" y2="4.8" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="60" y1="12.5" x2="68.0" y2="19.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="65" y1="12.8" x2="74.1" y2="5.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="65" y1="12.8" x2="72.6" y2="19.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="70" y1="13.0" x2="73.8" y2="3.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="70" y1="13.0" x2="73.1" y2="20.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="75" y1="13.3" x2="65.1" y2="7.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="75" y1="13.3" x2="68.5" y2="16.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="80" y1="13.5" x2="78.3" y2="5.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="80" y1="13.5" x2="78.0" y2="22.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="85" y1="13.7" x2="90.7" y2="9.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="85" y1="13.7" x2="93.5" y2="20.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="90" y1="13.9" x2="94.4" y2="6.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="90" y1="13.9" x2="94.8" y2="22.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="95" y1="14.0" x2="91.7" y2="7.4" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="95" y1="14.0" x2="90.7" y2="22.7" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="100" y1="14.2" x2="107.7" y2="10.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="100" y1="14.2" x2="107.1" y2="17.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="105" y1="14.4" x2="113.0" y2="11.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="105" y1="14.4" x2="115.9" y2="18.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="110" y1="14.5" x2="106.6" y2="3.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="110" y1="14.5" x2="107.0" y2="24.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="115" y1="14.6" x2="118.2" y2="7.8" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="115" y1="14.6" x2="118.6" y2="22.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="120" y1="14.7" x2="124.2" y2="7.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="120" y1="14.7" x2="124.7" y2="22.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="125" y1="14.8" x2="125.5" y2="5.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="125" y1="14.8" x2="125.6" y2="25.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="130" y1="14.9" x2="126.1" y2="6.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="130" y1="14.9" x2="125.6" y2="24.0" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="135" y1="14.9" x2="137.8" y2="6.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="135" y1="14.9" x2="138.3" y2="24.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="140" y1="15.0" x2="142.2" y2="6.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="140" y1="15.0" x2="141.9" y2="21.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="145" y1="15.0" x2="151.4" y2="11.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="145" y1="15.0" x2="152.4" y2="18.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="150" y1="15.0" x2="145.3" y2="6.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="150" y1="15.0" x2="145.8" y2="22.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="155" y1="15.0" x2="161.6" y2="5.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="155" y1="15.0" x2="160.0" y2="21.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="160" y1="15.0" x2="150.9" y2="8.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="160" y1="15.0" x2="151.4" y2="20.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="165" y1="14.9" x2="161.4" y2="7.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="165" y1="14.9" x2="161.3" y2="22.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="170" y1="14.9" x2="174.3" y2="5.6" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="170" y1="14.9" x2="173.2" y2="21.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="175" y1="14.8" x2="184.2" y2="10.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="175" y1="14.8" x2="183.2" y2="19.0" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="180" y1="14.7" x2="170.8" y2="9.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="180" y1="14.7" x2="170.2" y2="20.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="185" y1="14.6" x2="179.2" y2="5.3" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="185" y1="14.6" x2="179.9" y2="22.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="190" y1="14.5" x2="185.1" y2="4.4" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="190" y1="14.5" x2="186.5" y2="21.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="195" y1="14.3" x2="190.8" y2="4.0" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="195" y1="14.3" x2="190.8" y2="24.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="200" y1="14.2" x2="202.0" y2="5.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="200" y1="14.2" x2="202.4" y2="24.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="205" y1="14.0" x2="204.1" y2="3.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="205" y1="14.0" x2="204.2" y2="23.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="210" y1="13.8" x2="201.8" y2="10.0" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="210" y1="13.8" x2="203.6" y2="16.8" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="215" y1="13.6" x2="223.5" y2="10.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="215" y1="13.6" x2="222.5" y2="16.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="220" y1="13.4" x2="218.9" y2="2.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="220" y1="13.4" x2="219.0" y2="23.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="225" y1="13.2" x2="226.2" y2="1.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="225" y1="13.2" x2="226.2" y2="24.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="230" y1="13.0" x2="223.4" y2="8.0" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="230" y1="13.0" x2="220.8" y2="19.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="235" y1="12.7" x2="235.2" y2="4.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="235" y1="12.7" x2="235.3" y2="22.6" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="240" y1="12.5" x2="239.6" y2="4.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="240" y1="12.5" x2="239.6" y2="21.0" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="245" y1="12.2" x2="236.1" y2="8.5" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="245" y1="12.2" x2="234.2" y2="16.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="250" y1="11.9" x2="243.8" y2="7.5" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="250" y1="11.9" x2="242.4" y2="17.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="255" y1="11.6" x2="252.2" y2="4.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="255" y1="11.6" x2="250.9" y2="22.3" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="260" y1="11.4" x2="252.1" y2="3.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="260" y1="11.4" x2="252.0" y2="19.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="265" y1="11.1" x2="264.7" y2="1.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="265" y1="11.1" x2="264.8" y2="18.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="270" y1="10.8" x2="264.2" y2="2.5" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="270" y1="10.8" x2="264.7" y2="18.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="275" y1="10.5" x2="270.4" y2="0.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="275" y1="10.5" x2="270.4" y2="20.3" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="280" y1="10.2" x2="274.2" y2="5.7" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="280" y1="10.2" x2="271.1" y2="17.0" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="285" y1="9.8" x2="285.4" y2="0.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="285" y1="9.8" x2="285.3" y2="18.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="290" y1="9.5" x2="287.5" y2="0.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="290" y1="9.5" x2="287.6" y2="18.0" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="295" y1="9.2" x2="303.5" y2="5.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="295" y1="9.2" x2="304.1" y2="12.8" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="300" y1="8.9" x2="305.7" y2="-0.5" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="300" y1="8.9" x2="304.1" y2="15.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="305" y1="8.6" x2="304.0" y2="-1.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="305" y1="8.6" x2="304.1" y2="17.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="310" y1="8.3" x2="312.7" y2="-0.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="310" y1="8.3" x2="313.0" y2="18.0" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="315" y1="8.0" x2="309.9" y2="-2.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="315" y1="8.0" x2="310.9" y2="16.3" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="320" y1="7.7" x2="314.7" y2="1.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="320" y1="7.7" x2="315.3" y2="13.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="325" y1="7.3" x2="320.2" y2="1.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="325" y1="7.3" x2="317.7" y2="16.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="330" y1="7.0" x2="338.9" y2="3.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="330" y1="7.0" x2="336.9" y2="10.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="335" y1="6.7" x2="326.2" y2="0.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="335" y1="6.7" x2="326.0" y2="13.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="340" y1="6.5" x2="346.8" y2="-1.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="340" y1="6.5" x2="345.6" y2="12.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="345" y1="6.2" x2="336.8" y2="0.6" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="345" y1="6.2" x2="337.3" y2="11.5" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="350" y1="5.9" x2="354.5" y2="0.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="350" y1="5.9" x2="356.1" y2="13.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="355" y1="5.6" x2="361.3" y2="0.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="355" y1="5.6" x2="362.0" y2="10.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="360" y1="5.4" x2="353.1" y2="2.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="360" y1="5.4" x2="349.8" y2="9.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="365" y1="5.1" x2="367.1" y2="-5.7" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="365" y1="5.1" x2="367.3" y2="16.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="370" y1="4.9" x2="370.3" y2="-5.7" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="370" y1="4.9" x2="370.3" y2="14.7" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="375" y1="4.7" x2="381.4" y2="1.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="375" y1="4.7" x2="384.9" y2="10.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="380" y1="4.5" x2="385.9" y2="-1.3" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="380" y1="4.5" x2="387.3" y2="11.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="385" y1="4.3" x2="388.0" y2="-6.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="385" y1="4.3" x2="387.3" y2="12.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="390" y1="4.1" x2="387.8" y2="-4.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="390" y1="4.1" x2="387.0" y2="15.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="395" y1="3.9" x2="395.0" y2="-8.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="395" y1="3.9" x2="395.0" y2="15.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="400" y1="3.7" x2="398.0" y2="-5.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="400" y1="3.7" x2="397.9" y2="13.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="405" y1="3.6" x2="408.4" y2="-3.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="405" y1="3.6" x2="410.0" y2="13.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="410" y1="3.5" x2="403.0" y2="-3.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="410" y1="3.5" x2="401.5" y2="11.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="415" y1="3.4" x2="423.9" y2="-1.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="415" y1="3.4" x2="421.9" y2="6.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="420" y1="3.3" x2="412.7" y2="-3.0" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="420" y1="3.3" x2="411.4" y2="10.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="425" y1="3.2" x2="432.6" y2="-0.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="425" y1="3.2" x2="435.1" y2="8.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="430" y1="3.1" x2="437.5" y2="-3.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="430" y1="3.1" x2="438.7" y2="10.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="435" y1="3.1" x2="426.4" y2="-0.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="435" y1="3.1" x2="427.6" y2="6.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="440" y1="3.0" x2="437.1" y2="-5.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="440" y1="3.0" x2="437.0" y2="11.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="445" y1="3.0" x2="444.5" y2="-7.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="445" y1="3.0" x2="444.5" y2="12.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="450" y1="3.0" x2="451.3" y2="-6.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="450" y1="3.0" x2="451.0" y2="10.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="455" y1="3.0" x2="462.3" y2="-5.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="455" y1="3.0" x2="461.0" y2="10.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="460" y1="3.1" x2="468.4" y2="-2.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="460" y1="3.1" x2="466.0" y2="7.3" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="465" y1="3.1" x2="471.2" y2="-2.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="465" y1="3.1" x2="473.3" y2="10.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="470" y1="3.2" x2="462.7" y2="-4.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="470" y1="3.2" x2="462.0" y2="11.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="475" y1="3.2" x2="469.8" y2="-1.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="475" y1="3.2" x2="468.4" y2="9.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="480" y1="3.3" x2="485.1" y2="-2.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="480" y1="3.3" x2="487.5" y2="11.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="485" y1="3.5" x2="476.6" y2="-0.5" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="485" y1="3.5" x2="475.6" y2="7.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="490" y1="3.6" x2="482.1" y2="0.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="490" y1="3.6" x2="481.4" y2="7.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="495" y1="3.7" x2="498.7" y2="-6.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="495" y1="3.7" x2="498.1" y2="12.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="500" y1="3.9" x2="495.1" y2="-6.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="500" y1="3.9" x2="495.6" y2="13.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="505" y1="4.1" x2="503.6" y2="-5.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="505" y1="4.1" x2="503.9" y2="11.5" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="510" y1="4.2" x2="506.7" y2="-6.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="510" y1="4.2" x2="507.4" y2="12.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="515" y1="4.4" x2="519.7" y2="-6.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="515" y1="4.4" x2="518.0" y2="11.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="520" y1="4.7" x2="524.0" y2="-4.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="520" y1="4.7" x2="524.2" y2="14.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="525" y1="4.9" x2="521.3" y2="-5.0" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="525" y1="4.9" x2="521.2" y2="14.8" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="530" y1="5.1" x2="522.8" y2="-2.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="530" y1="5.1" x2="524.6" y2="10.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="535" y1="5.4" x2="543.4" y2="-0.6" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="535" y1="5.4" x2="541.1" y2="9.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="540" y1="5.6" x2="533.3" y2="0.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="540" y1="5.6" x2="532.1" y2="12.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="545" y1="5.9" x2="546.4" y2="-4.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="545" y1="5.9" x2="546.3" y2="15.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="550" y1="6.2" x2="553.6" y2="-0.5" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="550" y1="6.2" x2="555.2" y2="15.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="555" y1="6.4" x2="556.7" y2="-2.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="555" y1="6.4" x2="556.5" y2="14.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="560" y1="6.7" x2="553.2" y2="3.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="560" y1="6.7" x2="551.6" y2="11.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="565" y1="7.0" x2="569.4" y2="-1.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="565" y1="7.0" x2="570.4" y2="17.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="570" y1="7.3" x2="571.1" y2="-3.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="570" y1="7.3" x2="571.0" y2="16.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="575" y1="7.6" x2="567.5" y2="1.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="575" y1="7.6" x2="569.3" y2="12.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="580" y1="7.9" x2="571.5" y2="1.8" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="580" y1="7.9" x2="572.6" y2="13.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="585" y1="8.3" x2="581.9" y2="-3.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="585" y1="8.3" x2="582.4" y2="17.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="590" y1="8.6" x2="598.5" y2="1.5" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="590" y1="8.6" x2="597.4" y2="14.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="595" y1="8.9" x2="587.0" y2="0.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="595" y1="8.9" x2="587.3" y2="16.6" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="600" y1="9.2" x2="606.8" y2="3.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="600" y1="9.2" x2="608.7" y2="17.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="605" y1="9.5" x2="600.0" y2="-0.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="605" y1="9.5" x2="600.6" y2="18.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="610" y1="9.8" x2="613.7" y2="2.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="610" y1="9.8" x2="614.1" y2="18.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="615" y1="10.1" x2="608.0" y2="2.7" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="615" y1="10.1" x2="607.6" y2="18.0" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="620" y1="10.4" x2="615.2" y2="4.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="620" y1="10.4" x2="614.4" y2="17.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="625" y1="10.7" x2="630.1" y2="4.5" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="625" y1="10.7" x2="632.4" y2="19.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="630" y1="11.0" x2="623.2" y2="6.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="630" y1="11.0" x2="620.7" y2="17.7" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="635" y1="11.3" x2="634.4" y2="3.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="635" y1="11.3" x2="634.4" y2="18.4" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="640" y1="11.6" x2="635.5" y2="5.8" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="640" y1="11.6" x2="635.7" y2="17.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="645" y1="11.9" x2="640.2" y2="1.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="645" y1="11.9" x2="640.6" y2="21.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="650" y1="12.2" x2="657.7" y2="5.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="650" y1="12.2" x2="658.1" y2="19.0" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="655" y1="12.4" x2="666.2" y2="8.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="655" y1="12.4" x2="665.9" y2="16.6" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="660" y1="12.7" x2="658.3" y2="2.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="660" y1="12.7" x2="658.7" y2="21.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="665" y1="12.9" x2="662.5" y2="2.0" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="665" y1="12.9" x2="663.3" y2="20.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="670" y1="13.2" x2="669.5" y2="5.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="670" y1="13.2" x2="669.5" y2="21.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="675" y1="13.4" x2="670.7" y2="5.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="675" y1="13.4" x2="670.9" y2="21.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="680" y1="13.6" x2="679.2" y2="6.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="680" y1="13.6" x2="679.0" y2="22.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="685" y1="13.8" x2="683.9" y2="5.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="685" y1="13.8" x2="684.0" y2="21.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="690" y1="14.0" x2="695.6" y2="7.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="690" y1="14.0" x2="695.2" y2="19.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="695" y1="14.2" x2="695.6" y2="6.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="695" y1="14.2" x2="695.6" y2="22.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="700" y1="14.3" x2="700.1" y2="4.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="700" y1="14.3" x2="700.1" y2="21.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="705" y1="14.4" x2="703.9" y2="6.6" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="705" y1="14.4" x2="703.7" y2="23.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="710" y1="14.6" x2="707.6" y2="4.3" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="710" y1="14.6" x2="708.2" y2="22.6" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="715" y1="14.7" x2="713.2" y2="7.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="715" y1="14.7" x2="712.9" y2="22.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="720" y1="14.8" x2="719.5" y2="7.0" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="720" y1="14.8" x2="719.5" y2="22.3" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="725" y1="14.9" x2="727.5" y2="4.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="725" y1="14.9" x2="726.9" y2="23.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="730" y1="14.9" x2="737.7" y2="5.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="730" y1="14.9" x2="735.4" y2="21.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="735" y1="15.0" x2="727.1" y2="11.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="735" y1="15.0" x2="727.2" y2="18.5" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="740" y1="15.0" x2="745.1" y2="4.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="740" y1="15.0" x2="744.3" y2="24.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="745" y1="15.0" x2="738.2" y2="11.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="745" y1="15.0" x2="736.3" y2="18.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="750" y1="15.0" x2="740.9" y2="10.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="750" y1="15.0" x2="742.9" y2="18.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="755" y1="15.0" x2="751.4" y2="6.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="755" y1="15.0" x2="750.5" y2="25.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="760" y1="14.9" x2="756.9" y2="4.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="760" y1="14.9" x2="756.7" y2="26.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="765" y1="14.9" x2="772.0" y2="11.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="765" y1="14.9" x2="771.7" y2="18.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="770" y1="14.8" x2="771.1" y2="5.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="770" y1="14.8" x2="770.9" y2="22.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="775" y1="14.7" x2="781.9" y2="9.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="775" y1="14.7" x2="781.8" y2="20.3" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="780" y1="14.6" x2="777.0" y2="6.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="780" y1="14.6" x2="777.0" y2="23.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="785" y1="14.5" x2="784.6" y2="6.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="785" y1="14.5" x2="784.5" y2="24.0" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="790" y1="14.4" x2="798.9" y2="8.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="790" y1="14.4" x2="796.1" y2="18.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="795" y1="14.2" x2="798.5" y2="8.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="795" y1="14.2" x2="798.7" y2="20.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="800" y1="14.1" x2="803.1" y2="7.3" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="800" y1="14.1" x2="804.2" y2="23.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="805" y1="13.9" x2="796.1" y2="9.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="805" y1="13.9" x2="796.8" y2="18.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="810" y1="13.7" x2="814.2" y2="2.5" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="810" y1="13.7" x2="812.6" y2="20.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="815" y1="13.5" x2="822.5" y2="4.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="815" y1="13.5" x2="821.3" y2="21.0" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="820" y1="13.3" x2="818.7" y2="2.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="820" y1="13.3" x2="819.0" y2="21.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="825" y1="13.0" x2="835.7" y2="8.5" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="825" y1="13.0" x2="834.1" y2="16.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="830" y1="12.8" x2="823.1" y2="7.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="830" y1="12.8" x2="823.4" y2="17.5" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="835" y1="12.6" x2="835.4" y2="3.0" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="835" y1="12.6" x2="835.3" y2="21.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="840" y1="12.3" x2="845.9" y2="5.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="840" y1="12.3" x2="844.7" y2="18.0" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="845" y1="12.0" x2="847.7" y2="1.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="845" y1="12.0" x2="846.9" y2="19.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="850" y1="11.8" x2="842.1" y2="6.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="850" y1="11.8" x2="840.6" y2="17.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="855" y1="11.5" x2="857.8" y2="1.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="855" y1="11.5" x2="858.2" y2="22.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="860" y1="11.2" x2="857.6" y2="1.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="860" y1="11.2" x2="858.0" y2="19.4" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="865" y1="10.9" x2="863.8" y2="2.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="865" y1="10.9" x2="863.7" y2="20.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="870" y1="10.6" x2="865.2" y2="1.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="870" y1="10.6" x2="865.9" y2="18.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="875" y1="10.3" x2="881.7" y2="0.8" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="875" y1="10.3" x2="881.2" y2="19.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="880" y1="10.0" x2="884.7" y2="4.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="880" y1="10.0" x2="885.2" y2="16.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="885" y1="9.7" x2="890.4" y2="4.7" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="885" y1="9.7" x2="891.7" y2="15.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="890" y1="9.3" x2="885.1" y2="2.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="890" y1="9.3" x2="883.3" y2="18.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="895" y1="9.0" x2="887.8" y2="0.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="895" y1="9.0" x2="888.6" y2="16.8" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="900" y1="8.7" x2="900.8" y2="-0.4" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="900" y1="8.7" x2="901.0" y2="20.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="905" y1="8.4" x2="904.6" y2="-2.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="905" y1="8.4" x2="904.6" y2="17.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="910" y1="8.1" x2="917.2" y2="3.7" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="910" y1="8.1" x2="916.8" y2="12.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="915" y1="7.8" x2="907.9" y2="4.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="915" y1="7.8" x2="906.2" y2="11.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="920" y1="7.5" x2="919.5" y2="-0.5" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="920" y1="7.5" x2="919.4" y2="15.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="925" y1="7.2" x2="916.6" y2="3.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="925" y1="7.2" x2="915.3" y2="11.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="930" y1="6.9" x2="922.9" y2="0.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="930" y1="6.9" x2="922.9" y2="12.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="935" y1="6.6" x2="926.9" y2="-0.6" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="935" y1="6.6" x2="928.7" y2="12.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="940" y1="6.3" x2="950.5" y2="1.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="940" y1="6.3" x2="950.8" y2="10.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="945" y1="6.0" x2="940.9" y2="-2.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="945" y1="6.0" x2="939.7" y2="16.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="950" y1="5.7" x2="946.2" y2="-4.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="950" y1="5.7" x2="947.6" y2="12.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="955" y1="5.5" x2="963.9" y2="-1.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="955" y1="5.5" x2="963.7" y2="11.8" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="960" y1="5.2" x2="952.9" y2="2.4" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="960" y1="5.2" x2="952.8" y2="8.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="965" y1="5.0" x2="959.7" y2="0.0" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="965" y1="5.0" x2="956.3" y2="13.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="970" y1="4.8" x2="965.9" y2="-6.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="970" y1="4.8" x2="965.9" y2="15.9" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="975" y1="4.5" x2="974.8" y2="-3.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="975" y1="4.5" x2="974.8" y2="13.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="980" y1="4.3" x2="987.3" y2="-2.5" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="980" y1="4.3" x2="986.8" y2="10.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="985" y1="4.1" x2="978.6" y2="-4.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="985" y1="4.1" x2="978.9" y2="12.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="990" y1="4.0" x2="981.8" y2="-0.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="990" y1="4.0" x2="979.2" y2="9.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="995" y1="3.8" x2="1004.3" y2="-2.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="995" y1="3.8" x2="1005.0" y2="10.1" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="1000" y1="3.6" x2="1006.5" y2="-5.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="1000" y1="3.6" x2="1006.3" y2="12.3" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1005" y1="3.5" x2="1006.1" y2="-4.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="1005" y1="3.5" x2="1005.9" y2="10.7" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1010" y1="3.4" x2="1013.9" y2="-7.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1010" y1="3.4" x2="1013.2" y2="12.2" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="1015" y1="3.3" x2="1021.6" y2="-5.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="1015" y1="3.3" x2="1020.6" y2="11.1" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1020" y1="3.2" x2="1020.4" y2="-4.6" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="1020" y1="3.2" x2="1020.3" y2="10.6" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="1025" y1="3.1" x2="1034.1" y2="-0.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1025" y1="3.1" x2="1035.1" y2="7.0" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1030" y1="3.1" x2="1028.8" y2="-7.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1030" y1="3.1" x2="1029.1" y2="11.4" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="1035" y1="3.0" x2="1028.6" y2="-2.7" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="1035" y1="3.0" x2="1029.6" y2="7.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1040" y1="3.0" x2="1048.4" y2="-4.3" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="1040" y1="3.0" x2="1047.6" y2="9.6" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="1045" y1="3.0" x2="1040.7" y2="-6.0" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="1045" y1="3.0" x2="1040.9" y2="11.5" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1050" y1="3.0" x2="1056.9" y2="-5.2" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1050" y1="3.0" x2="1054.8" y2="8.8" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="1055" y1="3.0" x2="1048.8" y2="-0.6" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1055" y1="3.0" x2="1045.1" y2="8.9" stroke="#3A8A52" stroke-width="2.2" stroke-linecap="round"/><line x1="1060" y1="3.1" x2="1058.9" y2="-5.4" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1060" y1="3.1" x2="1059.0" y2="10.9" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1065" y1="3.1" x2="1072.9" y2="-1.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="1065" y1="3.1" x2="1072.4" y2="7.1" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="1070" y1="3.2" x2="1077.6" y2="-0.8" stroke="#1F5233" stroke-width="2.2" stroke-linecap="round"/><line x1="1070" y1="3.2" x2="1078.6" y2="7.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="1075" y1="3.3" x2="1068.5" y2="-1.8" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><line x1="1075" y1="3.3" x2="1067.6" y2="9.2" stroke="#2C7344" stroke-width="2.2" stroke-linecap="round"/><g transform="translate(70 13.0)"><path d="M0 0 C-6 -10 -20 -8 -22 2 C-12 4 -6 4 0 0Z M0 0 C6 -10 20 -8 22 2 C12 4 6 4 0 0Z" fill="#2C7344" stroke="#14301E" stroke-width="1"/><circle cx="-4" cy="3" r="5" fill="#C4202F"/><circle cx="5" cy="4" r="5" fill="#C4202F"/><circle cx="0" cy="9" r="5" fill="#A81C2B"/><circle cx="-5.5" cy="1.5" r="1.4" fill="#fff" opacity=".8"/></g><g transform="translate(220 13.4)"><path d="M0 0 C-6 -10 -20 -8 -22 2 C-12 4 -6 4 0 0Z M0 0 C6 -10 20 -8 22 2 C12 4 6 4 0 0Z" fill="#2C7344" stroke="#14301E" stroke-width="1"/><circle cx="-4" cy="3" r="5" fill="#C4202F"/><circle cx="5" cy="4" r="5" fill="#C4202F"/><circle cx="0" cy="9" r="5" fill="#A81C2B"/><circle cx="-5.5" cy="1.5" r="1.4" fill="#fff" opacity=".8"/></g><g transform="translate(370 4.9)"><path d="M0 0 C-6 -10 -20 -8 -22 2 C-12 4 -6 4 0 0Z M0 0 C6 -10 20 -8 22 2 C12 4 6 4 0 0Z" fill="#2C7344" stroke="#14301E" stroke-width="1"/><circle cx="-4" cy="3" r="5" fill="#C4202F"/><circle cx="5" cy="4" r="5" fill="#C4202F"/><circle cx="0" cy="9" r="5" fill="#A81C2B"/><circle cx="-5.5" cy="1.5" r="1.4" fill="#fff" opacity=".8"/></g><g transform="translate(520 4.7)"><path d="M0 0 C-6 -10 -20 -8 -22 2 C-12 4 -6 4 0 0Z M0 0 C6 -10 20 -8 22 2 C12 4 6 4 0 0Z" fill="#2C7344" stroke="#14301E" stroke-width="1"/><circle cx="-4" cy="3" r="5" fill="#C4202F"/><circle cx="5" cy="4" r="5" fill="#C4202F"/><circle cx="0" cy="9" r="5" fill="#A81C2B"/><circle cx="-5.5" cy="1.5" r="1.4" fill="#fff" opacity=".8"/></g><g transform="translate(670 13.2)"><path d="M0 0 C-6 -10 -20 -8 -22 2 C-12 4 -6 4 0 0Z M0 0 C6 -10 20 -8 22 2 C12 4 6 4 0 0Z" fill="#2C7344" stroke="#14301E" stroke-width="1"/><circle cx="-4" cy="3" r="5" fill="#C4202F"/><circle cx="5" cy="4" r="5" fill="#C4202F"/><circle cx="0" cy="9" r="5" fill="#A81C2B"/><circle cx="-5.5" cy="1.5" r="1.4" fill="#fff" opacity=".8"/></g><g transform="translate(820 13.3)"><path d="M0 0 C-6 -10 -20 -8 -22 2 C-12 4 -6 4 0 0Z M0 0 C6 -10 20 -8 22 2 C12 4 6 4 0 0Z" fill="#2C7344" stroke="#14301E" stroke-width="1"/><circle cx="-4" cy="3" r="5" fill="#C4202F"/><circle cx="5" cy="4" r="5" fill="#C4202F"/><circle cx="0" cy="9" r="5" fill="#A81C2B"/><circle cx="-5.5" cy="1.5" r="1.4" fill="#fff" opacity=".8"/></g><g transform="translate(970 4.8)"><path d="M0 0 C-6 -10 -20 -8 -22 2 C-12 4 -6 4 0 0Z M0 0 C6 -10 20 -8 22 2 C12 4 6 4 0 0Z" fill="#2C7344" stroke="#14301E" stroke-width="1"/><circle cx="-4" cy="3" r="5" fill="#C4202F"/><circle cx="5" cy="4" r="5" fill="#C4202F"/><circle cx="0" cy="9" r="5" fill="#A81C2B"/><circle cx="-5.5" cy="1.5" r="1.4" fill="#fff" opacity=".8"/></g><g transform="translate(145 19.0)"><path d="M-9 4 Q-9 -8 0 -9 Q9 -8 9 4 Z" fill="#E3B23C"/><rect x="-10" y="3" width="20" height="3" rx="1.5" fill="#B88A1A"/><circle cx="0" cy="10" r="2.6" fill="#B88A1A"/></g><g transform="translate(445 7.0)"><path d="M-9 4 Q-9 -8 0 -9 Q9 -8 9 4 Z" fill="#E3B23C"/><rect x="-10" y="3" width="20" height="3" rx="1.5" fill="#B88A1A"/><circle cx="0" cy="10" r="2.6" fill="#B88A1A"/></g><g transform="translate(745 19.0)"><path d="M-9 4 Q-9 -8 0 -9 Q9 -8 9 4 Z" fill="#E3B23C"/><rect x="-10" y="3" width="20" height="3" rx="1.5" fill="#B88A1A"/><circle cx="0" cy="10" r="2.6" fill="#B88A1A"/></g><g transform="translate(1045 7.0)"><path d="M-9 4 Q-9 -8 0 -9 Q9 -8 9 4 Z" fill="#E3B23C"/><rect x="-10" y="3" width="20" height="3" rx="1.5" fill="#B88A1A"/><circle cx="0" cy="10" r="2.6" fill="#B88A1A"/></g></svg></div>
 
 <div class="top">
   <div class="datestamp"><span id="dow"></span> <span class="rest" id="drest"></span></div>
@@ -303,7 +400,46 @@ body.phone .panel{border-radius:12px;}
 <main>
   <section class="view on" id="today">
     <div class="todaycol">
-      <div class="spine" id="spine"></div>
+      <div class="spine" id="spine">
+        <div class="evs" id="evs"></div>
+        <div class="scene" id="scene"><svg class="sc-hw" viewBox="0 0 620 230" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><defs><radialGradient id="mglow"><stop offset="0" stop-color="#F5E6B8" stop-opacity=".42"/><stop offset="1" stop-color="#F5E6B8" stop-opacity="0"/></radialGradient></defs><circle cx="480" cy="98" r="118" fill="url(#mglow)"/><circle cx="480" cy="98" r="80" fill="#F5E6B8"/><circle cx="452" cy="76" r="14" fill="#E3D09A" opacity=".7"/><circle cx="505" cy="120" r="19" fill="#E3D09A" opacity=".6"/><circle cx="470" cy="128" r="8" fill="#E3D09A" opacity=".7"/><circle cx="508" cy="70" r="7" fill="#E3D09A" opacity=".6"/><g transform="translate(392 38) rotate(-12) scale(0.56)"><path d="M50 12 L53 6 L55 13 C62 10 72 6 90 4 C86 10 87 14 85 19 C82 16 79 17 77 22 C74 19 70 20 68 25 C65 22 60 23 57 28 C55 25 53 24 50 32 C47 24 45 25 43 28 C40 23 35 22 32 25 C30 20 26 19 23 22 C21 17 18 16 15 19 C13 14 14 10 10 4 C28 6 38 10 45 13 L47 6 Z" fill="#0B0612"/></g><g transform="translate(540 14) rotate(10) scale(0.4)"><path d="M50 12 L53 6 L55 13 C62 10 72 6 90 4 C86 10 87 14 85 19 C82 16 79 17 77 22 C74 19 70 20 68 25 C65 22 60 23 57 28 C55 25 53 24 50 32 C47 24 45 25 43 28 C40 23 35 22 32 25 C30 20 26 19 23 22 C21 17 18 16 15 19 C13 14 14 10 10 4 C28 6 38 10 45 13 L47 6 Z" fill="#0B0612"/></g><g transform="translate(430 6) rotate(-4) scale(0.3)"><path d="M50 12 L53 6 L55 13 C62 10 72 6 90 4 C86 10 87 14 85 19 C82 16 79 17 77 22 C74 19 70 20 68 25 C65 22 60 23 57 28 C55 25 53 24 50 32 C47 24 45 25 43 28 C40 23 35 22 32 25 C30 20 26 19 23 22 C21 17 18 16 15 19 C13 14 14 10 10 4 C28 6 38 10 45 13 L47 6 Z" fill="#0B0612"/></g><path d="M0 205 C90 188 180 212 280 200 C380 188 470 210 620 196 L620 230 L0 230 Z" fill="#0B0612"/><path d="M6 218 L6 176 L11 168 L16 176 L16 218 Z" fill="#0B0612"/><path d="M26 218 L26 176 L31 168 L36 176 L36 218 Z" fill="#0B0612"/><path d="M46 218 L46 176 L51 168 L56 176 L56 218 Z" fill="#0B0612"/><path d="M66 218 L66 176 L71 168 L76 176 L76 218 Z" fill="#0B0612"/><path d="M86 218 L86 176 L91 168 L96 176 L96 218 Z" fill="#0B0612"/><path d="M106 218 L106 176 L111 168 L116 176 L116 218 Z" fill="#0B0612"/><path d="M126 218 L126 176 L131 168 L136 176 L136 218 Z" fill="#0B0612"/><path d="M146 218 L146 176 L151 168 L156 176 L156 218 Z" fill="#0B0612"/><rect x="0" y="186" width="152" height="5" fill="#0B0612"/><rect x="0" y="204" width="152" height="5" fill="#0B0612"/><g transform="translate(196 118) scale(0.9)"><path d="M0 100 L0 30 Q0 0 30 0 Q60 0 60 30 L60 100 Z" fill="#4A3A63"/><path d="M0 100 L0 30 Q0 0 30 0" fill="none" stroke="#6B578A" stroke-width="3"/><text x="30" y="52" text-anchor="middle" font-family="Creepster" font-size="22" fill="#D9C9EE">BOO</text></g><g transform="translate(262 88) scale(0.95)" opacity="0.92"><path d="M0 40 C0 8 18 -6 40 -6 C62 -6 80 8 80 40 L80 100 L68 88 L56 102 L44 88 L32 102 L20 88 L8 100 L0 92 Z" fill="#F4EEFF"/><ellipse cx="28" cy="38" rx="7" ry="10" fill="#2A1840"/><ellipse cx="54" cy="38" rx="7" ry="10" fill="#2A1840"/><ellipse cx="41" cy="62" rx="8" ry="11" fill="#2A1840"/><ellipse cx="22" cy="54" rx="6" ry="3.5" fill="#FF9DBB" opacity=".6"/><ellipse cx="60" cy="54" rx="6" ry="3.5" fill="#FF9DBB" opacity=".6"/></g><g transform="translate(172 196) rotate(-14) scale(0.8)"><path d="M0 30 L5 0 Q20 -6 35 0 L40 30 Z" fill="#FFB020"/><path d="M0 30 L2.5 15 Q20 9 37.5 15 L40 30 Z" fill="#FF7A1A"/><path d="M5 0 Q20 -6 35 0 L33 7 Q20 3 7 7 Z" fill="#FFF3CC"/></g><g transform="translate(342 200) rotate(12) scale(0.7)"><path d="M0 30 L5 0 Q20 -6 35 0 L40 30 Z" fill="#FFB020"/><path d="M0 30 L2.5 15 Q20 9 37.5 15 L40 30 Z" fill="#FF7A1A"/><path d="M5 0 Q20 -6 35 0 L33 7 Q20 3 7 7 Z" fill="#FFF3CC"/></g><g transform="translate(350 8) scale(.87)">
+<defs>
+ <radialGradient id="pg1" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#FFB347"/><stop offset=".6" stop-color="#F57C14"/><stop offset="1" stop-color="#C8530A"/></radialGradient>
+ <radialGradient id="pg2" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#FFC25A"/><stop offset="1" stop-color="#F0780F"/></radialGradient>
+ <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE98A"/><stop offset=".55" stop-color="#FFB02E"/><stop offset="1" stop-color="#FF7A00" stop-opacity="0"/></radialGradient>
+ <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<ellipse cx="150" cy="248" rx="128" ry="12" fill="#000" opacity=".45"/>
+<ellipse cx="62" cy="145" rx="62" ry="100" fill="#C8530A"/>
+<ellipse cx="238" cy="145" rx="62" ry="100" fill="#C8530A"/>
+<ellipse cx="102" cy="145" rx="62" ry="106" fill="url(#pg1)"/>
+<ellipse cx="198" cy="145" rx="62" ry="106" fill="url(#pg1)"/>
+<ellipse cx="150" cy="145" rx="60" ry="110" fill="url(#pg2)"/>
+<path d="M150 36 C130 80 130 210 150 254 M102 44 C70 90 72 200 102 246 M198 44 C230 90 228 200 198 246" fill="none" stroke="#B8480A" stroke-opacity=".5" stroke-width="3"/>
+<path d="M60 90 C46 118 46 160 58 190" fill="none" stroke="#FFD08A" stroke-opacity=".55" stroke-width="7" stroke-linecap="round"/>
+<path d="M126 38 C122 14 138 4 152 0 L166 10 C158 20 160 30 166 40 C154 46 138 46 126 38 Z" fill="#587A2A"/>
+<path d="M166 10 C176 -2 196 4 192 20 C188 10 178 10 172 18" fill="none" stroke="#587A2A" stroke-width="5" stroke-linecap="round"/>
+<path d="M132 36 C140 40 154 40 162 36" fill="none" stroke="#3F5A1C" stroke-width="3"/>
+<g class="flk-a" filter="url(#blur6)">
+ <polygon points="86,96 128,118 82,132" fill="url(#glow)"/><polygon points="214,96 172,118 218,132" fill="url(#glow)"/>
+ <path d="M72 164 Q150 214 228 164 L214 184 L198 168 L184 198 L166 174 L150 204 L134 174 L116 198 L102 168 L86 184 Z" fill="url(#glow)"/>
+</g>
+<g class="flk-b"><polygon points="90,98 128,119 86,131" fill="#FFE27A"/><polygon points="210,98 172,119 214,131" fill="#FFE27A"/>
+<polygon points="150,132 140,152 160,152" fill="#FFE27A"/>
+<path d="M76 166 Q150 210 224 166 L212 184 L197 170 L183 198 L166 175 L150 203 L134 175 L117 198 L103 170 L88 184 Z" fill="#FFE27A"/>
+</g><path d="M92 118 L120 122 M208 118 L180 122" stroke="#FFF6C8" stroke-width="2" stroke-opacity=".8"/>
+</g><text id="hwN" x="14" y="86" font-family="Creepster" font-size="66" fill="#FF8A1F" letter-spacing="1">7 sleeps</text><text id="hwL" x="16" y="120" font-family="Creepster" font-size="30" fill="#C4B3D6" letter-spacing="1.5">till Halloween</text></svg><svg class="sc-xm" viewBox="0 0 620 230" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><path d="M0 206 C100 192 190 212 300 204 C420 194 520 212 620 200 L620 230 L0 230 Z" fill="#F4F8EE"/><g transform="translate(18 14) rotate(-4)"><path d="M0 18 L18 0 L250 0 L250 108 L0 108 Z" fill="#FFFFFF" stroke="#A81C2B" stroke-width="3"/><circle cx="20" cy="16" r="5" fill="#CCDBC5" stroke="#A81C2B" stroke-width="2"/><text id="xmN" x="132" y="62" text-anchor="middle" font-family="Mountains of Christmas" font-weight="700" font-size="46" fill="#A81C2B">24 sleeps</text><text id="xmL" x="132" y="94" text-anchor="middle" font-family="Mountains of Christmas" font-weight="700" font-size="27" fill="#14301E">till Christmas</text></g><g transform="translate(322 18) scale(0.92)"><rect x="-8" y="150" width="16" height="22" fill="#6B4A2B"/><path d="M0 54 L56.0 122 L-56.0 122 Z" fill="#1F5233"/><path d="M-56.0 122 Q0 134 56.0 122" fill="none" stroke="#F4F8EE" stroke-width="3" opacity=".8"/><path d="M0 14 L44.0 82 L-44.0 82 Z" fill="#256339"/><path d="M-44.0 82 Q0 94 44.0 82" fill="none" stroke="#F4F8EE" stroke-width="3" opacity=".8"/><path d="M0 -24 L31.0 44 L-31.0 44 Z" fill="#2C7344"/><path d="M-31.0 44 Q0 56 31.0 44" fill="none" stroke="#F4F8EE" stroke-width="3" opacity=".8"/><circle cx="-22" cy="112" r="5.5" fill="#A81C2B"/><circle cx="-23.5" cy="110.5" r="1.8" fill="#fff" opacity=".7"/><circle cx="18" cy="100" r="5.5" fill="#E3B23C"/><circle cx="16.5" cy="98.5" r="1.8" fill="#fff" opacity=".7"/><circle cx="-6" cy="82" r="5.5" fill="#F4F8EE"/><circle cx="-7.5" cy="80.5" r="1.8" fill="#fff" opacity=".7"/><circle cx="22" cy="70" r="5.5" fill="#A81C2B"/><circle cx="20.5" cy="68.5" r="1.8" fill="#fff" opacity=".7"/><circle cx="-14" cy="46" r="5.5" fill="#E3B23C"/><circle cx="-15.5" cy="44.5" r="1.8" fill="#fff" opacity=".7"/><circle cx="8" cy="36" r="5.5" fill="#A81C2B"/><circle cx="6.5" cy="34.5" r="1.8" fill="#fff" opacity=".7"/><circle cx="-34" cy="126" r="5.5" fill="#E3B23C"/><circle cx="-35.5" cy="124.5" r="1.8" fill="#fff" opacity=".7"/><circle cx="36" cy="124" r="5.5" fill="#F4F8EE"/><circle cx="34.5" cy="122.5" r="1.8" fill="#fff" opacity=".7"/><path class="tstar" d="M0 -34 l5 11 12 1 -9 8 3 12 -11 -6 -11 6 3 -12 -9 -8 12 -1 Z" fill="#E3B23C"/><g transform="translate(0 -19)"><path class="spk spk1" d="M0 -14 L2.6 -2.6 L14 0 L2.6 2.6 L0 14 L-2.6 2.6 L-14 0 L-2.6 -2.6Z" fill="#FFFFFF"/></g><g transform="translate(10 -27) scale(.6)"><path class="spk spk2" d="M0 -14 L2.6 -2.6 L14 0 L2.6 2.6 L0 14 L-2.6 2.6 L-14 0 L-2.6 -2.6Z" fill="#FFF3C4"/></g></g><g transform="translate(620 206) scale(1.14) translate(-620 -206)"><g transform="translate(380 128)"><rect x="0" y="0" width="74" height="78" rx="3" fill="#A81C2B"/><rect x="31.0" y="0" width="12" height="78" fill="#F4F8EE"/><rect x="-4" y="-9" width="82" height="14" rx="3" fill="#A81C2B"/><rect x="31.0" y="-9" width="12" height="14" fill="#F4F8EE"/><rect x="-4" y="3" width="82" height="2" fill="#000" opacity=".12"/><g transform="translate(37.0 -9) scale(0.6727272727272727)"><path d="M0 0 C-14 -22 -40 -20 -38 -4 C-36 8 -14 6 0 0 Z" fill="#F4F8EE"/><path d="M0 0 C14 -22 40 -20 38 -4 C36 8 14 6 0 0 Z" fill="#F4F8EE"/><path d="M-2 2 L-16 28 L-8 24 L-2 32 Z" fill="#BFC9B8"/><path d="M2 2 L16 28 L8 24 L2 32 Z" fill="#BFC9B8"/><path d="M-28 -8 C-20 -10 -12 -6 -4 0 M28 -8 C20 -10 12 -6 4 0" stroke="#BFC9B8" stroke-width="2" fill="none" opacity=".6"/><circle cx="0" cy="0" r="7" fill="#F4F8EE"/><circle cx="-1.5" cy="-1.5" r="3" fill="#D8435A" opacity=".7"/></g></g><g transform="translate(430 174)"><rect x="0" y="0" width="46" height="32" rx="3" fill="#F4F8EE"/><rect x="12" y="0" width="4" height="32" fill="#A81C2B" opacity=".35"/><rect x="24" y="0" width="4" height="32" fill="#A81C2B" opacity=".35"/><rect x="0" y="12" width="46" height="4" fill="#A81C2B" opacity=".35"/><rect x="17.0" y="0" width="12" height="32" fill="#A81C2B"/><g transform="translate(23.0 -9) scale(0.55)"><path d="M0 0 C-14 -22 -40 -20 -38 -4 C-36 8 -14 6 0 0 Z" fill="#A81C2B"/><path d="M0 0 C14 -22 40 -20 38 -4 C36 8 14 6 0 0 Z" fill="#A81C2B"/><path d="M-2 2 L-16 28 L-8 24 L-2 32 Z" fill="#7C1020"/><path d="M2 2 L16 28 L8 24 L2 32 Z" fill="#7C1020"/><path d="M-28 -8 C-20 -10 -12 -6 -4 0 M28 -8 C20 -10 12 -6 4 0" stroke="#7C1020" stroke-width="2" fill="none" opacity=".6"/><circle cx="0" cy="0" r="7" fill="#A81C2B"/><circle cx="-1.5" cy="-1.5" r="3" fill="#D8435A" opacity=".7"/></g></g><g id="elfGift" data-elfgift style="display:none;cursor:pointer" transform="translate(480 38) scale(.62)"><rect x="-10" y="-6" width="80" height="104" fill="transparent"/>
+<path d="M12 30 Q18 6 46 4 Q38 14 49 30 Z" fill="#C4202F"/><circle cx="46" cy="5" r="5.5" fill="#fff"/><rect x="9" y="27" width="42" height="8" rx="4" fill="#fff"/>
+<path d="M17 40 L6 33 L17 47 Z M43 40 L54 33 L43 47 Z" fill="#F2BE94"/>
+<circle cx="30" cy="42" r="13.5" fill="#F7CDA6"/><circle cx="23" cy="46" r="2.6" fill="#F28B8B" opacity=".7"/><circle cx="37" cy="46" r="2.6" fill="#F28B8B" opacity=".7"/>
+<circle cx="25.5" cy="40" r="1.8" fill="#2B1A12"/><circle cx="34.5" cy="40" r="1.8" fill="#2B1A12"/><path d="M25 48 Q30 53 35 48" fill="none" stroke="#8A3B2B" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M15 56 Q30 51 45 56 L47 76 Q30 80 13 76 Z" fill="#C4202F"/><path d="M20 55 l5 6 5 -6 5 6 5 -6" fill="#fff" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>
+<rect x="14" y="68" width="32" height="5" fill="#2B1A12"/><rect x="26" y="66.5" width="8" height="8" rx="1.5" fill="#E3B23C"/>
+<rect x="6" y="56" width="9" height="17" rx="4.5" fill="#C4202F"/><rect x="45" y="56" width="9" height="17" rx="4.5" fill="#C4202F"/><circle cx="10.5" cy="75" r="4" fill="#F7CDA6"/><circle cx="49.5" cy="75" r="4" fill="#F7CDA6"/>
+<rect x="17" y="76" width="11" height="10" fill="#fff"/><rect x="32" y="76" width="11" height="10" fill="#fff"/>
+<path d="M17 78 h11 M17 82 h11 M32 78 h11 M32 82 h11" stroke="#C4202F" stroke-width="2.2"/>
+<ellipse cx="22" cy="87.5" rx="8" ry="3.4" fill="#2B1A12"/><ellipse cx="38" cy="87.5" rx="8" ry="3.4" fill="#2B1A12"/></g><g transform="translate(470 94)"><rect x="0" y="0" width="64" height="112" rx="3" fill="#E3B23C"/><rect x="26.0" y="0" width="12" height="112" fill="#A81C2B"/><rect x="-4" y="-9" width="72" height="14" rx="3" fill="#E3B23C"/><rect x="26.0" y="-9" width="12" height="14" fill="#A81C2B"/><rect x="-4" y="3" width="72" height="2" fill="#000" opacity=".12"/><g transform="translate(32.0 -9) scale(0.5818181818181818)"><path d="M0 0 C-14 -22 -40 -20 -38 -4 C-36 8 -14 6 0 0 Z" fill="#A81C2B"/><path d="M0 0 C14 -22 40 -20 38 -4 C36 8 14 6 0 0 Z" fill="#A81C2B"/><path d="M-2 2 L-16 28 L-8 24 L-2 32 Z" fill="#7C1020"/><path d="M2 2 L16 28 L8 24 L2 32 Z" fill="#7C1020"/><path d="M-28 -8 C-20 -10 -12 -6 -4 0 M28 -8 C20 -10 12 -6 4 0" stroke="#7C1020" stroke-width="2" fill="none" opacity=".6"/><circle cx="0" cy="0" r="7" fill="#A81C2B"/><circle cx="-1.5" cy="-1.5" r="3" fill="#D8435A" opacity=".7"/></g></g><g transform="translate(548 150)"><rect x="0" y="0" width="62" height="56" rx="3" fill="#2C7344"/><circle cx="7" cy="9" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="7" cy="23" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="7" cy="37" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="7" cy="51" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="7" cy="65" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="21" cy="9" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="21" cy="23" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="21" cy="37" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="21" cy="51" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="21" cy="65" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="35" cy="9" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="35" cy="23" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="35" cy="37" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="35" cy="51" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="35" cy="65" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="49" cy="9" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="49" cy="23" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="49" cy="37" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="49" cy="51" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="49" cy="65" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="63" cy="9" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="63" cy="23" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="63" cy="37" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="63" cy="51" r="2.6" fill="#FFFFFF" opacity=".55"/><circle cx="63" cy="65" r="2.6" fill="#FFFFFF" opacity=".55"/><rect x="25.0" y="0" width="12" height="56" fill="#F4F8EE"/><rect x="-4" y="-9" width="70" height="14" rx="3" fill="#2C7344"/><rect x="25.0" y="-9" width="12" height="14" fill="#F4F8EE"/><rect x="-4" y="3" width="70" height="2" fill="#000" opacity=".12"/><g transform="translate(31.0 -9) scale(0.5636363636363636)"><path d="M0 0 C-14 -22 -40 -20 -38 -4 C-36 8 -14 6 0 0 Z" fill="#A81C2B"/><path d="M0 0 C14 -22 40 -20 38 -4 C36 8 14 6 0 0 Z" fill="#A81C2B"/><path d="M-2 2 L-16 28 L-8 24 L-2 32 Z" fill="#7C1020"/><path d="M2 2 L16 28 L8 24 L2 32 Z" fill="#7C1020"/><path d="M-28 -8 C-20 -10 -12 -6 -4 0 M28 -8 C20 -10 12 -6 4 0" stroke="#7C1020" stroke-width="2" fill="none" opacity=".6"/><circle cx="0" cy="0" r="7" fill="#A81C2B"/><circle cx="-1.5" cy="-1.5" r="3" fill="#D8435A" opacity=".7"/></g></g></g><g transform="translate(196 150) rotate(-10) scale(0.8)"><path d="M0 70 L0 14 Q0 -4 16 -4 Q32 -4 32 12" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/><path d="M0 70 L0 14 Q0 -4 16 -4 Q32 -4 32 12" fill="none" stroke="#C4202F" stroke-width="9" stroke-linecap="round" stroke-dasharray="7 7"/></g></svg></div>
+      </div>
       <div class="stepper">
         <button class="sbtn" id="dPrev" aria-label="Previous day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <button class="slabel" id="dLabel"></button>
@@ -311,18 +447,19 @@ body.phone .panel{border-radius:12px;}
       </div>
     </div>
     <div class="rail">
-      <div class="card">
-        <h2>Don't forget <span class="count" id="tdc"></span></h2>
+      <div class="card todo" id="todoCard">
+        <svg class="bow" width="86" height="66" viewBox="-44 -24 88 66" aria-hidden="true"><g transform="translate(0 0) scale(0.9)"><path d="M0 0 C-14 -22 -40 -20 -38 -4 C-36 8 -14 6 0 0 Z" fill="#A81C2B"/><path d="M0 0 C14 -22 40 -20 38 -4 C36 8 14 6 0 0 Z" fill="#A81C2B"/><path d="M-2 2 L-16 28 L-8 24 L-2 32 Z" fill="#7C1020"/><path d="M2 2 L16 28 L8 24 L2 32 Z" fill="#7C1020"/><path d="M-28 -8 C-20 -10 -12 -6 -4 0 M28 -8 C20 -10 12 -6 4 0" stroke="#7C1020" stroke-width="2" fill="none" opacity=".6"/><circle cx="0" cy="0" r="7" fill="#A81C2B"/><circle cx="-1.5" cy="-1.5" r="3" fill="#D8435A" opacity=".7"/></g></svg>
+        <h2>To Do <span class="count" id="tdc"></span><button class="hplus" data-add="todo" aria-label="Add to To Do">+</button></h2>
         <div id="todoRail"></div>
       </div>
       <button class="cardlink" data-go="points">
         <h2>Points</h2>
         <div class="mini" id="pointsMini"></div>
       </button>
-      <button class="cardlink" data-go="lists">
-        <h2>Shopping <span class="count" id="shc"></span></h2>
+      <div class="cardlink" id="shopCard" data-go="lists" role="button" tabindex="0">
+        <h2>Shopping <span class="count" id="shc"></span><button class="hplus" data-add="shop" aria-label="Add to Shopping">+</button></h2>
         <div id="shopPeek"></div>
-      </button>
+      </div>
     </div>
   </section>
 
@@ -348,8 +485,9 @@ body.phone .panel{border-radius:12px;}
       <div class="items" id="shopList"></div>
     </div>
     <div class="panel" id="pTodo">
-      <div class="ph"><h2>To do</h2><span class="sub">Start with a name to assign it</span></div>
-      <div class="newline"><input id="todoNew" placeholder="Maddy PE uniform tomorrow" enterkeyhint="done" autocomplete="off"><button id="todoAdd">Add</button></div>
+      <div class="ph"><h2>To Do</h2><span class="sub">Start with names to assign it, or tap a chip</span></div>
+      <div class="newline"><input id="todoNew" placeholder="Maddy &amp; Ava tidy the games room" enterkeyhint="done" autocomplete="off"><button id="todoAdd">Add</button></div>
+      <div class="chips" id="todoChips"></div>
       <div class="items" id="todoList"></div>
     </div>
   </section>
@@ -359,23 +497,43 @@ body.phone .panel{border-radius:12px;}
 
 <div class="pnav" id="pnav">
   <button data-v="shop" class="on">Shopping</button>
-  <button data-v="todo">To do</button>
+  <button data-v="todo">To Do</button>
   <button data-v="points">Points</button>
   <button data-v="today">Today</button>
 </div>
 
-<!-- add event sheet -->
+<!-- add / edit event sheet -->
 <div class="scrim" id="addScrim">
   <div class="sheet">
     <div class="lead" id="sheetLead">New event</div>
     <div class="dayl" id="dayList"></div>
+    <div class="daystep" id="editDay" hidden>
+      <button id="eDayPrev" aria-label="Earlier day">&lsaquo;</button>
+      <div class="dl" id="eDayLabel"></div>
+      <button id="eDayNext" aria-label="Later day">&rsaquo;</button>
+    </div>
     <input class="big" id="sheetIn" placeholder="Swimming 4pm" enterkeyhint="done" autocomplete="off">
     <div class="preview" id="preview"></div>
-    <div class="hint">Add a time (4pm, 9.30am) or a day (Friday, tomorrow, 12/10) anywhere. Start with a name to tag someone.</div>
+    <div class="hint" id="sheetHint"></div>
     <div class="whorow" id="whorow"></div>
     <div class="acts">
       <button class="cancel" id="cancelBtn">Cancel</button>
+      <button class="delbtn" id="delBtn" hidden>Delete</button>
       <button class="save" id="saveBtn">Add</button>
+    </div>
+  </div>
+</div>
+
+<!-- add to To Do / Shopping sheet -->
+<div class="scrim" id="itemScrim">
+  <div class="sheet">
+    <div class="lead" id="itemLead">Add</div>
+    <input class="big" id="itemIn" enterkeyhint="done" autocomplete="off">
+    <div class="hint" id="itemHint"></div>
+    <div class="whorow" id="itemChips"></div>
+    <div class="acts">
+      <button class="cancel" id="itemCancel">Cancel</button>
+      <button class="save" id="itemSave">Add</button>
     </div>
   </div>
 </div>
@@ -385,19 +543,21 @@ body.phone .panel{border-radius:12px;}
   <div class="sheet" id="modalBody"></div>
 </div>
 
+<button id="elf" aria-label="Elf on the shelf"></button>
 <div class="toast" id="toast"><span id="toastText"></span><button id="toastUndo" hidden>Undo</button></div>
-<canvas id="fxlo"></canvas><canvas id="fx"></canvas>
+<canvas id="fx"></canvas>
 <div id="night"></div>
 
 <script>
 'use strict';
 /* =====================================================================
-   Family Planner v1
+   Family Planner v2
    Data: Google Apps Script backend (Calendar + Sheet), or demo mode.
    Changes are applied instantly on screen, queued, and sent in batches.
    If there's no signal, they wait and go when it's back.
    ===================================================================== */
 
+/*PURE-START*/
 /* ---------------- household ---------------- */
 const PEOPLE = [
   {name:'Darren', color:'#54B6DC'},
@@ -405,32 +565,8 @@ const PEOPLE = [
   {name:'Maddy',  color:'#A9D84E'},
   {name:'Ava',    color:'#B69CFF'}
 ];
+const NAMES = PEOPLE.map(p=>p.name);
 const EVERYONE = {name:'Everyone', color:'#F1EDE2'};
-// Person colours per look. Light looks use darker shades so names stay readable.
-const PALETTES = {
-  dark:     {Darren:'#54B6DC', Naomi:'#EC7099', Maddy:'#A9D84E', Ava:'#B69CFF', Everyone:'#F1EDE2'},
-  paper:    {Darren:'#176B93', Naomi:'#B8305F', Maddy:'#4E7A0C', Ava:'#6A48D0', Everyone:'#1B2328'},
-  daylight: {Darren:'#176B93', Naomi:'#B8305F', Maddy:'#4E7A0C', Ava:'#6A48D0', Everyone:'#0E161B'}
-};
-const THEMES = [
-  {id:'paper',    name:'Warm paper',    bg:'#F3EFE6', card:'#FFFFFF', text:'#1B2328', meta:'#F3EFE6'},
-  {id:'daylight', name:'Cool daylight', bg:'#E9EEF1', card:'#FFFFFF', text:'#0E161B', meta:'#E9EEF1'},
-  {id:'dark',     name:'Dark',          bg:'#0E161B', card:'#1F313B', text:'#F1EDE2', meta:'#0E161B'}
-];
-const POINTS_PEOPLE = ['Maddy','Ava'];
-const POINT_STEPS = [1,2,3,5];
-const NIGHT_FROM = 22, NIGHT_TO = 6;       // dark 10pm to 6am
-const IDLE_MS = 90 * 1000;                 // back to Today after 90s
-const POLL_WALL = 60 * 1000, POLL_PHONE = 30 * 1000;
-
-const colorOf = n => (PALETTES[theme] || PALETTES.dark)[n] || '#7F8A8F';
-
-/* ---------------- storage ---------------- */
-const store = {
-  get(k, d){ try{ const v = localStorage.getItem(k); return v===null ? d : JSON.parse(v); }catch(e){ return d; } },
-  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} },
-  del(k){ try{ localStorage.removeItem(k); }catch(e){} }
-};
 
 /* ---------------- dates ---------------- */
 const pad = n => String(n).padStart(2,'0');
@@ -443,6 +579,8 @@ const addDays = (d, n) => { const x = new Date(d.getFullYear(), d.getMonth(), d.
 const today = () => { const d = new Date(); return new Date(d.getFullYear(), d.getMonth(), d.getDate()); };
 const mondayOf = d => addDays(d, -((d.getDay()+6)%7));
 const hm = d => pad(d.getHours())+':'+pad(d.getMinutes());
+const daysBetween = (a, b) => Math.round((b - a) / 864e5);
+const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 function pretty(t){
   if(!t) return '';
   const [h,m] = t.split(':').map(Number);
@@ -455,23 +593,45 @@ function dayLabel(ds){
   if(ds === iso(addDays(t,1))) return 'Tomorrow';
   return DOW3[d.getDay()]+' '+d.getDate()+' '+MON[d.getMonth()].slice(0,3);
 }
-function esc(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,8);
-const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 
-/* ---------------- parsing ---------------- */
-const NAME_RE = new RegExp('^\\s*('+PEOPLE.map(p=>p.name).join('|')+'|everyone|family)\\b\\s*[:,\\-\\u2013\\u2014]?\\s*', 'i');
+/* ---------------- people tags ---------------- */
+// who is always an array of names in household order, ['Everyone'], or null.
+const NM = '(?:'+NAMES.join('|')+')';
+const NAME_RE = new RegExp('^\\s*(everyone|family|'+NM+'(?:\\s*(?:,|&|\\+|\\band\\b)\\s*'+NM+')*)(?![\\w\\u2019\'])\\s*[:,\\-\\u2013\\u2014]?\\s*', 'i');
 function whoOf(text){
-  const m = String(text).match(NAME_RE);
-  if(!m) return {who:null, rest:String(text)};
+  const s = String(text), m = s.match(NAME_RE);
+  if(!m) return {who:null, rest:s};
   const n = m[1].toLowerCase();
-  const who = (n==='everyone' || n==='family') ? 'Everyone' : PEOPLE.find(p=>p.name.toLowerCase()===n).name;
-  const rest = String(text).slice(m[0].length).trim();
-  return {who, rest: rest || String(text)};
+  let who;
+  if(n==='everyone' || n==='family') who = ['Everyone'];
+  else { const set = n.split(/\s*(?:,|&|\+|\band\b)\s*/); who = NAMES.filter(x=>set.indexOf(x.toLowerCase())>=0); }
+  const rest = s.slice(m[0].length).trim();
+  return {who, rest: rest || s};
+}
+function whoNames(who){
+  if(!who) return [];
+  const a = Array.isArray(who) ? who : String(who).split(',');
+  return a.map(x=>String(x).trim()).filter(Boolean);
+}
+function joinNames(a){
+  a = whoNames(a);
+  if(a.length <= 1) return a[0] || '';
+  return a.slice(0,-1).join(', ') + ' & ' + a[a.length-1];
+}
+function composeTitle(who, title){ const n = whoNames(who); return (n.length ? joinNames(n)+': ' : '') + title; }
+
+const GRABS_RE = /^\s*(?:(?:up\s*for\s*grabs|grabs)\b\s*[:,\-–—]?|anyone\s*[:,\-–—])\s*/i;
+function parseTodo(raw){
+  const s = String(raw).trim(), g = s.match(GRABS_RE);
+  if(g){ const rest = s.slice(g[0].length).trim(); return {who:null, grabs:true, text:cap(rest || s)}; }
+  const w = whoOf(s);
+  const names = (w.who && w.who[0] !== 'Everyone') ? w.who : null;
+  return {who:names, grabs:false, text:cap(w.who ? w.rest : s)};
 }
 
 const DAY_WORDS = {sunday:0,monday:1,mon:1,tuesday:2,tue:2,tues:2,wednesday:3,wed:3,thursday:4,thu:4,thur:4,thurs:4,friday:5,fri:5,saturday:6,sat:6};
-function parseEvent(raw, baseDate){
+function parseEvent(raw, baseDate, opts){
+  const noDate = !!(opts && opts.noDate);
   let text = ' ' + raw.trim() + ' ';
   let time = null, date = baseDate, dateSet = false;
 
@@ -489,28 +649,30 @@ function parseEvent(raw, baseDate){
     if(m){ time = pad(parseInt(m[1],10))+':'+m[2]; text = text.slice(0,m.index) + ' ' + text.slice(m.index+m[0].length); }
   }
 
-  // date: dd/mm or dd/mm/yy(yy)
-  m = text.match(/\s(?:on\s+)?(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?(?=[\s,.!?]|$)/);
-  if(m){
-    const d = parseInt(m[1],10), mo = parseInt(m[2],10);
-    let y = m[3] ? parseInt(m[3],10) : today().getFullYear();
-    if(y < 100) y += 2000;
-    let cand = new Date(y, mo-1, d);
-    if(cand.getMonth()===mo-1 && cand.getDate()===d){
-      if(!m[3] && cand < addDays(today(), -30)) cand = new Date(y+1, mo-1, d);
-      date = iso(cand); dateSet = true;
-      text = text.slice(0,m.index) + ' ' + text.slice(m.index+m[0].length);
-    }
-  }
-  if(!dateSet){
-    m = text.match(/\s(?:(?:on|this|next)\s+)?(today|tonight|tomorrow|tmrw|tomoz|sunday|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri|saturday|sat)(?=[\s,.!?]|$)/i);
+  if(!noDate){
+    // date: dd/mm or dd/mm/yy(yy)
+    m = text.match(/\s(?:on\s+)?(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?(?=[\s,.!?]|$)/);
     if(m){
-      const w = m[1].toLowerCase(), t = today();
-      if(w==='today' || w==='tonight') date = iso(t);
-      else if(w==='tomorrow' || w==='tmrw' || w==='tomoz') date = iso(addDays(t,1));
-      else { const target = DAY_WORDS[w]; date = iso(addDays(t, (target - t.getDay() + 7) % 7)); }
-      dateSet = true;
-      text = text.slice(0,m.index) + ' ' + text.slice(m.index+m[0].length);
+      const d = parseInt(m[1],10), mo = parseInt(m[2],10);
+      let y = m[3] ? parseInt(m[3],10) : today().getFullYear();
+      if(y < 100) y += 2000;
+      let cand = new Date(y, mo-1, d);
+      if(cand.getMonth()===mo-1 && cand.getDate()===d){
+        if(!m[3] && cand < addDays(today(), -30)) cand = new Date(y+1, mo-1, d);
+        date = iso(cand); dateSet = true;
+        text = text.slice(0,m.index) + ' ' + text.slice(m.index+m[0].length);
+      }
+    }
+    if(!dateSet){
+      m = text.match(/\s(?:(?:on|this|next)\s+)?(today|tonight|tomorrow|tmrw|tomoz|sunday|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri|saturday|sat)(?=[\s,.!?]|$)/i);
+      if(m){
+        const w = m[1].toLowerCase(), t = today();
+        if(w==='today' || w==='tonight') date = iso(t);
+        else if(w==='tomorrow' || w==='tmrw' || w==='tomoz') date = iso(addDays(t,1));
+        else { const target = DAY_WORDS[w]; date = iso(addDays(t, (target - t.getDay() + 7) % 7)); }
+        dateSet = true;
+        text = text.slice(0,m.index) + ' ' + text.slice(m.index+m[0].length);
+      }
     }
   }
 
@@ -519,16 +681,114 @@ function parseEvent(raw, baseDate){
   return {title: cap(w.who ? w.rest : text), who: w.who, time, date, dateSet};
 }
 
+/* ---------------- seasons ---------------- */
+// Halloween 24-31 Oct, Christmas 1-31 Dec (both inclusive). Back to normal on 1 Nov / 1 Jan.
+function seasonOf(d){
+  const m = d.getMonth(), day = d.getDate();
+  if(m === 9 && day >= 24) return 'halloween';
+  if(m === 11) return 'christmas';
+  return null;
+}
+const SEASON_ENDS = {halloween:'1 November', christmas:'1 January'};
+function nextOn(m, d, from){ let t = new Date(from.getFullYear(), m, d); if(t < from) t = new Date(from.getFullYear()+1, m, d); return t; }
+function sleepsText(n){ return n === 1 ? '1 sleep' : n + ' sleeps'; }
+// What the scene counter should say, for "halloween" or "christmas".
+function countdown(kind, now){
+  const t0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  if(kind === 'halloween'){
+    const n = daysBetween(t0, nextOn(9, 31, t0));
+    return n === 0 ? {day:true, big:'Happy', small:'Halloween!'} : {n, big:sleepsText(n), small:'till Halloween'};
+  }
+  if(t0.getMonth() === 11 && t0.getDate() === 25) return {day:true, big:'Merry', small:'Christmas!'};
+  if(t0.getMonth() === 11 && t0.getDate() > 25){
+    const n = daysBetween(t0, new Date(t0.getFullYear()+1, 0, 1));
+    return {n, big:sleepsText(n), small:'till New Year'};
+  }
+  const n = daysBetween(t0, nextOn(11, 25, t0));
+  return {n, big:sleepsText(n), small:'till Christmas'};
+}
+
+/* ---------------- elf on the shelf ---------------- */
+// His "day" turns over at 6am, so before 6am it is still yesterday's elf day.
+const ELF_HOUR = 6;
+function elfDayKey(d){ return iso(new Date((d || new Date()).getTime() - ELF_HOUR*3600*1000)); }
+function hash(s){ let h = 2166136261; for(let i=0;i<s.length;i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+// Same hiding spot all day, a different one tomorrow (never the same two days running).
+function elfIndex(key, count){
+  const prev = iso(addDays(fromIso(key), -1));
+  let i = hash('elf'+key) % count;
+  if(i === hash('elf'+prev) % count) i = (i + 1) % count;
+  return i;
+}
+// Active 1-24 December (he goes home on Christmas Eve).
+function elfActiveOn(key){ const p = key.split('-').map(Number); return p[1] === 12 && p[2] >= 1 && p[2] <= 24; }
+/*PURE-END*/
+
+const esc = s => String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,8);
+const $ = id => document.getElementById(id);
+const isPhone = Math.min(screen.width, screen.height) < 600;
+if(isPhone) document.body.classList.add('phone');
+
+const PALETTES = {
+  dark:      {Darren:'#54B6DC', Naomi:'#EC7099', Maddy:'#A9D84E', Ava:'#B69CFF', Everyone:'#F1EDE2'},
+  paper:     {Darren:'#176B93', Naomi:'#B8305F', Maddy:'#4E7A0C', Ava:'#6A48D0', Everyone:'#1B2328'},
+  daylight:  {Darren:'#176B93', Naomi:'#B8305F', Maddy:'#4E7A0C', Ava:'#6A48D0', Everyone:'#0E161B'},
+  seaglass:  {Darren:'#0F6A8F', Naomi:'#B0305C', Maddy:'#3F6F0F', Ava:'#6342C4', Everyone:'#0C3338'},
+  halloween: {Darren:'#5FCBEB', Naomi:'#FF82B0', Maddy:'#9DE766', Ava:'#C9A9FF', Everyone:'#F6EAD8'},
+  christmas: {Darren:'#0B5F82', Naomi:'#962680', Maddy:'#356006', Ava:'#5A3BBA', Everyone:'#14301E'}
+};
+const THEMES = [
+  {id:'paper',     name:'Warm paper',    bg:'#F3EFE6', card:'#FFFFFF', text:'#1B2328', accent:'#FFB020', meta:'#F3EFE6'},
+  {id:'daylight',  name:'Cool daylight', bg:'#E9EEF1', card:'#FFFFFF', text:'#0E161B', accent:'#FFB020', meta:'#E9EEF1'},
+  {id:'dark',      name:'Dark',          bg:'#0E161B', card:'#1F313B', text:'#F1EDE2', accent:'#FFB020', meta:'#0E161B'},
+  {id:'seaglass',  name:'Sea glass',     bg:'#CFECE9', card:'#F6FCFB', text:'#0C3338', accent:'#B3321F', meta:'#CFECE9'},
+  {id:'halloween', name:'Halloween',     bg:'#150B21', card:'#2D1A42', text:'#F6EAD8', accent:'#FF8A1F', meta:'#150B21'},
+  {id:'christmas', name:'Christmas',     bg:'#CCDBC5', card:'#F4F8EE', text:'#14301E', accent:'#A81C2B', meta:'#CCDBC5'}
+];
+const POINTS_PEOPLE = ['Maddy','Ava'];
+const POINT_STEPS = [1,2,3,5];
+const NIGHT_FROM = 22, NIGHT_TO = 6;       // dark 10pm to 6am
+const IDLE_MS = 90 * 1000;                 // back to Today after 90s
+const POLL_WALL = 60 * 1000, POLL_PHONE = 30 * 1000;
+const SCRIPT_VERSION_NEEDED = 2;
+
+/* ---------------- storage ---------------- */
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v===null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} },
+  del(k){ try{ localStorage.removeItem(k); }catch(e){} }
+};
+
 /* ---------------- look ---------------- */
-let theme = store.get('fp.theme', 'dark');
-if(!PALETTES[theme]) theme = 'dark';
-const isLight = () => theme !== 'dark';
+// themePick = what this screen chose. theme = what is actually showing (a season can override it).
+let themePick = store.get('fp.theme', 'dark');
+if(!PALETTES[themePick]) themePick = 'dark';
+let seasonal = store.get('fp.seasonal', !isPhone);   // the wall follows the seasons; phones keep their own pick
+let theme = themePick;
+const colorOf = n => (PALETTES[theme] || PALETTES.dark)[n] || '#7F8A8F';
+const isLight = () => !(theme === 'dark' || theme === 'halloween');
 function applyTheme(){
+  const s = seasonal ? seasonOf(new Date()) : null;
+  theme = s || themePick;
   document.documentElement.dataset.theme = theme;
   const t = THEMES.find(x=>x.id===theme);
   const m = document.querySelector('meta[name="theme-color"]'); if(m && t) m.setAttribute('content', t.meta);
+  drawScene();
 }
-applyTheme();
+function setText(id, text, size){ const el = $(id); if(!el) return; el.textContent = text; if(size) el.setAttribute('font-size', size); }
+function drawScene(){
+  const now = new Date();
+  if(theme === 'halloween'){
+    const c = countdown('halloween', now);
+    setText('hwN', c.big, c.day ? 66 : (c.n >= 100 ? 52 : 66));
+    setText('hwL', c.small, c.day ? 40 : 30);
+  } else if(theme === 'christmas'){
+    const c = countdown('christmas', now);
+    setText('xmN', c.big, c.day ? 52 : (c.n >= 100 ? 36 : 46));
+    setText('xmL', c.small, c.day ? 34 : 27);
+  }
+}
 
 /* ---------------- config ---------------- */
 function readHashConfig(){
@@ -557,23 +817,38 @@ function rebuild(){
   POINTS_PEOPLE.forEach(p=>{ if(typeof view.points[p] !== 'number') view.points[p] = 0; });
   outbox.forEach(op => applyLocal(view, op));
 }
+function setEventTime(ev, op){
+  if(op.time){
+    const d = fromIso(op.date); const [h,mi] = op.time.split(':').map(Number); d.setHours(h, mi, 0, 0);
+    const dur = (!ev.allDay && ev.e > ev.s) ? ev.e - ev.s : 3600000;
+    ev.allDay = false; ev.s = d.getTime(); ev.e = ev.s + dur; delete ev.sd; delete ev.ed;
+  } else {
+    ev.allDay = true; ev.sd = op.date; ev.ed = iso(addDays(fromIso(op.date),1)); delete ev.s; delete ev.e;
+  }
+}
 function applyLocal(s, op){
   switch(op.type){
     case 'shop.add': if(!s.shopping.some(i=>i.id===op.id)) s.shopping.push({id:op.id, text:op.text, bought:false}); break;
     case 'shop.bought': s.shopping.forEach(i=>{ if(i.id===op.id) i.bought = op.bought; }); break;
     case 'shop.remove': s.shopping = s.shopping.filter(i=>i.id!==op.id); break;
     case 'shop.clear': s.shopping = s.shopping.filter(i=>!i.bought); break;
-    case 'todo.add': if(!s.todos.some(i=>i.id===op.id)) s.todos.push({id:op.id, text:op.text, who:op.who||null}); break;
+    case 'todo.add': if(!s.todos.some(i=>i.id===op.id)) s.todos.push({id:op.id, text:op.text, who:op.who||null, grabs:!!op.grabs}); break;
     case 'todo.done': s.todos = s.todos.filter(i=>i.id!==op.id); break;
-    case 'todo.undone': if(!s.todos.some(i=>i.id===op.id)) s.todos.push({id:op.id, text:op.text, who:op.who||null}); break;
+    case 'todo.undone': if(!s.todos.some(i=>i.id===op.id)) s.todos.push({id:op.id, text:op.text, who:op.who||null, grabs:!!op.grabs}); break;
     case 'points.add': s.points[op.who] = (s.points[op.who]||0) + op.delta; break;
     case 'points.undo': s.points[op.who] = (s.points[op.who]||0) - op.delta; break;
     case 'points.payout': s.points[op.who] = 0; break;
     case 'event.add': {
       const ev = {id:'tmp-'+op.opId, title:op.title, pending:true, rec:false};
-      if(op.time){ const d = fromIso(op.date); const [h,mi] = op.time.split(':').map(Number); d.setHours(h, mi); ev.allDay=false; ev.s=d.getTime(); ev.e=ev.s+3600000; }
-      else { ev.allDay=true; ev.sd=op.date; ev.ed=iso(addDays(fromIso(op.date),1)); }
+      setEventTime(ev, op);
       s.events.push(ev); break;
+    }
+    case 'event.edit': {
+      const ev = s.events.find(e=>e.id===op.eventId);
+      if(!ev || ev.rec) break;
+      ev.title = op.title; ev.pending = true;
+      if(!op.titleOnly) setEventTime(ev, op);
+      break;
     }
     case 'event.delete': s.events = s.events.filter(e=>e.id!==op.eventId); break;
   }
@@ -609,26 +884,32 @@ function neededRange(){
   return [iso(s), iso(e)];
 }
 
+// Ops an out-of-date (v1) script would mangle or silently drop. They wait until the script says it is v2.
+const needsV2 = op => op.type === 'event.edit' || (op.type === 'todo.add' && (op.grabs || String(op.who||'').indexOf(',') >= 0));
+
 let syncTimer = null;
 function scheduleSync(ms){ clearTimeout(syncTimer); syncTimer = setTimeout(sync, ms); }
 
 async function sync(){
   if(!cfg || syncing) return;
   syncing = true; drawStatus();
-  const ops = outbox.slice(0, 40);
+  const ver = server.version || 1;
+  const ops = outbox.filter(o=>ver >= SCRIPT_VERSION_NEEDED || !needsV2(o)).slice(0, 40);
   const [start, end] = neededRange();
   let again = false;
   try{
     const res = await transport({k:cfg.k, ops, start, end});
     if(!res || !res.ok) throw new Error((res && res.error) || 'No reply');
-    const done = new Set(res.applied || []);
-    outbox = outbox.filter(o=>!done.has(o.opId));
+    const done = new Set(res.applied || []), rejected = new Set(res.rejected || []);
+    outbox = outbox.filter(o=>!done.has(o.opId) && !rejected.has(o.opId));
     store.set('fp.outbox', outbox);
-    server = {events:res.events||[], shopping:res.shopping||[], todos:res.todos||[], points:res.points||{}, range:[start,end]};
+    server = {events:res.events||[], shopping:res.shopping||[], todos:res.todos||[], points:res.points||{}, range:[start,end], version:res.version||1};
     store.set('fp.server', server);
     lastOk = Date.now(); store.set('fp.lastOk', lastOk);
     lastErr = null;
-    again = outbox.length > 0;
+    if(rejected.size) lastErr = 'The Google script didn’t understand '+rejected.size+' change'+(rejected.size===1?'':'s')+'. Redeploy Code.gs from the setup guide.';
+    else if(server.version < SCRIPT_VERSION_NEEDED && outbox.some(needsV2)) lastErr = 'The Google script is out of date, so some changes are waiting. Redeploy Code.gs from the setup guide.';
+    again = outbox.some(o=>server.version >= SCRIPT_VERSION_NEEDED || !needsV2(o));
   }catch(e){
     lastErr = (e && e.name === 'AbortError') ? 'Timed out' : ((e && e.message) || 'Could not connect');
   }
@@ -640,19 +921,19 @@ async function sync(){
 
 /* ---------------- demo backend ---------------- */
 function demoSeed(){
-  const t = today(), at = (n,h,m) => { const d = addDays(t,n); d.setHours(h,m); return d.getTime(); };
+  const t = today(), at = (n,h,m) => { const d = addDays(t,n); d.setHours(h,m,0,0); return d.getTime(); };
   const ev = [];
   const timed = (n,h,m,title) => ev.push({id:'d'+ev.length, title, allDay:false, s:at(n,h,m), e:at(n,h,m)+3600000, rec:false});
   const allday = (n,title,len) => ev.push({id:'d'+ev.length, title, allDay:true, sd:iso(addDays(t,n)), ed:iso(addDays(t,n+(len||1))), rec:false});
   timed(0,8,15,'Maddy: School drop-off'); allday(0,'Ava: Library books due'); timed(0,13,0,'Darren: Supplier call');
-  timed(0,16,0,'Ava: Swimming'); timed(0,18,30,'Everyone: Dinner at Nana’s');
+  timed(0,16,0,'Maddy & Ava: Swimming'); timed(0,18,30,'Everyone: Dinner at Nana’s');
   timed(1,10,30,'Maddy: Dentist'); timed(1,19,0,'Naomi: Book club'); timed(2,9,0,'Darren: Car service');
-  timed(2,15,45,'Maddy: Netball training'); allday(3,'Ava: Free dress day'); timed(4,12,0,'Darren: Lunch with Kev');
+  timed(2,15,45,'Maddy & Ava: Netball training'); allday(3,'Ava: Free dress day'); timed(4,12,0,'Darren & Naomi: Lunch with Kev');
   timed(5,8,0,'Everyone: Parkrun'); timed(6,11,0,'Ava: Ella’s party'); timed(8,19,30,'Naomi: Parent-teacher night');
   allday(12,'Darren: Rego due'); allday(15,'School holidays',5); timed(19,17,30,'Maddy: Netball final');
   return {ev, n:ev.length,
     shopping:[{id:'s1',text:'Milk',bought:false},{id:'s2',text:'Bread',bought:false},{id:'s3',text:'Weet-Bix',bought:false},{id:'s4',text:'Dishwasher tablets',bought:false}],
-    todos:[{id:'t1',text:'PE uniform in the bag',who:'Maddy'},{id:'t2',text:'Put the washing out',who:'Darren'},{id:'t3',text:'Sign the excursion form',who:'Naomi'}],
+    todos:[{id:'t1',text:'PE uniform in the bag',who:'Maddy',grabs:false},{id:'t2',text:'Put the washing out',who:'Darren',grabs:false},{id:'t3',text:'Wash the car',who:null,grabs:true},{id:'t4',text:'Tidy the games room',who:'Maddy,Ava',grabs:false}],
     points:[{id:'p1',who:'Maddy',delta:14},{id:'p2',who:'Ava',delta:11}], seen:{}};
 }
 function demoServer(p){
@@ -664,7 +945,7 @@ function demoServer(p){
       case 'shop.bought': db.shopping.forEach(i=>{ if(i.id===op.id) i.bought=!!op.bought; }); break;
       case 'shop.remove': db.shopping = db.shopping.filter(i=>i.id!==op.id); break;
       case 'shop.clear': db.shopping = db.shopping.filter(i=>!i.bought); break;
-      case 'todo.add': db.todos.push({id:op.id,text:op.text,who:op.who||null}); break;
+      case 'todo.add': db.todos.push({id:op.id,text:op.text,who:op.grabs ? null : (op.who||null),grabs:!!op.grabs}); break;
       case 'todo.done': db.todos.forEach(i=>{ if(i.id===op.id) i.done=true; }); break;
       case 'todo.undone': db.todos.forEach(i=>{ if(i.id===op.id) i.done=false; }); break;
       case 'points.add': db.points.push({id:op.id,who:op.who,delta:op.delta}); break;
@@ -672,16 +953,22 @@ function demoServer(p){
       case 'points.payout': db.points = db.points.filter(r=>r.who!==op.who); break;
       case 'event.add': {
         const e = {id:'d'+(db.n++), title:op.title, rec:false};
-        if(op.time){ const d=fromIso(op.date); const [h,mi]=op.time.split(':').map(Number); d.setHours(h,mi); e.allDay=false; e.s=d.getTime(); e.e=e.s+3600000; }
-        else { e.allDay=true; e.sd=op.date; e.ed=iso(addDays(fromIso(op.date),1)); }
+        setEventTime(e, op);
         db.ev.push(e); break;
+      }
+      case 'event.edit': {
+        const e = db.ev.find(x=>x.id===op.eventId);
+        if(!e || e.rec) break;
+        e.title = op.title;
+        if(!op.titleOnly) setEventTime(e, op);
+        break;
       }
       case 'event.delete': db.ev = db.ev.filter(e=>e.id!==op.eventId); break;
     }
   });
   store.set('fp.demo', db);
   const pts = {}; POINTS_PEOPLE.forEach(n=>pts[n]=0); db.points.forEach(r=>{ pts[r.who]=(pts[r.who]||0)+r.delta; });
-  return new Promise(res=>setTimeout(()=>res({ok:true, applied:(p.ops||[]).map(o=>o.opId),
+  return new Promise(res=>setTimeout(()=>res({ok:true, version:2, applied:(p.ops||[]).map(o=>o.opId), rejected:[],
     events:db.ev, shopping:db.shopping, todos:db.todos.filter(t=>!t.done), points:pts}), 250));
 }
 
@@ -714,9 +1001,23 @@ let days = {};
 const dayEvents = ds => days[ds] || [];
 
 /* ---------------- rendering ---------------- */
-const $ = id => document.getElementById(id);
 const TICK = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>';
-const whoTag = (who, cls) => who ? '<div class="'+(cls||'who')+'" style="color:'+colorOf(who)+'">'+esc(who)+'</div>' : '';
+function whoTag(who, cls){
+  const n = whoNames(who); if(!n.length) return '';
+  const parts = n.map((x,i)=>{
+    const sep = i === 0 ? '' : (i === n.length-1 ? '<span class="amp"> &amp; </span>' : '<span class="amp">, </span>');
+    return sep + '<span style="color:'+colorOf(x)+'">'+esc(x)+'</span>';
+  }).join('');
+  return '<div class="'+(cls||'who')+'">'+parts+'</div>';
+}
+// Left edge colour: one person = their colour; several = a blend down the edge.
+function edgeStyle(who){
+  const n = whoNames(who);
+  if(!n.length) return '';
+  if(n.length === 1) return 'border-left-color:'+colorOf(n[0]);
+  const stops = n.map(x=>colorOf(x));
+  return 'border-image:linear-gradient(to bottom,'+stops.join(',')+') 1';
+}
 
 function tickClock(){
   const d = new Date();
@@ -735,6 +1036,7 @@ function dayName(off){
   if(off===-1) return 'Yesterday';
   return DOW3[d.getDay()]+' '+d.getDate()+' '+MON[d.getMonth()].slice(0,3);
 }
+let evIndex = {};
 function renderToday(){
   const vd = addDays(today(), dayOffset), isToday = dayOffset===0;
   const list = dayEvents(iso(vd));
@@ -742,10 +1044,12 @@ function renderToday(){
   const anytime = list.filter(e=>e.time===null);
   const timed = list.filter(e=>e.time!==null);
   const nextIdx = isToday ? timed.findIndex(e=>e.sMs >= now) : -2;
-  let h = isToday ? '' : '<div class="dayhead">'+(Math.abs(dayOffset)===1 ? dayName(dayOffset)+' \u00b7 ' : '')+DOW[vd.getDay()]+' '+vd.getDate()+' '+MON[vd.getMonth()]+'</div>';
+  evIndex = {};
+  const attrs = e => { evIndex[e.key] = e; return ' data-ev="'+esc(e.key)+'" role="button" tabindex="0"'; };
+  let h = isToday ? '' : '<div class="dayhead">'+(Math.abs(dayOffset)===1 ? dayName(dayOffset)+' · ' : '')+DOW[vd.getDay()]+' '+vd.getDate()+' '+MON[vd.getMonth()]+'</div>';
   if(anytime.length){
     h += '<div class="anytime">' + anytime.map(e=>
-      '<div class="ev'+(e.pending?' pending':'')+'"><div class="t">'+(e.cont?'Ongoing':'All day')+'</div><div class="body">'+
+      '<div class="ev'+(e.pending?' pending':'')+'"'+attrs(e)+'><div class="t">'+(e.cont?'Ongoing':'All day')+'</div><div class="body">'+
       '<div class="title">'+esc(e.title)+'</div>'+whoTag(e.who)+'</div></div>').join('') + '</div>';
   }
   if(!list.length) h += '<div class="empty" style="font-size:19px;padding-top:20px">'+(isToday ? 'Nothing on today.' : 'Nothing on.')+'</div>';
@@ -755,11 +1059,11 @@ function renderToday(){
       h += '<div class="nowline"><span class="lbl">Now '+hh+'.'+pad(d.getMinutes())+'</span><span class="bar"></span></div>';
     }
     const past = isToday ? e.eMs <= now : dayOffset < 0, isNext = isToday && i===nextIdx;
-    h += '<div class="ev'+(past?' past':'')+(isNext?' next':'')+(e.pending?' pending':'')+'">'+
+    h += '<div class="ev'+(past?' past':'')+(isNext?' next':'')+(e.pending?' pending':'')+'"'+attrs(e)+'>'+
          '<div class="t">'+pretty(e.time)+'</div><div class="body"><div class="title">'+esc(e.title)+'</div>'+whoTag(e.who)+'</div></div>';
   });
   if(isToday && timed.length && nextIdx === -1) h += '<div class="nowline"><span class="lbl">That’s the lot</span><span class="bar"></span></div>';
-  $('spine').innerHTML = h;
+  $('evs').innerHTML = h;
   $('dLabel').innerHTML = esc(dayName(dayOffset)) + (isToday ? '' : '<small>Back to today</small>');
 
   const todos = view.todos;
@@ -776,7 +1080,8 @@ function renderToday(){
     : '<div class="empty">List’s empty.</div>';
 }
 function todoRow(i){
-  return '<button class="row" data-todo="'+esc(i.id)+'"><div class="box">'+TICK+'</div><div class="txt">'+esc(i.text)+'</div>'+whoTag(i.who,'tag')+'</button>';
+  const tag = i.grabs ? '<div class="grabs">Up for grabs</div>' : whoTag(i.who,'tag');
+  return '<button class="row" data-todo="'+esc(i.id)+'"><div class="box">'+TICK+'</div><div class="txt">'+esc(i.text)+'</div>'+tag+'</button>';
 }
 
 function renderCols(target, dates){
@@ -784,7 +1089,7 @@ function renderCols(target, dates){
   $(target).innerHTML = dates.map(ds=>{
     const dt = fromIso(ds), evs = dayEvents(ds);
     return '<div class="col'+(ds===t?' today':'')+'"><h3>'+DOW3[dt.getDay()]+'</h3><div class="num">'+dt.getDate()+'</div><div class="items">'+
-      evs.map(e=>'<button class="chip'+(e.pending?' pending':'')+'" data-day="'+ds+'" style="border-left-color:'+colorOf(e.who)+'">'+
+      evs.map(e=>'<button class="chip'+(e.pending?' pending':'')+'" data-day="'+ds+'" style="'+edgeStyle(e.who)+'">'+
         '<div class="ct">'+(e.time?pretty(e.time):(e.cont?'Ongoing':'All day'))+'</div><div class="cx">'+esc(e.title)+'</div></button>').join('')+
       '</div><button class="add" data-day="'+ds+'" aria-label="Add to '+dayLabel(ds)+'">+</button></div>';
   }).join('');
@@ -813,7 +1118,7 @@ function renderMonth(){
     const ds = iso(d), evs = dayEvents(ds), out = d.getMonth() !== g.first.getMonth();
     const shown = evs.slice(0,3);
     h += '<button class="cell'+(out?' out':'')+(ds===t?' now':'')+(ds<t?' past':'')+'" data-day="'+ds+'"><span class="cn">'+d.getDate()+'</span>'+
-      shown.map(e=>'<span class="mev'+(e.pending?' pending':'')+'" style="border-left-color:'+colorOf(e.who)+'">'+(e.time?'<b>'+pretty(e.time)+'</b> ':'')+esc(e.title)+'</span>').join('')+
+      shown.map(e=>'<span class="mev'+(e.pending?' pending':'')+'" style="'+edgeStyle(e.who)+'">'+(e.time?'<b>'+pretty(e.time)+'</b> ':'')+esc(e.title)+'</span>').join('')+
       (evs.length>3 ? '<span class="mm">+'+(evs.length-3)+' more</span>' : '')+'</button>';
     count++;
   }
@@ -830,6 +1135,7 @@ function renderLists(){
     ? open.concat(got).map(i=>'<button class="row'+(i.bought?' done':'')+'" data-shop="'+esc(i.id)+'"><div class="box">'+TICK+'</div><div class="txt">'+esc(i.text)+'</div></button>').join('')
     : '<div class="empty" style="padding:14px 0">Nothing needed.</div>';
   $('todoList').innerHTML = view.todos.length ? view.todos.map(todoRow).join('') : '<div class="empty" style="padding:14px 0">Nothing to remember.</div>';
+  $('todoChips').innerHTML = chipsHTML(tdSel, 'panel');
 }
 
 function renderPoints(){
@@ -851,34 +1157,39 @@ function renderAll(){
   if(!view) rebuild();
   days = bucketEvents(view.events);
   tickClock(); renderToday(); renderWeeks(); renderMonth(); renderLists(); renderPoints(); drawStatus();
-  if(addOpen) renderDayList();
+  if(addOpen && mode==='add') renderDayList();
+  placeElf();
 }
 
 /* ---------------- navigation + idle ---------------- */
-const isPhone = Math.min(screen.width, screen.height) < 600;
-if(isPhone) document.body.classList.add('phone');
 let current = isPhone ? 'shop' : 'today';
+const sectionOf = v => (v==='shop' || v==='todo') ? 'lists' : v;
 function show(v){
   current = v;
-  const section = (v==='shop' || v==='todo') ? 'lists' : v;
+  const section = sectionOf(v);
   document.querySelectorAll('.view').forEach(s=>s.classList.toggle('on', s.id===section));
   $('lists').dataset.only = (v==='shop' || v==='todo') ? v : '';
   document.querySelectorAll('#nav .tab').forEach(b=>b.classList.toggle('on', b.dataset.v===v));
   document.querySelectorAll('#pnav button').forEach(b=>b.classList.toggle('on', b.dataset.v===v));
-  poke();
+  poke(); placeElf();
 }
 $('nav').addEventListener('click', e=>{ const t = e.target.closest('.tab'); if(t) show(t.dataset.v); });
 $('pnav').addEventListener('click', e=>{ const t = e.target.closest('button'); if(t) show(t.dataset.v); });
-document.addEventListener('click', e=>{ const g = e.target.closest('[data-go]'); if(g) show(g.dataset.go); });
+document.addEventListener('click', e=>{
+  if(e.target.closest('[data-add]')) return;
+  const g = e.target.closest('[data-go]'); if(g) show(g.dataset.go);
+});
+$('shopCard').addEventListener('keydown', e=>{ if((e.key==='Enter'||e.key===' ') && e.target===$('shopCard')){ e.preventDefault(); show('lists'); } });
 
 function stepDay(d){
   dayOffset = d===0 ? 0 : dayOffset + d;
   renderToday();
   const sp = $('spine'); sp.scrollTop = 0;
-  sp.classList.remove('slide-l','slide-r'); void sp.offsetWidth;
-  if(d) sp.classList.add(d>0 ? 'slide-l' : 'slide-r');
+  const ev = $('evs'); ev.classList.remove('slide-l','slide-r'); void ev.offsetWidth;
+  if(d) ev.classList.add(d>0 ? 'slide-l' : 'slide-r');
   const ds = iso(addDays(today(), dayOffset)), r = server.range;
   if(cfg && (!r || ds < r[0] || ds >= r[1])) scheduleSync(50);
+  placeElf();
 }
 $('dPrev').onclick = ()=>stepDay(-1);
 $('dNext').onclick = ()=>stepDay(1);
@@ -899,7 +1210,7 @@ function poke(){
   if(isPhone) return;
   idleTimer = setTimeout(()=>{
     if(!cfg) return;
-    closeAdd(); closeModal();
+    closeAdd(); closeItem(); closeModal();
     if(monthOffset){ monthOffset = 0; renderMonth(); scheduleSync(100); }
     if(dayOffset){ dayOffset = 0; renderToday(); }
     show('today');
@@ -907,9 +1218,9 @@ function poke(){
 }
 ['touchstart','mousedown','keydown'].forEach(ev=>document.addEventListener(ev, poke, {passive:true}));
 
-$('mPrev').onclick = ()=>{ monthOffset--; renderMonth(); scheduleSync(50); };
-$('mNext').onclick = ()=>{ monthOffset++; renderMonth(); scheduleSync(50); };
-$('mToday').onclick = ()=>{ monthOffset = 0; renderMonth(); scheduleSync(50); };
+$('mPrev').onclick = ()=>{ monthOffset--; renderMonth(); scheduleSync(50); placeElf(); };
+$('mNext').onclick = ()=>{ monthOffset++; renderMonth(); scheduleSync(50); placeElf(); };
+$('mToday').onclick = ()=>{ monthOffset = 0; renderMonth(); scheduleSync(50); placeElf(); };
 
 /* ---------------- toast ---------------- */
 let toastTimer = null, toastUndo = null;
@@ -934,7 +1245,7 @@ document.addEventListener('click', e=>{
     t.classList.add('done');
     fire(p.x, p.y); sound.fire();
     enqueue({type:'todo.done', id:item.id});
-    toast('Done: '+item.text, ()=>enqueue({type:'todo.undone', id:item.id, text:item.text, who:item.who}));
+    toast('Done: '+item.text, ()=>enqueue({type:'todo.undone', id:item.id, text:item.text, who:item.who, grabs:item.grabs}));
     return;
   }
   const s = e.target.closest('[data-shop]');
@@ -950,21 +1261,75 @@ $('clearBought').onclick = ()=>enqueue({type:'shop.clear'});
 function onEnter(input, fn){
   input.addEventListener('keydown', e=>{ if(e.key==='Enter' && !e.isComposing){ e.preventDefault(); fn(); } });
 }
-function addShop(){
-  const el = $('shopNew');
-  el.value.split(/,|\n/).map(x=>x.trim()).filter(Boolean).forEach(text=>{
+function addShopText(raw){
+  raw.split(/,|\n/).map(x=>x.trim()).filter(Boolean).forEach(text=>{
     enqueue({type:'shop.add', id:uid(), text:cap(text)});
   });
-  el.value = '';
 }
-function addTodo(){
-  const el = $('todoNew'), raw = el.value.trim(); if(!raw) return;
-  const w = whoOf(raw);
-  enqueue({type:'todo.add', id:uid(), text:cap(w.who ? w.rest : raw), who:w.who && w.who!=='Everyone' ? w.who : null});
-  el.value = '';
+// Who/Up-for-grabs choice: tapped chips win; otherwise a name typed at the start of the text.
+function submitTodo(raw, sel){
+  raw = raw.trim(); if(!raw) return false;
+  const p = parseTodo(raw);
+  let who = p.who, grabs = p.grabs;
+  if(sel.grabs){ grabs = true; who = null; }
+  else if(sel.who.length){ who = sel.who; grabs = false; }
+  enqueue({type:'todo.add', id:uid(), text:p.text, who: (!grabs && who && who.length) ? who.join(',') : null, grabs});
+  return true;
 }
-onEnter($('shopNew'), addShop); $('shopAdd').onclick = ()=>{ addShop(); $('shopNew').focus(); };
-onEnter($('todoNew'), addTodo); $('todoAdd').onclick = ()=>{ addTodo(); $('todoNew').focus(); };
+let tdSel = {who:[], grabs:false}, itemSel = {who:[], grabs:false};
+function chipsHTML(sel, key){
+  return PEOPLE.map(p=>{
+    const on = sel.who.indexOf(p.name) >= 0, c = colorOf(p.name);
+    return '<button class="wchip'+(on?' on':'')+'" data-chip="'+key+'" data-n="'+p.name+'" style="'+(on?'background:'+c+';border-color:'+c:'')+'">'+p.name+'</button>';
+  }).join('') + '<button class="wchip grabsc'+(sel.grabs?' on':'')+'" data-chip="'+key+'" data-n="GRABS">Up for grabs</button>';
+}
+function pickChip(sel, n){
+  if(n === 'GRABS'){ sel.grabs = !sel.grabs; if(sel.grabs) sel.who = []; return; }
+  sel.grabs = false;
+  sel.who = NAMES.filter(x=> x === n ? sel.who.indexOf(n) < 0 : sel.who.indexOf(x) >= 0);
+}
+document.addEventListener('click', e=>{
+  const c = e.target.closest('[data-chip]'); if(!c) return;
+  if(c.dataset.chip === 'panel'){ pickChip(tdSel, c.dataset.n); $('todoChips').innerHTML = chipsHTML(tdSel, 'panel'); }
+  else { pickChip(itemSel, c.dataset.n); $('itemChips').innerHTML = chipsHTML(itemSel, 'sheet'); }
+});
+function addTodoPanel(){
+  if(submitTodo($('todoNew').value, tdSel)){ $('todoNew').value = ''; tdSel = {who:[], grabs:false}; $('todoChips').innerHTML = chipsHTML(tdSel, 'panel'); }
+}
+function addShopPanel(){ addShopText($('shopNew').value); $('shopNew').value = ''; }
+onEnter($('shopNew'), addShopPanel); $('shopAdd').onclick = ()=>{ addShopPanel(); $('shopNew').focus(); };
+onEnter($('todoNew'), addTodoPanel); $('todoAdd').onclick = ()=>{ addTodoPanel(); $('todoNew').focus(); };
+
+/* ---------------- add to To Do / Shopping sheet ---------------- */
+let itemKind = null, itemOpen = false;
+function openItem(kind){
+  itemKind = kind; itemOpen = true; itemSel = {who:[], grabs:false};
+  $('itemLead').textContent = kind === 'todo' ? 'Add to To Do' : 'Add to Shopping';
+  $('itemIn').value = '';
+  $('itemIn').placeholder = kind === 'todo' ? 'Wash the car' : 'Milk, bread, eggs';
+  $('itemHint').textContent = kind === 'todo' ? 'Pick who it’s for, or Up for grabs if anyone can do it for extra points.' : 'Separate items with commas to add several at once.';
+  $('itemChips').hidden = kind !== 'todo';
+  $('itemChips').innerHTML = chipsHTML(itemSel, 'sheet');
+  $('itemScrim').classList.add('on');
+  setTimeout(()=>$('itemIn').focus(), 60);
+}
+function closeItem(){ $('itemScrim').classList.remove('on'); itemOpen = false; $('itemIn').blur(); }
+function saveItem(){
+  const raw = $('itemIn').value.trim();
+  if(!raw){ closeItem(); return; }
+  if(itemKind === 'todo') submitTodo(raw, itemSel); else addShopText(raw);
+  closeItem();
+  toast('Added to '+(itemKind === 'todo' ? 'To Do' : 'Shopping'));
+}
+$('itemCancel').onclick = closeItem;
+$('itemSave').onclick = saveItem;
+$('itemIn').addEventListener('keydown', e=>{ if(e.key==='Enter' && !e.isComposing){ e.preventDefault(); saveItem(); } });
+$('itemScrim').addEventListener('click', e=>{ if(e.target.id === 'itemScrim') closeItem(); });
+document.addEventListener('click', e=>{
+  const a = e.target.closest('[data-add]'); if(!a) return;
+  e.stopPropagation();
+  openItem(a.dataset.add);
+});
 
 /* ---------------- points: actions ---------------- */
 $('points').addEventListener('click', e=>{
@@ -1003,25 +1368,36 @@ $('points').addEventListener('click', e=>{
   }
 });
 
-/* ---------------- add event sheet ---------------- */
-let addOpen = false, sheetDate = null, sheetWho = null, sheetDayFixed = false, confirmDel = null;
-function drawWho(){
-  const opts = [EVERYONE].concat(PEOPLE);
-  $('whorow').innerHTML = opts.map(p=>{
-    const on = p.name === sheetWho;
-    return '<button class="wchip'+(on?' on':'')+'" data-whopick="'+p.name+'" style="'+(on?'background:'+colorOf(p.name)+';border-color:'+colorOf(p.name):'')+'">'+esc(p.name)+'</button>';
+/* ---------------- add / edit event sheet ---------------- */
+let addOpen = false, mode = 'add', sheetDate = null, sheetWho = [], whoTouched = false, confirmDel = null, editEv = null, delArm = false, renderedDay = null;
+function effNames(p){ return whoTouched ? sheetWho : ((p && p.who) || sheetWho); }
+function toggleWho(arr, name){
+  if(name === 'Everyone') return arr.indexOf('Everyone') >= 0 ? [] : ['Everyone'];
+  const a = arr.filter(x=>x !== 'Everyone');
+  return NAMES.filter(x => x === name ? a.indexOf(x) < 0 : a.indexOf(x) >= 0);
+}
+function drawWho(p){
+  const on = effNames(p);
+  $('whorow').innerHTML = [EVERYONE].concat(PEOPLE).map(x=>{
+    const sel = on.indexOf(x.name) >= 0, c = colorOf(x.name);
+    return '<button class="wchip'+(sel?' on':'')+'" data-whopick="'+x.name+'" style="'+(sel?'background:'+c+';border-color:'+c:'')+'">'+esc(x.name)+'</button>';
   }).join('');
 }
-function currentParse(){ return parseEvent($('sheetIn').value, sheetDate); }
+function currentParse(){ return parseEvent($('sheetIn').value, sheetDate, {noDate: mode === 'edit'}); }
 function updatePreview(){
   const raw = $('sheetIn').value.trim();
   const p = currentParse();
-  const who = p.who || sheetWho;
-  $('sheetLead').textContent = 'New event — ' + dayLabel(p.date);
-  $('preview').textContent = raw ? '→ '+[dayLabel(p.date), p.time ? pretty(p.time) : 'All day', who].filter(Boolean).join(' · ') + (p.title ? ' · '+p.title : '') : '';
-  if(p.date !== renderedDay) renderDayList();
+  const who = joinNames(effNames(p));
+  const day = mode === 'edit' ? sheetDate : p.date;
+  if(mode === 'edit'){
+    $('sheetLead').textContent = 'Edit event';
+    $('eDayLabel').textContent = editEv && editEv.titleOnly ? '' : dayLabel(sheetDate);
+  } else $('sheetLead').textContent = 'New event — ' + dayLabel(p.date);
+  const timeBit = (mode === 'edit' && editEv && editEv.titleOnly) ? '' : (p.time ? pretty(p.time) : 'All day');
+  $('preview').textContent = raw ? '→ '+[dayLabel(day), timeBit, who].filter(Boolean).join(' · ') + (p.title ? ' · '+p.title : '') : '';
+  drawWho(p);
+  if(mode === 'add' && p.date !== renderedDay) renderDayList();
 }
-let renderedDay = null;
 function renderDayList(){
   const ds = currentParse().date; renderedDay = ds;
   const evs = dayEvents(ds);
@@ -1029,23 +1405,63 @@ function renderDayList(){
     const del = (!e.rec && !e.pending && !e.cont) ?
       (confirmDel===e.key ? '<button class="conf n" data-nodel>Keep</button><button class="conf y" data-del="'+esc(e.id)+'">Delete</button>' : '<button class="x" data-ask="'+esc(e.key)+'" aria-label="Delete">×</button>')
       : (e.rec ? '<span class="rep">Repeats</span>' : '');
-    return '<div class="dr"><b style="color:'+colorOf(e.who)+'">'+(e.time?pretty(e.time):'All day')+'</b><span>'+esc(e.title)+'</span>'+del+'</div>';
+    return '<div class="dr"><b style="color:'+colorOf(whoNames(e.who)[0])+'">'+(e.time?pretty(e.time):'All day')+'</b><span>'+esc(e.title)+'</span>'+del+'</div>';
   }).join('') : '';
 }
+function sheetChrome(){
+  const edit = mode === 'edit';
+  $('dayList').style.display = edit ? 'none' : '';
+  $('editDay').hidden = !edit;
+  $('delBtn').hidden = !edit;
+  $('delBtn').classList.remove('armed'); $('delBtn').textContent = 'Delete'; delArm = false;
+  $('saveBtn').textContent = edit ? 'Save' : 'Add';
+  $('sheetHint').textContent = edit
+    ? (editEv && editEv.titleOnly ? 'This event runs over several days, so only its name and who it’s for can be changed here.' : 'Change the name, time or day. Clear the time to make it all day.')
+    : 'Add a time (4pm, 9.30am) or a day (Friday, tomorrow, 12/10) anywhere. Tag people at the start: Maddy & Ava swimming.';
+  $('eDayPrev').style.visibility = $('eDayNext').style.visibility = (edit && editEv && editEv.titleOnly) ? 'hidden' : 'visible';
+}
+function showSheet(){ $('addScrim').classList.add('on'); addOpen = true; setTimeout(()=>$('sheetIn').focus(), 60); }
 function openAdd(ds){
-  sheetDate = ds || iso(today()); sheetWho = null; confirmDel = null;
-  $('sheetIn').value = '';
-  drawWho(); updatePreview(); renderDayList();
-  $('addScrim').classList.add('on'); addOpen = true;
-  setTimeout(()=>$('sheetIn').focus(), 60);
+  mode = 'add'; editEv = null;
+  sheetDate = ds || iso(today()); sheetWho = []; whoTouched = false; confirmDel = null;
+  $('sheetIn').value = ''; $('sheetIn').placeholder = 'Swimming 4pm';
+  sheetChrome(); updatePreview(); renderDayList();
+  showSheet();
+}
+function openEdit(it){
+  const ev = view.events.find(x=>x.id === it.id); if(!ev) return;
+  const w = whoOf(ev.title || '');
+  const title = w.who ? cap(w.rest) : (ev.title || '');
+  const startDs = ev.allDay ? ev.sd : iso(new Date(ev.s));
+  const time = ev.allDay ? null : hm(new Date(ev.s));
+  const span = ev.allDay ? daysBetween(fromIso(ev.sd), fromIso(ev.ed)) > 1 : iso(new Date(ev.e - 1)) !== startDs;
+  mode = 'edit';
+  editEv = {id:ev.id, titleOnly:span, origTitle:ev.title || '', origDate:startDs, origTime:time};
+  sheetDate = startDs; sheetWho = w.who || []; whoTouched = false;
+  $('sheetIn').value = title + ((!span && time) ? ' ' + pretty(time) : '');
+  $('sheetIn').placeholder = 'Event name';
+  sheetChrome(); updatePreview();
+  showSheet();
 }
 function closeAdd(){ $('addScrim').classList.remove('on'); addOpen = false; $('sheetIn').blur(); }
 function saveAdd(){
   const raw = $('sheetIn').value.trim();
-  if(!raw){ closeAdd(); return; }
   const p = currentParse();
-  const who = p.who || sheetWho;
-  const title = (who ? who+': ' : '') + (p.title || raw);
+  if(mode === 'edit'){
+    if(!p.title){ toast('Give it a name first'); return; }
+    const names = effNames(p);
+    const title = composeTitle(names, p.title);
+    const date = editEv.titleOnly ? editEv.origDate : sheetDate;
+    const time = editEv.titleOnly ? null : p.time;
+    const same = title === editEv.origTitle && (editEv.titleOnly || (date === editEv.origDate && time === editEv.origTime));
+    closeAdd();
+    if(same) return;
+    enqueue({type:'event.edit', eventId:editEv.id, title, date, time, titleOnly:editEv.titleOnly});
+    toast('Saved');
+    return;
+  }
+  if(!raw){ closeAdd(); return; }
+  const title = composeTitle(effNames(p), p.title || raw);
   enqueue({type:'event.add', title, date:p.date, time:p.time});
   closeAdd();
   toast('Added: '+dayLabel(p.date)+(p.time?' '+pretty(p.time):''));
@@ -1054,11 +1470,18 @@ $('addbtn').onclick = ()=>openAdd(current==='today' && dayOffset ? iso(addDays(t
 $('cancelBtn').onclick = closeAdd;
 $('saveBtn').onclick = saveAdd;
 $('sheetIn').addEventListener('input', updatePreview);
-$('sheetIn').addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); saveAdd(); } });
+$('sheetIn').addEventListener('keydown', e=>{ if(e.key==='Enter' && !e.isComposing){ e.preventDefault(); saveAdd(); } });
+$('eDayPrev').onclick = ()=>{ sheetDate = iso(addDays(fromIso(sheetDate), -1)); updatePreview(); };
+$('eDayNext').onclick = ()=>{ sheetDate = iso(addDays(fromIso(sheetDate), 1)); updatePreview(); };
+$('delBtn').onclick = ()=>{
+  if(!delArm){ delArm = true; $('delBtn').classList.add('armed'); $('delBtn').textContent = 'Really delete?'; return; }
+  const id = editEv && editEv.id; closeAdd();
+  if(id){ enqueue({type:'event.delete', eventId:id}); toast('Deleted'); }
+};
 $('addScrim').addEventListener('click', e=>{
   if(e.target.id==='addScrim'){ closeAdd(); return; }
   const w = e.target.closest('[data-whopick]');
-  if(w){ sheetWho = sheetWho===w.dataset.whopick ? null : w.dataset.whopick; drawWho(); updatePreview(); return; }
+  if(w){ const p = currentParse(); sheetWho = toggleWho(effNames(p), w.dataset.whopick); whoTouched = true; updatePreview(); return; }
   const a = e.target.closest('[data-ask]');
   if(a){ confirmDel = a.dataset.ask; renderDayList(); return; }
   if(e.target.closest('[data-nodel]')){ confirmDel = null; renderDayList(); return; }
@@ -1070,23 +1493,43 @@ document.addEventListener('click', e=>{
   const d = e.target.closest('[data-day]');
   if(d && !isPhone) openAdd(d.dataset.day);
 });
+// Tap an event on Today to edit it.
+$('evs').addEventListener('click', e=>{
+  const r = e.target.closest('[data-ev]'); if(!r) return;
+  const it = evIndex[r.dataset.ev]; if(!it) return;
+  if(it.pending){ toast('Still saving… try again in a moment'); return; }
+  if(it.rec){ toast('Repeating events can only be changed in Google Calendar'); return; }
+  openEdit(it);
+});
+$('evs').addEventListener('keydown', e=>{
+  if(e.key !== 'Enter' && e.key !== ' ') return;
+  const r = e.target.closest('[data-ev]'); if(!r) return;
+  e.preventDefault(); r.click();
+});
 
-/* ---------------- modal ---------------- */
+/* ---------------- modal + settings ---------------- */
 function openModal(html){ $('modalBody').innerHTML = html; $('modal').classList.add('on'); }
 function closeModal(){ $('modal').classList.remove('on'); }
 $('modal').addEventListener('click', e=>{
   if(e.target.id==='modal' || e.target.closest('[data-close]')){ closeModal(); return; }
   const t = e.target.closest('[data-theme-pick]');
-  if(t){ theme = t.dataset.themePick; store.set('fp.theme', theme); applyTheme(); renderAll(); openSettings(); return; }
-  if(e.target.closest('#sndSwitch')){ muted = !muted; store.set('fp.muted', muted); drawMute(); if(!muted) sound.tick(); openSettings(); }
+  if(t){ themePick = t.dataset.themePick; store.set('fp.theme', themePick); applyTheme(); renderAll(); openSettings(); return; }
+  if(e.target.closest('#sndSwitch')){ muted = !muted; store.set('fp.muted', muted); drawMute(); if(!muted) sound.tick(); openSettings(); return; }
+  if(e.target.closest('#seaSwitch')){ seasonal = !seasonal; store.set('fp.seasonal', seasonal); applyTheme(); renderAll(); openSettings(); }
 });
 function openSettings(){
+  const s = seasonOf(new Date());
+  const pickName = (THEMES.find(x=>x.id===themePick)||{}).name;
+  const note = (seasonal && s && s !== themePick)
+    ? '<div class="warnbox">'+(s==='halloween'?'Halloween':'Christmas')+' is showing right now. Your pick, '+esc(pickName)+', comes back on '+SEASON_ENDS[s]+'.</div>' : '';
   openModal('<div class="mtitle">Settings</div>'+
     '<div class="lead" style="margin-top:14px">Look</div>'+
-    '<div class="themes">'+THEMES.map(t=>'<button class="tcard'+(theme===t.id?' on':'')+'" data-theme-pick="'+t.id+'">'+
+    '<div class="themes">'+THEMES.map(t=>'<button class="tcard'+(themePick===t.id?' on':'')+'" data-theme-pick="'+t.id+'">'+
       '<div class="tprev" style="background:'+t.bg+'"><i style="width:55%;background:'+t.text+'"></i><i style="width:85%;background:'+t.card+'"></i>'+
-      '<i style="width:70%;background:'+t.card+'"></i><i style="width:32%;background:#FFB020"></i></div><span>'+t.name+'</span></button>').join('')+'</div>'+
+      '<i style="width:70%;background:'+t.card+'"></i><i style="width:32%;background:'+t.accent+'"></i></div><span>'+t.name+'</span></button>').join('')+'</div>'+
     '<div class="hint">Changes this screen only. Each phone can pick its own.</div>'+
+    '<div class="setrow"><span>Seasonal looks<small>Halloween from 24 to 31 October, Christmas for all of December. Switches on and off by itself.</small></span><button class="switch'+(seasonal?' on':'')+'" id="seaSwitch" aria-label="Seasonal looks"></button></div>'+
+    note+
     '<div class="setrow"><span>Sound effects</span><button class="switch'+(muted?'':' on')+'" id="sndSwitch" aria-label="Sound effects"></button></div>'+
     '<div class="acts"><button class="save" data-close>Done</button></div>');
 }
@@ -1105,9 +1548,10 @@ $('statusBtn').onclick = ()=>{
   openModal(
     '<div class="mtitle">Sync</div><div class="stat">'+
     'Connected to: <b>'+(cfg.url==='demo' ? 'Demo (not real data)' : 'Google')+'</b><br>'+
+    'Script version: <b>'+(server.version || 1)+'</b>'+((server.version||1) < SCRIPT_VERSION_NEEDED ? ' <span style="color:var(--danger)">(needs 2)</span>' : '')+'<br>'+
     'Last synced: <b>'+ago(lastOk)+'</b><br>'+
     'Changes waiting to send: <b>'+outbox.length+'</b>'+
-    (lastErr ? '<br>Problem: <b style="color:var(--rose)">'+esc(lastErr)+'</b>' : '')+
+    (lastErr ? '<br>Problem: <b style="color:var(--danger)">'+esc(lastErr)+'</b>' : '')+
     '</div><div class="acts"><button class="cancel" id="reconnect">Change connection</button><button class="save" id="syncNow">Sync now</button></div>');
   $('syncNow').onclick = ()=>{ closeModal(); sync(); };
   $('reconnect').onclick = ()=>setupScreen(true);
@@ -1175,14 +1619,14 @@ const sound = (()=>{
     g.gain.exponentialRampToValueAtTime(0.0001, start+dur);
     o.connect(g); g.connect(c.destination); o.start(start); o.stop(start+dur+0.02);
   }
-  function noise(c, start, dur, from, to, vol){
+  function noise(c, start, dur, from, to, vol, peak, type){
     const len = Math.floor(c.sampleRate*dur), buf = c.createBuffer(1, len, c.sampleRate), d = buf.getChannelData(0);
     for(let i=0;i<len;i++) d[i] = Math.random()*2-1;
     const src = c.createBufferSource(); src.buffer = buf;
-    const f = c.createBiquadFilter(); f.type = 'bandpass'; f.Q.value = 0.9;
+    const f = c.createBiquadFilter(); f.type = type || 'bandpass'; f.Q.value = 0.9;
     f.frequency.setValueAtTime(from, start); f.frequency.exponentialRampToValueAtTime(to, start+dur);
-    const g = c.createGain();
-    g.gain.setValueAtTime(0.0001, start); g.gain.exponentialRampToValueAtTime(vol, start+0.05); g.gain.exponentialRampToValueAtTime(0.0001, start+dur);
+    const g = c.createGain(), pk = peak || 0.05;
+    g.gain.setValueAtTime(0.0001, start); g.gain.exponentialRampToValueAtTime(vol, start+pk); g.gain.exponentialRampToValueAtTime(0.0001, start+dur);
     src.connect(f); f.connect(g); g.connect(c.destination); src.start(start); src.stop(start+dur);
   }
   const SEMI = [0,4,7,12,16,19,24];
@@ -1195,12 +1639,17 @@ const sound = (()=>{
       const end = t + steps*0.075;
       tone(c, 2093, end, 0.35, 'triangle', 0.12); tone(c, 2637, end+0.06, 0.4, 'triangle', 0.09);
     },
+    // A whoosh of flame (a rising then falling rush of air) with a little crackle. No boom.
     fire(){
       const c = ac(); if(!c) return; const t = c.currentTime;
-      tone(c, 120, t, 0.7, 'sine', 0.7, 32);
-      noise(c, t, 1.2, 250, 2400, 0.6);
-      noise(c, t+0.04, 0.35, 2500, 7000, 0.18);
-      noise(c, t+0.25, 1.0, 900, 300, 0.25);
+      noise(c, t, 0.75, 220, 3400, 0.5, 0.18);
+      noise(c, t+0.12, 1.1, 3000, 600, 0.3, 0.25);
+      for(let i=0;i<9;i++) noise(c, t+0.25+Math.random()*1.0, 0.04, 2500+Math.random()*3500, 1500, 0.07, 0.004, 'highpass');
+    },
+    poof(){
+      const c = ac(); if(!c) return; const t = c.currentTime;
+      noise(c, t, 0.35, 900, 220, 0.4, 0.02, 'lowpass');
+      [1568, 2093, 2637].forEach((f,i)=>tone(c, f, t+0.04+i*0.07, 0.3, 'triangle', 0.1));
     },
     payout(){
       const c = ac(); if(!c) return; const t = c.currentTime;
@@ -1211,34 +1660,18 @@ const sound = (()=>{
 })();
 
 /* ---------------- effects ---------------- */
-// One canvas over everything. Flames are pre-drawn once as sprites and stamped,
-// which is far cheaper than drawing gradients per particle per frame.
-// Flames and smoke are soft, so they're drawn on a half-resolution canvas (about 16x less
-// pixel work than full retina). Confetti, sparks and rings stay sharp on the full canvas.
+// One canvas over everything. Fire is drawn as flat, cel-shaded vector shapes (anime style):
+// layered teardrop flames, a starburst, speed lines and diamond embers. Confetti is unchanged.
 const fx = $('fx'), g2 = fx.getContext('2d');
-const fxlo = $('fxlo'), g3 = fxlo.getContext('2d'), LO = 0.5;
-let parts = [], running = false, dpr = 1;
+let parts = [], running = false, dpr = 1, frames = 0, lastT = 0;
 const reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-const MAX_PARTS = 1400;
+const MAX_PARTS = 1400, TAU = Math.PI*2;
 function sizeFx(){
   dpr = Math.min(window.devicePixelRatio || 1, 2); fx.width = innerWidth*dpr; fx.height = innerHeight*dpr; g2.setTransform(dpr,0,0,dpr,0,0);
-  fxlo.width = Math.ceil(innerWidth*LO); fxlo.height = Math.ceil(innerHeight*LO); g3.setTransform(LO,0,0,LO,0,0);
 }
-sizeFx(); addEventListener('resize', sizeFx);
-
-function sprite(stops){
-  const n = 128, c = document.createElement('canvas'); c.width = c.height = n;
-  const x = c.getContext('2d'), g = x.createRadialGradient(n/2,n/2,0,n/2,n/2,n/2);
-  stops.forEach(s=>g.addColorStop(s[0], s[1])); x.fillStyle = g; x.fillRect(0,0,n,n);
-  return c;
-}
-const SPR = {
-  core:  sprite([[0,'rgba(255,255,235,1)'],[0.25,'rgba(255,225,130,.95)'],[0.6,'rgba(255,150,30,.4)'],[1,'rgba(255,90,0,0)']]),
-  flame: sprite([[0,'rgba(255,205,80,1)'],[0.35,'rgba(255,125,20,.75)'],[0.7,'rgba(225,45,0,.28)'],[1,'rgba(160,20,0,0)']]),
-  ember: sprite([[0,'rgba(255,95,20,.95)'],[0.5,'rgba(205,35,0,.45)'],[1,'rgba(120,0,0,0)']]),
-  smoke: sprite([[0,'rgba(70,62,56,.42)'],[0.6,'rgba(70,62,56,.16)'],[1,'rgba(70,62,56,0)']])
-};
+sizeFx(); addEventListener('resize', ()=>{ sizeFx(); schedElf(); });
 const rnd = (a,b) => a + Math.random()*(b-a);
+const ease = u => 1 - Math.pow(1 - u, 3);
 function room(){ return MAX_PARTS - parts.length; }
 
 // Points: two confetti cannons from the bottom corners, plus a pop at the button.
@@ -1268,99 +1701,265 @@ function celebrate(x, y, who, power){
   loop();
 }
 
-// To-do done: a tall column of fire, a radial burst, sparks, a shockwave and a shake.
+// To Do done: an anime-style explosion that turns into an inferno, plus a big screen shake.
 function fire(x, y){
-  const k = Math.min(innerWidth, innerHeight)/810, light = isLight();
-  const q = reduced ? 0.2 : 1;
-  const add = (o) => { if(parts.length < MAX_PARTS) parts.push(o); };
-  for(let i=0;i<150*q;i++) add({k:'f', x: x + rnd(-34,34)*k, y: y + rnd(-10,10), vx: rnd(-2.2,2.2), vy: -rnd(5,15)*k,
-    g: -0.14*k, drag: 0.985, r: rnd(30,78)*k, grow: rnd(1.004,1.016), life: 1, decay: rnd(0.011,0.02), delay: Math.floor(rnd(0,8))});
-  for(let i=0;i<90*q;i++){ const a = rnd(0, Math.PI*2), v = rnd(8, 22)*k;
-    add({k:'f', x, y, vx: Math.cos(a)*v, vy: Math.sin(a)*v, g: -0.05, drag: 0.92, r: rnd(26,58)*k, grow: 1.0, life: 1, decay: rnd(0.02,0.032), delay: 0}); }
-  for(let i=0;i<150*q;i++){ const a = rnd(0, Math.PI*2), v = rnd(6, 24)*k;
-    add({k:'s', x, y, vx: Math.cos(a)*v, vy: Math.sin(a)*v - 5*k, g: 0.32, drag: 0.98, life: 1, decay: rnd(0.009,0.018), delay: 0, sz: rnd(2,4.5)}); }
-  add({k:'ring', x, y, r: 12, max: 430*k, life: 1, decay: 0.04, delay: 0});
-  add({k:'ring', x, y, r: 8, max: 260*k, life: 1, decay: 0.036, delay: 4});
-  if(light) for(let i=0;i<46*q;i++) add({k:'m', x: x + rnd(-40,40)*k, y: y - rnd(0,40)*k, vx: rnd(-0.8,0.8), vy: -rnd(1.2,3.2)*k,
-    g: 0, drag: 0.995, r: rnd(40,90)*k, grow: 1.012, life: 1, decay: rnd(0.008,0.013), delay: Math.floor(rnd(10,30))});
+  const k = Math.max(0.5, Math.min(innerWidth, innerHeight)/810), t = performance.now(), q = reduced ? 0.3 : 1;
+  const add = o => { if(parts.length < MAX_PARTS) parts.push(o); };
+  // 1. impact starburst
+  add({k:'B', x, y, t0:t, dur:640, R:250*k, spikes:16, seed:rnd(0,TAU), jit:Array.from({length:32}, ()=>rnd(.82,1.12))});
+  // 2. speed lines
+  const nr = Math.round(32*q);
+  for(let i=0;i<nr;i++) add({k:'R', x, y, t0:t+rnd(0,70), dur:rnd(380,640), a:i/nr*TAU+rnd(-.08,.08), r0:rnd(50,110)*k, r1:rnd(380,860)*k, w:rnd(.025,.07), col:i%3 ? '#FFF6D6' : '#FFD84A'});
+  // 3. flame tongues: tall centre, then mid, then small, so the small ones sit in front
+  const tongues = (n, hMin, hMax, spread, delay) => {
+    for(let i=0;i<Math.ceil(n*q);i++){
+      const h = rnd(hMin, hMax)*k, w = h*rnd(.27,.4);
+      add({k:'T', x:x + rnd(-spread, spread)*k, y:y + rnd(0,26)*k, t0:t + delay + rnd(0,200), dur:rnd(1150,1750), h, w, ph:rnd(0,TAU), lean:rnd(-.5,.5)*w, lw:Math.max(2, 3.2*k)});
+    }
+  };
+  tongues(7, 360, 520, 70, 40); tongues(9, 230, 360, 190, 90); tongues(10, 110, 230, 300, 140);
+  // a fiery bed in front of the flame bases, so they read as one inferno rather than separate drops
+  add({k:'F', x, y:y+10*k, t0:t+30, dur:1700, rx:330*k, ry:46*k, lw:Math.max(2, 3.2*k)});
+  // 4. diamond embers
+  const ne = Math.round(46*q);
+  for(let i=0;i<ne;i++) add({k:'D', x:x+rnd(-200,200)*k, y:y+rnd(-20,30)*k, vx:rnd(-1.4,1.4), vy:-rnd(2.5,7)*k, g:-0.02, t0:t+rnd(0,500), dur:rnd(1100,2200), s:rnd(5,11)*k, ph:rnd(0,TAU), col:['#FFD23F','#FF7A1A','#FFF3C4','#FF4A1C'][i%4]});
   if(!reduced){ document.body.classList.remove('shake'); void document.body.offsetWidth; document.body.classList.add('shake'); setTimeout(()=>document.body.classList.remove('shake'), 550); }
   loop();
 }
 
-let frames = 0; // exposed for performance testing
-function loop(){
-  if(running) return; running = true;
-  const step = ()=>{
-    frames++;
-    const W = innerWidth, H = innerHeight, light = isLight();
-    g2.setTransform(dpr,0,0,dpr,0,0);
-    g2.clearRect(0,0,W,H);
-    g3.clearRect(0,0,W,H);
-    const alive = [];
-    // 1. smoke (light looks only) and flames, on the low-res canvas
-    g3.globalCompositeOperation = light ? 'source-over' : 'lighter';
-    for(const p of parts){
+// Elf vanishing: a cartoon puff of smoke with a few gold sparkles.
+function puff(x, y){
+  const k = Math.max(0.5, Math.min(innerWidth, innerHeight)/810), t = performance.now(), n = reduced ? 8 : 26;
+  for(let i=0;i<n;i++){
+    const a = rnd(0, TAU), d = rnd(0, 34)*k;
+    parts.push({k:'P', x:x+Math.cos(a)*d, y:y+Math.sin(a)*d*.8, vx:Math.cos(a)*rnd(.3,1.6), vy:Math.sin(a)*rnd(.3,1.2)-rnd(.2,1), t0:t+rnd(0,120), dur:rnd(650,1100), r0:rnd(14,26)*k, r1:rnd(48,92)*k, col:['#F6F2FB','#DCD5E6','#FFFFFF','#C9C0D8'][i%4]});
+  }
+  if(!reduced) for(let i=0;i<10;i++) parts.push({k:'D', x:x+rnd(-30,30)*k, y:y+rnd(-40,10)*k, vx:rnd(-1.6,1.6), vy:-rnd(1,4)*k, g:.06, t0:t+rnd(0,200), dur:rnd(700,1200), s:rnd(5,9)*k, ph:rnd(0,TAU), col:i%2 ? '#FFD23F' : '#FFFFFF'});
+  loop();
+}
+
+function tonguePath(g, x, y, w, h, bend){
+  g.beginPath();
+  g.moveTo(x - w/2, y);
+  g.bezierCurveTo(x - w/2 - w*0.18, y - h*0.35, x + bend*0.4 - w*0.12, y - h*0.7, x + bend, y - h);
+  g.bezierCurveTo(x + bend*0.4 + w*0.30, y - h*0.62, x + w/2 + w*0.2, y - h*0.32, x + w/2, y);
+  g.quadraticCurveTo(x, y + w*0.28, x - w/2, y);
+  g.closePath();
+}
+const FLAME_LAYERS = [['#E0301E',1,1],['#FF7A1A',.74,.8],['#FFC21F',.5,.58],['#FFF3C4',.26,.34]];
+function drawTongue(g, p, now){
+  const u = (now - p.t0) / p.dur;
+  const grow = u < .2 ? ease(u/.2) : 1;
+  const fade = u > .6 ? Math.max(0, 1 - (u-.6)/.4) : 1;
+  const h = p.h * grow * (.45 + .55*fade) * (1 + .09*Math.sin(now*.012 + p.ph));
+  const w = p.w * (.6 + .4*grow) * (.5 + .5*fade);
+  const bend = Math.sin(now*.007 + p.ph*1.7)*w*.5 + p.lean*u;
+  g.globalAlpha = Math.min(1, fade*1.6);
+  FLAME_LAYERS.forEach((l, i)=>{
+    tonguePath(g, p.x, p.y + i*w*.05, w*l[1], h*l[2], bend*l[2]);
+    g.fillStyle = l[0]; g.fill();
+    if(i === 0){ g.lineWidth = p.lw; g.strokeStyle = '#6E0E0E'; g.lineJoin = 'round'; g.stroke(); }
+  });
+}
+function drawBed(g, p, now){
+  const u = (now - p.t0) / p.dur;
+  const grow = ease(Math.min(1, u/.15));
+  const fade = u > .62 ? Math.max(0, 1 - (u-.62)/.38) : 1;
+  g.globalAlpha = Math.min(1, fade*1.6);
+  const N = 16;
+  [['#E0301E',1,1],['#FF7A1A',.82,.74],['#FFC21F',.56,.48]].forEach((l, i)=>{
+    const rx = p.rx*grow*l[1], ry = p.ry*grow*l[2]*(.4 + .6*fade), y0 = p.y - i*p.ry*.08;
+    g.beginPath();
+    for(let n=0;n<=N;n++){
+      const t = n/N, x = p.x - rx + 2*rx*t, env = Math.sqrt(Math.max(0, 1 - Math.pow(2*t-1, 2)));
+      const spike = (n%2 ? .5 : 1) * (.82 + .18*Math.sin(now*.011 + n*1.9 + i));
+      const y = y0 - ry*1.5*env*spike;
+      if(n) g.lineTo(x, y); else g.moveTo(x, y0);
+    }
+    g.quadraticCurveTo(p.x, y0 + ry*.55, p.x - rx, y0);
+    g.closePath();
+    g.fillStyle = l[0]; g.fill();
+    if(i === 0){ g.lineWidth = p.lw; g.strokeStyle = '#6E0E0E'; g.lineJoin = 'round'; g.stroke(); }
+  });
+}
+function drawRay(g, p, now){
+  const u = (now - p.t0) / p.dur;
+  const tip = p.r0 + (p.r1 - p.r0) * ease(Math.min(1, u*1.6));
+  const tail = p.r0 + (p.r1 - p.r0) * Math.pow(u, 1.6) * .8;
+  if(tip <= tail) return;
+  const c = Math.cos(p.a), s = Math.sin(p.a), hw = tail * p.w;
+  g.globalAlpha = Math.max(0, 1 - u*u);
+  g.fillStyle = p.col;
+  g.beginPath(); g.moveTo(p.x + c*tip, p.y + s*tip);
+  g.lineTo(p.x + c*tail - s*hw, p.y + s*tail + c*hw);
+  g.lineTo(p.x + c*tail + s*hw, p.y + s*tail - c*hw);
+  g.closePath(); g.fill();
+}
+function drawBurst(g, p, now){
+  const u = (now - p.t0) / p.dur;
+  const R = p.R * ease(Math.min(1, u/.3));
+  g.globalAlpha = u > .45 ? Math.max(0, 1 - (u-.45)/.55) : 1;
+  [['#FF3B1F',1],['#FF9A1F',.7],['#FFEB6B',.42]].forEach((l, li)=>{
+    g.beginPath();
+    for(let i=0;i<p.spikes*2;i++){
+      const a = p.seed + i*Math.PI/p.spikes, rr = R*l[1]*(i%2 ? .55 : 1)*p.jit[i];
+      const px = p.x + Math.cos(a)*rr, py = p.y + Math.sin(a)*rr;
+      if(i) g.lineTo(px, py); else g.moveTo(px, py);
+    }
+    g.closePath(); g.fillStyle = l[0]; g.fill();
+    if(li === 0){ g.lineWidth = 4; g.strokeStyle = '#6E0E0E'; g.lineJoin = 'round'; g.stroke(); }
+  });
+}
+
+function step(now){
+  frames++;
+  const W = innerWidth, H = innerHeight, dtf = Math.min(2.5, Math.max(0, (now - lastT)/16.667)); lastT = now;
+  g2.setTransform(dpr,0,0,dpr,0,0);
+  g2.clearRect(0,0,W,H);
+  g2.globalCompositeOperation = 'source-over';
+  const alive = [];
+  for(const p of parts){
+    if(p.k === 'c'){
       if(p.delay > 0){ p.delay--; alive.push(p); continue; }
-      if(p.k==='c'){
-        p.vx *= 0.986; p.vy = Math.min(p.vy*0.99 + 0.42, p.term);
-        p.x += p.vx + (p.vy > 0 ? Math.sin(frames*0.09*p.sway + p.ph)*1.3 : 0); p.y += p.vy; p.rot += p.vr;
-        if(p.vy > 0 && p.y > H + 30) continue;
-        if(p.x < -60 || p.x > W + 60) continue;
-        if(frames > 0 && p.y > H + 60) continue;
-        p.life -= 0.0022; if(p.life <= 0) continue;
-        alive.push(p); continue;
-      }
-      p.life -= p.decay; if(p.life <= 0) continue;
-      alive.push(p);
-      if(p.k==='ring'){ p.r += (p.max - p.r)*0.14; continue; }
-      p.vx *= p.drag; p.vy = p.vy*p.drag + p.g; p.x += p.vx; p.y += p.vy;
-      if(p.grow) p.r *= (p.life > 0.55 ? p.grow : 0.985);
-      if(p.k==='m'){ g3.globalAlpha = Math.min(1, p.life*1.2) * 0.9; g3.drawImage(SPR.smoke, p.x-p.r, p.y-p.r, p.r*2, p.r*2); }
+      p.vx *= 0.986; p.vy = Math.min(p.vy*0.99 + 0.42, p.term);
+      p.x += p.vx + (p.vy > 0 ? Math.sin(frames*0.09*p.sway + p.ph)*1.3 : 0); p.y += p.vy; p.rot += p.vr;
+      if(p.vy > 0 && p.y > H + 30) continue;
+      if(p.x < -60 || p.x > W + 60) continue;
+      p.life -= 0.0022; if(p.life <= 0) continue;
+      alive.push(p); continue;
     }
-    for(const p of alive){
-      if(p.delay > 0 || p.k!=='f') continue;
-      const s = p.life > 0.72 ? SPR.core : (p.life > 0.38 ? SPR.flame : SPR.ember);
-      g3.globalAlpha = Math.min(1, p.life*1.6);
-      g3.drawImage(s, p.x-p.r, p.y-p.r, p.r*2, p.r*2);
-    }
-    g3.globalAlpha = 1; g3.globalCompositeOperation = 'source-over';
-    g2.globalCompositeOperation = light ? 'source-over' : 'lighter';
-    // 2. sparks and rings
-    for(const p of alive){
-      if(p.delay > 0) continue;
-      if(p.k==='s'){ g2.globalAlpha = Math.min(1, p.life*1.4); g2.fillStyle = light ? '#E8590C' : '#FFD27A'; g2.fillRect(p.x, p.y, p.sz, p.sz); }
-      else if(p.k==='ring'){
-        g2.globalAlpha = Math.max(0, p.life); g2.lineWidth = 2 + 10*p.life;
-        g2.strokeStyle = light ? 'rgba(230,110,0,.85)' : 'rgba(255,190,70,.9)';
-        g2.beginPath(); g2.arc(p.x, p.y, p.r, 0, Math.PI*2); g2.stroke();
-      }
-    }
-    // 3. confetti on top, normal blending
-    g2.globalCompositeOperation = 'source-over';
-    for(const p of alive){
-      if(p.k!=='c' || p.delay > 0) continue;
-      const c = Math.cos(p.rot), sn = Math.sin(p.rot);
-      g2.setTransform(dpr*c, dpr*sn, -dpr*sn, dpr*c, dpr*p.x, dpr*p.y);
-      g2.globalAlpha = Math.min(1, p.life*3);
-      g2.fillStyle = p.color;
-      g2.fillRect(-p.w/2, -p.h/2, p.w, p.h*Math.abs(Math.cos(p.rot*1.7 + p.ph)) + 1);
-    }
-    g2.setTransform(dpr,0,0,dpr,0,0);
-    g2.globalAlpha = 1;
-    parts = alive;
-    if(parts.length) requestAnimationFrame(step); else { running = false; g2.clearRect(0,0,W,H); g3.clearRect(0,0,W,H); }
-  };
+    const u = (now - p.t0) / p.dur;
+    if(u >= 1) continue;
+    if(u >= 0 && (p.k === 'D' || p.k === 'P')){ p.x += p.vx*dtf; p.y += p.vy*dtf; if(p.g) p.vy += p.g*dtf; p.vx *= Math.pow(.99, dtf); }
+    alive.push(p);
+  }
+  const live = k => alive.filter(p=>p.k === k && now >= p.t0);
+  live('B').forEach(p=>drawBurst(g2, p, now));
+  live('R').forEach(p=>drawRay(g2, p, now));
+  live('T').forEach(p=>drawTongue(g2, p, now));
+  live('F').forEach(p=>drawBed(g2, p, now));
+  live('P').forEach(p=>{
+    const u = (now - p.t0)/p.dur, r = p.r0 + (p.r1 - p.r0)*ease(u);
+    g2.globalAlpha = .92*(1-u); g2.fillStyle = p.col;
+    g2.beginPath(); g2.arc(p.x, p.y, r, 0, TAU); g2.fill();
+    g2.globalAlpha *= .6; g2.fillStyle = '#FFFFFF'; g2.beginPath(); g2.arc(p.x - r*.22, p.y - r*.22, r*.55, 0, TAU); g2.fill();
+  });
+  live('D').forEach(p=>{
+    const u = (now - p.t0)/p.dur, s = p.s*(.8 + .2*Math.sin(now*.02 + p.ph));
+    g2.globalAlpha = u < .7 ? 1 : 1 - (u-.7)/.3; g2.fillStyle = p.col;
+    g2.beginPath(); g2.moveTo(p.x, p.y - s); g2.lineTo(p.x + s*.6, p.y); g2.lineTo(p.x, p.y + s); g2.lineTo(p.x - s*.6, p.y); g2.closePath(); g2.fill();
+  });
+  // confetti on top
+  for(const p of alive){
+    if(p.k !== 'c' || p.delay > 0) continue;
+    const c = Math.cos(p.rot), sn = Math.sin(p.rot);
+    g2.setTransform(dpr*c, dpr*sn, -dpr*sn, dpr*c, dpr*p.x, dpr*p.y);
+    g2.globalAlpha = Math.min(1, p.life*3);
+    g2.fillStyle = p.color;
+    g2.fillRect(-p.w/2, -p.h/2, p.w, p.h*Math.abs(Math.cos(p.rot*1.7 + p.ph)) + 1);
+  }
+  g2.setTransform(dpr,0,0,dpr,0,0);
+  g2.globalAlpha = 1;
+  parts = alive;
+  if(parts.length) requestAnimationFrame(step); else { running = false; g2.clearRect(0,0,W,H); }
+}
+function loop(){
+  if(running) return; running = true; lastT = performance.now();
   requestAnimationFrame(step);
 }
+
+/* ---------------- elf on the shelf ---------------- */
+// One elf, hidden somewhere different each day from 1 to 24 December. Tap him: "Found me!", puff of smoke,
+// gone until 6am tomorrow. Whether he's been found is remembered per screen.
+const ELF_INNER = "\n<path d=\"M12 30 Q18 6 46 4 Q38 14 49 30 Z\" fill=\"#C4202F\"/><circle cx=\"46\" cy=\"5\" r=\"5.5\" fill=\"#fff\"/><rect x=\"9\" y=\"27\" width=\"42\" height=\"8\" rx=\"4\" fill=\"#fff\"/>\n<path d=\"M17 40 L6 33 L17 47 Z M43 40 L54 33 L43 47 Z\" fill=\"#F2BE94\"/>\n<circle cx=\"30\" cy=\"42\" r=\"13.5\" fill=\"#F7CDA6\"/><circle cx=\"23\" cy=\"46\" r=\"2.6\" fill=\"#F28B8B\" opacity=\".7\"/><circle cx=\"37\" cy=\"46\" r=\"2.6\" fill=\"#F28B8B\" opacity=\".7\"/>\n<circle cx=\"25.5\" cy=\"40\" r=\"1.8\" fill=\"#2B1A12\"/><circle cx=\"34.5\" cy=\"40\" r=\"1.8\" fill=\"#2B1A12\"/><path d=\"M25 48 Q30 53 35 48\" fill=\"none\" stroke=\"#8A3B2B\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n<path d=\"M15 56 Q30 51 45 56 L47 76 Q30 80 13 76 Z\" fill=\"#C4202F\"/><path d=\"M20 55 l5 6 5 -6 5 6 5 -6\" fill=\"#fff\" stroke=\"#fff\" stroke-width=\"2\" stroke-linejoin=\"round\"/>\n<rect x=\"14\" y=\"68\" width=\"32\" height=\"5\" fill=\"#2B1A12\"/><rect x=\"26\" y=\"66.5\" width=\"8\" height=\"8\" rx=\"1.5\" fill=\"#E3B23C\"/>\n<rect x=\"6\" y=\"56\" width=\"9\" height=\"17\" rx=\"4.5\" fill=\"#C4202F\"/><rect x=\"45\" y=\"56\" width=\"9\" height=\"17\" rx=\"4.5\" fill=\"#C4202F\"/><circle cx=\"10.5\" cy=\"75\" r=\"4\" fill=\"#F7CDA6\"/><circle cx=\"49.5\" cy=\"75\" r=\"4\" fill=\"#F7CDA6\"/>\n<rect x=\"17\" y=\"76\" width=\"11\" height=\"10\" fill=\"#fff\"/><rect x=\"32\" y=\"76\" width=\"11\" height=\"10\" fill=\"#fff\"/>\n<path d=\"M17 78 h11 M17 82 h11 M32 78 h11 M32 82 h11\" stroke=\"#C4202F\" stroke-width=\"2.2\"/>\n<ellipse cx=\"22\" cy=\"87.5\" rx=\"8\" ry=\"3.4\" fill=\"#2B1A12\"/><ellipse cx=\"38\" cy=\"87.5\" rx=\"8\" ry=\"3.4\" fill=\"#2B1A12\"/>";
+const ELF_SPOTS = [
+  {id:'todoCard',    view:'today',  sel:'#todoCard',                    w:46, at:r=>[r.left + r.width*.52, r.top + 2]},
+  {id:'shopCard',    view:'today',  sel:'#shopCard',                    w:42, at:r=>[r.right - 40, r.bottom - 6]},
+  {id:'stripeL',     view:'today',  sel:'.stepper', phone:true,         w:46, at:r=>[r.left + r.width*.30, r.top + 10]},
+  {id:'stripeM',     view:'today',  sel:'.stepper', phone:true,         w:46, at:r=>[r.left + r.width*.66, r.top + 10]},
+  {id:'pointsCard',  view:'today',  sel:'.cardlink[data-go="points"]',  w:40, at:r=>[r.right - 28, r.bottom - 6]},
+  {id:'giftPile',    view:'today',  scene:true},
+  {id:'workCol',     view:'work',   sel:'#workCols .col:nth-child(3)',  w:46, at:r=>[r.left + r.width*.5, r.bottom - 50]},
+  {id:'wkndCol',     view:'wknd',   sel:'#wkndCols .col:nth-child(2)',  w:46, at:r=>[r.left + r.width*.5, r.bottom - 50]},
+  {id:'weekCol',     view:'week',   sel:'#weekCols .col:nth-child(6)',  w:46, at:r=>[r.left + r.width*.5, r.bottom - 50]},
+  {id:'monthCell',   view:'month',  sel:'#mgrid .cell:nth-child(19)',   w:36, at:r=>[r.right - 10, r.bottom - 4]},
+  {id:'listShop',    view:'lists',  sel:'#pShop', phone:true,           w:46, at:r=>[r.right - 44, r.bottom - 8]},
+  {id:'listTodo',    view:'lists',  sel:'#pTodo', phone:true,           w:46, at:r=>[r.right - 44, r.bottom - 8]},
+  {id:'pointsMaddy', view:'points', sel:'.pcard[data-person="Maddy"]', phone:true, w:46, at:r=>[r.right - 46, r.top + 112]},
+  {id:'pointsAva',   view:'points', sel:'.pcard[data-person="Ava"]',   phone:true, w:46, at:r=>[r.right - 46, r.top + 112]}
+];
+function elfSpots(){ return ELF_SPOTS.filter(s=>!isPhone || s.phone); }
+function elfSpotFor(key){ const list = elfSpots(); return list[elfIndex(key, list.length)]; }
+function elfActive(){ return theme === 'christmas' && elfActiveOn(elfDayKey()); }
+let elfRaf = 0;
+function schedElf(){ if(elfRaf) return; elfRaf = requestAnimationFrame(()=>{ elfRaf = 0; placeElf(); }); }
+function placeElf(){
+  const btn = $('elf'), gift = $('elfGift');
+  const hide = ()=>{ btn.classList.remove('on'); if(gift) gift.style.display = 'none'; };
+  if(!elfActive()){ hide(); return; }
+  const key = elfDayKey();
+  if(store.get('fp.elfFound', '') === key){ hide(); return; }
+  let sp = elfSpotFor(key);
+  // The gift pile only works while the scene has room to show it; on a packed day he moves to the To Do card instead.
+  const roomy = () => $('scene').offsetParent !== null && $('scene').getBoundingClientRect().height >= 60;
+  if(sp.scene && !roomy() && sectionOf(current) === 'today') sp = ELF_SPOTS.find(s=>s.id === 'todoCard');
+  if($('night').classList.contains('on') || sectionOf(current) !== sp.view){ hide(); return; }
+  if(sp.scene){
+    btn.classList.remove('on');
+    if(gift) gift.style.display = 'inline';
+    return;
+  }
+  if(gift) gift.style.display = 'none';
+  const el = document.querySelector(sp.sel);
+  if(!el || !el.getClientRects().length){ btn.classList.remove('on'); return; }
+  const r = el.getBoundingClientRect();
+  if(r.width < 10 || r.height < 10){ btn.classList.remove('on'); return; }
+  const f = sp.at(r), w = sp.w, h = w*1.5;
+  const left = Math.min(Math.max(4, f[0] - w/2), innerWidth - w - 4), top = f[1] - h;
+  if(top < 0 || f[1] > innerHeight + 4){ btn.classList.remove('on'); return; }
+  btn.style.cssText = 'left:'+left+'px;top:'+top+'px;width:'+w+'px;height:'+h+'px';
+  btn.classList.add('on');
+}
+function elfSay(text, x, y){
+  const d = document.createElement('div'); d.className = 'elfsay'; d.textContent = text;
+  d.style.left = Math.min(Math.max(90, x), innerWidth - 90) + 'px'; d.style.top = Math.max(10, y) + 'px';
+  document.body.appendChild(d); setTimeout(()=>d.remove(), 1800);
+}
+function elfFound(cx, cy, top){
+  store.set('fp.elfFound', elfDayKey());
+  puff(cx, cy); sound.poof(); elfSay('Found me!', cx, top - 48);
+  const gift = $('elfGift'); if(gift) gift.style.display = 'none';
+  $('elf').classList.add('vanish');
+  setTimeout(()=>{ $('elf').classList.remove('vanish'); $('elf').classList.remove('on'); }, 220);
+  poke();
+}
+$('elf').innerHTML = '<svg viewBox="0 0 60 90" width="100%" height="100%">'+ELF_INNER+'</svg>';
+$('elf').addEventListener('click', e=>{
+  e.stopPropagation();
+  const r = $('elf').getBoundingClientRect();
+  elfFound(r.left + r.width/2, r.top + r.height*.6, r.top);
+});
+$('scene').addEventListener('click', e=>{
+  if(!e.target.closest('[data-elfgift]')) return;
+  e.stopPropagation();
+  const r = $('elfGift').getBoundingClientRect();
+  elfFound(r.left + r.width/2, r.top + r.height*.6, r.top);
+});
+document.addEventListener('scroll', schedElf, true);
 
 /* ---------------- night ---------------- */
 let wokeUntil = 0;
 function isNight(){ const h = new Date().getHours(); return !isPhone && (h >= NIGHT_FROM || h < NIGHT_TO); }
-function drawNight(){ $('night').classList.toggle('on', isNight() && Date.now() > wokeUntil); }
+function drawNight(){
+  const on = isNight() && Date.now() > wokeUntil;
+  $('night').classList.toggle('on', on);
+  document.body.classList.toggle('night', on);
+}
 $('night').addEventListener('click', ()=>{ wokeUntil = Date.now() + 2*60*1000; drawNight(); show('today'); sync(); });
 
 /* ---------------- start ---------------- */
 drawMute();
+applyTheme();
 rebuild(); renderAll(); show(current);
 drawNight();
 if(!cfg) setupScreen(false); else sync();
@@ -1368,8 +1967,8 @@ if(!cfg) setupScreen(false); else sync();
 let lastDay = iso(today());
 setInterval(()=>{
   tickClock(); drawNight();
-  if(iso(today()) !== lastDay){ lastDay = iso(today()); renderAll(); }
-  else if(current==='today') renderToday();
+  if(iso(today()) !== lastDay){ lastDay = iso(today()); applyTheme(); renderAll(); }
+  else { if(current==='today') renderToday(); placeElf(); }
 }, 30000);
 setInterval(()=>{
   if(!cfg || document.hidden) return;
