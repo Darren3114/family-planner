@@ -46,13 +46,13 @@ html[data-theme="seaglass"] body::before{content:'';position:fixed;right:-70px;b
 /* ---- Halloween ---- */
 html[data-theme="halloween"]{--ink:#150B21;--ink-2:#21132F;--ink-3:#2D1A42;--rule:#44296A;--chalk:#F6EAD8;--chalk-dim:#C4B3D6;--chalk-faint:#A894C2;--now:#FF8A1F;--btnbg:#FF8A1F;--btntext:#1D0C00;--grabs:#7CE04A;--grabstext:#150B21;--danger:#FF82B0;--dangertext:#150B21;--ok:#9DE766;--past:.5;--scrim:rgba(10,4,20,.82);}
 html[data-theme="halloween"] body{background-image:radial-gradient(900px 520px at 78% 105%,#3B1D5C 0%,transparent 70%),radial-gradient(700px 400px at 5% -10%,#2A1450 0%,transparent 70%);}
-html[data-theme="halloween"] .datestamp{font-family:'Creepster','Archivo',sans-serif;font-weight:400;letter-spacing:.06em;font-size:34px;}
+html[data-theme="halloween"] .datestamp{font-family:'Creepster','Archivo',sans-serif;font-weight:400;letter-spacing:.06em;font-size:46px;}
 html[data-theme="halloween"] .datestamp .rest{font-weight:400;}
 
 /* ---- Christmas (sage + cranberry) ---- */
 html[data-theme="christmas"]{--ink:#CCDBC5;--ink-2:#F4F8EE;--ink-3:#E3EDDB;--rule:#A9C1A1;--chalk:#14301E;--chalk-dim:#2F4D38;--chalk-faint:#3C5A45;--now:#A81C2B;--btnbg:#A81C2B;--btntext:#FFFFFF;--grabs:#E3B23C;--grabstext:#14301E;--danger:#A81C2B;--dangertext:#FFFFFF;--ok:#356006;--past:.5;--scrim:rgba(20,48,30,.45);}
 html[data-theme="christmas"] body{background-image:radial-gradient(900px 500px at 85% 0%,#DCE8D4 0%,transparent 65%);}
-html[data-theme="christmas"] .datestamp{font-family:'Mountains of Christmas','Archivo',sans-serif;font-weight:700;font-size:36px;letter-spacing:.01em;}
+html[data-theme="christmas"] .datestamp{font-family:'Mountains of Christmas','Archivo',sans-serif;font-weight:700;font-size:48px;letter-spacing:.01em;}
 html[data-theme="christmas"] .datestamp .rest{font-weight:700;}
 html[data-theme="christmas"] .top{padding-top:18px;padding-bottom:2px;}
 html[data-theme="christmas"] nav{padding-bottom:8px;}
@@ -62,6 +62,16 @@ html[data-theme="christmas"] .stepper::before{content:'';position:absolute;left:
 html[data-theme="christmas"] .rail{padding-top:22px;margin-top:-22px;}
 html[data-theme="christmas"] .nowline .bar{height:2px;opacity:.8;}
 html[data-theme="christmas"] .addbtn{box-shadow:0 2px 0 #7C1020;}
+
+/* ---- Royal blue (blue + yellow) ---- */
+html[data-theme="royal"]{--ink:#14307F;--ink-2:#1B3F9E;--ink-3:#2450BA;--rule:#3F6AD6;--chalk:#F6F2E4;--chalk-dim:#C9D6F8;--chalk-faint:#A9BDF2;--now:#FFD83A;--btnbg:#FFD83A;--btntext:#14307F;--grabs:#FFD83A;--grabstext:#14307F;--danger:#FF9DBF;--dangertext:#14307F;--ok:#B4EC66;--past:.5;--scrim:rgba(6,16,64,.84);}
+html[data-theme="royal"] .datestamp{color:var(--now);}
+html[data-theme="royal"] .tab.on{background:var(--now);color:var(--ink);}
+html[data-theme="royal"] .ev .t,html[data-theme="royal"] .chip .ct,html[data-theme="royal"] .mev b,html[data-theme="royal"] .card h2,html[data-theme="royal"] .cardlink h2{color:var(--now);}
+html[data-theme="royal"] .anytime .ev .t{color:var(--chalk-dim);}
+html[data-theme="royal"] .card h2 .count,html[data-theme="royal"] .cardlink h2 .count{color:var(--chalk-dim);}
+html[data-theme="royal"] .box{border-color:var(--chalk-dim);}
+html[data-theme="royal"] .row.done .box{background:var(--chalk-dim);}
 
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html,body{height:100%;overflow:hidden;background-color:var(--ink);}
@@ -91,9 +101,9 @@ body.phone .ov{display:none !important;}
 
 /* ---------- chrome ---------- */
 .top{display:flex;align-items:center;gap:14px;padding:14px var(--pad) 10px;}
-.datestamp{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.01em;white-space:nowrap;}
+.datestamp{font-family:var(--display);font-weight:700;font-size:40px;letter-spacing:.01em;white-space:nowrap;}
 .datestamp .rest{color:var(--chalk-dim);font-weight:500;}
-.clock{font-family:var(--display);font-weight:600;font-size:26px;color:var(--chalk-dim);font-variant-numeric:tabular-nums;}
+.clock{font-family:var(--display);font-weight:600;font-size:40px;color:var(--chalk-dim);font-variant-numeric:tabular-nums;}
 .topr{margin-left:auto;display:flex;align-items:center;gap:6px;}
 .iconbtn{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;color:var(--chalk-faint);}
 .iconbtn svg{width:22px;height:22px;}
@@ -103,9 +113,9 @@ body.phone .ov{display:none !important;}
 .sdot.err{background:var(--danger);box-shadow:0 0 0 4px rgba(236,112,153,.22);}
 
 nav{display:flex;gap:6px;padding:0 var(--pad) 12px;align-items:center;}
-.tab{flex:0 0 auto;padding:9px 15px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.03em;color:var(--chalk-faint);min-height:42px;}
+.tab{flex:0 0 auto;padding:11px 20px;border-radius:999px;font-size:21px;font-weight:600;letter-spacing:.02em;color:var(--chalk-faint);min-height:54px;}
 .tab.on{color:var(--ink);background:var(--chalk);}
-.addbtn{margin-left:auto;flex:0 0 auto;padding:9px 20px;border-radius:999px;background:var(--btnbg);color:var(--btntext);font-weight:700;font-size:15px;letter-spacing:.03em;min-height:44px;}
+.addbtn{margin-left:auto;flex:0 0 auto;padding:11px 26px;border-radius:999px;background:var(--btnbg);color:var(--btntext);font-weight:700;font-size:21px;letter-spacing:.02em;min-height:54px;}
 
 main{flex:1;min-height:0;padding:0 var(--pad) var(--pad);}
 .view{display:none;height:100%;}
@@ -119,7 +129,7 @@ main{flex:1;min-height:0;padding:0 var(--pad) var(--pad);}
 .sbtn{flex:0 0 auto;width:72px;height:54px;border-radius:14px;background:var(--ink-2);display:grid;place-items:center;color:var(--chalk-dim);}
 .sbtn svg{width:26px;height:26px;}
 .sbtn:active{transform:scale(.95);}
-.slabel{flex:1;min-height:54px;border-radius:14px;text-align:center;font-family:var(--display);font-weight:700;font-size:19px;}
+.slabel{flex:1;min-height:54px;border-radius:14px;text-align:center;font-family:var(--display);font-weight:700;font-size:24px;}
 .slabel small{display:block;font-family:'Archivo',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--now);font-weight:700;margin-top:3px;}
 .slide-l{animation:slideL .24s ease;} .slide-r{animation:slideR .24s ease;}
 @keyframes slideL{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
@@ -135,6 +145,16 @@ main{flex:1;min-height:0;padding:0 var(--pad) var(--pad);}
 .switch{width:58px;height:34px;border-radius:999px;background:var(--rule);position:relative;flex:0 0 auto;}
 .switch::after{content:'';position:absolute;top:3px;left:3px;width:28px;height:28px;border-radius:50%;background:#fff;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3);}
 .switch.on{background:var(--ok);} .switch.on::after{left:27px;}
+.view.stepview{flex-direction:column;gap:0;}
+.view.stepview>.cols{flex:1 1 0;min-height:0;height:auto;}
+.view.stepview>.stepper{flex:0 0 auto;width:100%;}
+.view.stepview>.mbar,.view.stepview>.mhead{flex:0 0 auto;}
+.view.stepview>.mgrid{flex:1 1 0;}
+.mscard{position:fixed;left:50%;top:40%;transform:translate(-50%,-50%);z-index:52;pointer-events:none;text-align:center;font-family:var(--display);animation:msin 3.6s ease forwards;}
+.mscard b{display:block;font-size:200px;line-height:.9;font-weight:800;color:#FFD83A;-webkit-text-stroke:6px #2A0A3A;paint-order:stroke fill;text-shadow:0 10px 0 rgba(0,0,0,.25);}
+.mscard span{display:block;font-size:44px;font-weight:800;margin-top:10px;-webkit-text-stroke:5px #2A0A3A;paint-order:stroke fill;}
+@keyframes msin{0%{opacity:0;transform:translate(-50%,-50%) scale(.2)}12%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}20%{transform:translate(-50%,-50%) scale(1)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-62%) scale(1.05)}}
+body.phone .mscard b{font-size:110px;}
 body.shake main{animation:shake .5s cubic-bezier(.36,.07,.19,.97);}
 @keyframes shake{10%,90%{transform:translate(-2px,1px)}20%,80%{transform:translate(5px,-3px)}30%,50%,70%{transform:translate(-9px,4px)}40%,60%{transform:translate(9px,-4px)}}
 .pcard.flash{animation:pflash .7s ease-out;}
@@ -172,6 +192,8 @@ html[data-theme="halloween"] .scene .sc-hw,html[data-theme="christmas"] .scene .
 .card{background:var(--ink-2);border-radius:14px;padding:14px 16px;position:relative;}
 .card h2,.cardlink h2{font-size:24px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--chalk-faint);margin-bottom:10px;line-height:1.1;display:flex;align-items:center;gap:8px;}
 .card h2 .count,.cardlink h2 .count{margin-left:auto;color:var(--chalk-dim);font-size:15px;letter-spacing:.02em;}
+.chev{flex:0 0 auto;font-size:34px;line-height:.8;font-weight:500;letter-spacing:0;color:var(--chalk-faint);margin-left:-2px;}
+.card h2[data-go],.cardlink h2[data-go]{cursor:pointer;padding:8px 0;margin:-8px 0 2px;}
 .hplus{flex:0 0 auto;width:40px;height:40px;border-radius:999px;display:grid;place-items:center;background:var(--ink-3);color:var(--chalk);font-size:26px;line-height:1;letter-spacing:0;font-weight:500;}
 .hplus:active{transform:scale(.92);}
 .cardlink{display:block;width:100%;text-align:left;background:var(--ink-2);border-radius:14px;padding:14px 16px;cursor:pointer;}
@@ -185,6 +207,22 @@ body.phone .bow{display:none !important;}
 .box svg{width:16px;height:16px;opacity:0;}
 .row.done .box{background:var(--chalk-faint);}
 .row.done .box svg{opacity:1;}
+.row.shoprow{padding:0;gap:0;}
+.shoprow .rowmain{display:flex;align-items:center;gap:12px;flex:1;min-width:0;min-height:48px;padding:9px 0;text-align:left;}
+.grip{flex:0 0 auto;width:54px;height:48px;display:grid;place-items:center;color:var(--chalk-faint);touch-action:none;cursor:grab;}
+.grip svg{width:22px;height:22px;pointer-events:none;}
+.shead{display:flex;align-items:center;gap:4px;padding:2px 0 2px;margin-top:16px;border-bottom:2px solid var(--now);}
+.shead:first-child{margin-top:4px;}
+.shead .stxt{flex:1;min-width:0;font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:.08em;text-transform:uppercase;color:var(--now);overflow-wrap:anywhere;}
+.shead .hb{flex:0 0 auto;width:46px;height:46px;border-radius:12px;font-size:26px;line-height:1;color:var(--chalk-dim);display:grid;place-items:center;}
+.shead .hb:active{background:var(--ink-3);}
+.srow-ghost{position:fixed;z-index:70;pointer-events:none;background:var(--ink-3);border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.5);display:flex;align-items:center;padding:0 8px 0 16px;opacity:.97;}
+.srow-ghost .grip{color:var(--now);}
+.dropline{position:absolute;left:0;right:0;height:4px;border-radius:2px;background:var(--now);pointer-events:none;z-index:5;}
+.dragging{opacity:.22;}
+#shopList{position:relative;}
+.panel .ph #addHead{margin-left:auto;}
+.panel .ph #clearBought{margin-left:8px;}
 .row .txt{flex:1;font-size:17px;line-height:1.2;min-width:0;overflow-wrap:anywhere;}
 .row.done .txt{opacity:.4;text-decoration:line-through;}
 .tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;flex:0 0 auto;text-align:right;}
@@ -212,7 +250,7 @@ body.phone .bow{display:none !important;}
 /* ---------- month ---------- */
 #month{flex-direction:column;gap:0;}
 .mbar{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
-.mbar h2{font-family:var(--display);font-weight:700;font-size:20px;min-width:220px;}
+.mbar h2{font-family:var(--display);font-weight:700;font-size:20px;min-width:0;}
 .mbar .mnav{width:44px;height:40px;border-radius:10px;background:var(--ink-2);font-size:20px;color:var(--chalk-dim);}
 .mbar .mtoday{margin-left:auto;padding:0 14px;height:40px;border-radius:999px;border:1px solid var(--rule);font-size:13px;font-weight:600;color:var(--chalk-dim);}
 .mhead{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:5px;}
@@ -369,8 +407,10 @@ body.phone .ev .t{min-width:70px;font-size:17px;}
 body.phone .panel{border-radius:12px;}
 body.phone .themes{grid-template-columns:repeat(2,1fr);}
 
+body.phone #week.stepview>.cols{height:auto;}
+body.phone .stepper{padding-top:8px;}
 ::-webkit-scrollbar{width:0;height:0;}
-@media (prefers-reduced-motion:reduce){.bump,.slide-l,.slide-r,.pcard.flash,body.shake main,.flk-a,.flk-b,.tstar,.spk,.elfsay{animation:none;}.toast,#elf{transition:none;}.spk{opacity:0;}.elfsay{opacity:1;}}
+@media (prefers-reduced-motion:reduce){.mscard{animation:none;}.bump,.slide-l,.slide-r,.pcard.flash,body.shake main,.flk-a,.flk-b,.tstar,.spk,.elfsay{animation:none;}.toast,#elf{transition:none;}.spk{opacity:0;}.elfsay{opacity:1;}}
 </style>
 </head>
 <body>
@@ -392,8 +432,6 @@ body.phone .themes{grid-template-columns:repeat(2,1fr);}
   <button class="tab" data-v="wknd">Weekend</button>
   <button class="tab" data-v="week">7 days</button>
   <button class="tab" data-v="month">Month</button>
-  <button class="tab" data-v="lists">Lists</button>
-  <button class="tab" data-v="points">Points</button>
   <button class="addbtn" id="addbtn">+ Add</button>
 </nav>
 
@@ -449,15 +487,15 @@ body.phone .themes{grid-template-columns:repeat(2,1fr);}
     <div class="rail">
       <div class="card todo" id="todoCard">
         <svg class="bow" width="86" height="66" viewBox="-44 -24 88 66" aria-hidden="true"><g transform="translate(0 0) scale(0.9)"><path d="M0 0 C-14 -22 -40 -20 -38 -4 C-36 8 -14 6 0 0 Z" fill="#A81C2B"/><path d="M0 0 C14 -22 40 -20 38 -4 C36 8 14 6 0 0 Z" fill="#A81C2B"/><path d="M-2 2 L-16 28 L-8 24 L-2 32 Z" fill="#7C1020"/><path d="M2 2 L16 28 L8 24 L2 32 Z" fill="#7C1020"/><path d="M-28 -8 C-20 -10 -12 -6 -4 0 M28 -8 C20 -10 12 -6 4 0" stroke="#7C1020" stroke-width="2" fill="none" opacity=".6"/><circle cx="0" cy="0" r="7" fill="#A81C2B"/><circle cx="-1.5" cy="-1.5" r="3" fill="#D8435A" opacity=".7"/></g></svg>
-        <h2>To Do <span class="count" id="tdc"></span><button class="hplus" data-add="todo" aria-label="Add to To Do">+</button></h2>
+        <h2 data-go="todo" role="button" tabindex="0">To Do<span class="chev">&rsaquo;</span> <span class="count" id="tdc"></span><button class="hplus" data-add="todo" aria-label="Add to To Do">+</button></h2>
         <div id="todoRail"></div>
       </div>
       <button class="cardlink" data-go="points">
-        <h2>Points</h2>
+        <h2 data-go="points">Points<span class="chev">&rsaquo;</span></h2>
         <div class="mini" id="pointsMini"></div>
       </button>
-      <div class="cardlink" id="shopCard" data-go="lists" role="button" tabindex="0">
-        <h2>Shopping <span class="count" id="shc"></span><button class="hplus" data-add="shop" aria-label="Add to Shopping">+</button></h2>
+      <div class="cardlink" id="shopCard" data-go="shop" role="button" tabindex="0">
+        <h2 data-go="shop">Shopping<span class="chev">&rsaquo;</span> <span class="count" id="shc"></span><button class="hplus" data-add="shop" aria-label="Add to Shopping">+</button></h2>
         <div id="shopPeek"></div>
       </div>
     </div>
@@ -469,18 +507,20 @@ body.phone .themes{grid-template-columns:repeat(2,1fr);}
 
   <section class="view" id="month">
     <div class="mbar">
-      <button class="mnav" id="mPrev" aria-label="Previous month">&lsaquo;</button>
-      <button class="mnav" id="mNext" aria-label="Next month">&rsaquo;</button>
       <h2 id="mTitle"></h2>
-      <button class="mtoday" id="mToday">This month</button>
     </div>
     <div class="mhead"><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div><div>SUN</div></div>
     <div class="mgrid" id="mgrid"></div>
+    <div class="stepper" id="mStep">
+      <button class="sbtn" id="mPrev" aria-label="Previous month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="slabel" id="mLabel"></button>
+      <button class="sbtn" id="mNext" aria-label="Next month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
   </section>
 
   <section class="view" id="lists" data-only="">
     <div class="panel" id="pShop">
-      <div class="ph"><h2>Shopping</h2><span class="sub" id="shopSub"></span><button class="clear" id="clearBought" hidden>Clear ticked</button></div>
+      <div class="ph"><h2>Shopping</h2><span class="sub" id="shopSub"></span><button class="clear" id="addHead">+ Sub-head</button><button class="clear" id="clearBought" hidden>Clear ticked</button></div>
       <div class="newline"><input id="shopNew" placeholder="Add to the list" enterkeyhint="done" autocomplete="off" autocorrect="on"><button id="shopAdd">Add</button></div>
       <div class="items" id="shopList"></div>
     </div>
@@ -736,7 +776,8 @@ const PALETTES = {
   daylight:  {Darren:'#176B93', Naomi:'#B8305F', Maddy:'#4E7A0C', Ava:'#6A48D0', Everyone:'#0E161B'},
   seaglass:  {Darren:'#0F6A8F', Naomi:'#B0305C', Maddy:'#3F6F0F', Ava:'#6342C4', Everyone:'#0C3338'},
   halloween: {Darren:'#5FCBEB', Naomi:'#FF82B0', Maddy:'#9DE766', Ava:'#C9A9FF', Everyone:'#F6EAD8'},
-  christmas: {Darren:'#0B5F82', Naomi:'#962680', Maddy:'#356006', Ava:'#5A3BBA', Everyone:'#14301E'}
+  christmas: {Darren:'#0B5F82', Naomi:'#962680', Maddy:'#356006', Ava:'#5A3BBA', Everyone:'#14301E'},
+  royal:     {Darren:'#8FE3FF', Naomi:'#FF9DC4', Maddy:'#BDF56E', Ava:'#D5C2FF', Everyone:'#F6F2E4'}
 };
 const THEMES = [
   {id:'paper',     name:'Warm paper',    bg:'#F3EFE6', card:'#FFFFFF', text:'#1B2328', accent:'#FFB020', meta:'#F3EFE6'},
@@ -744,14 +785,15 @@ const THEMES = [
   {id:'dark',      name:'Dark',          bg:'#0E161B', card:'#1F313B', text:'#F1EDE2', accent:'#FFB020', meta:'#0E161B'},
   {id:'seaglass',  name:'Sea glass',     bg:'#CFECE9', card:'#F6FCFB', text:'#0C3338', accent:'#B3321F', meta:'#CFECE9'},
   {id:'halloween', name:'Halloween',     bg:'#150B21', card:'#2D1A42', text:'#F6EAD8', accent:'#FF8A1F', meta:'#150B21'},
-  {id:'christmas', name:'Christmas',     bg:'#CCDBC5', card:'#F4F8EE', text:'#14301E', accent:'#A81C2B', meta:'#CCDBC5'}
+  {id:'christmas', name:'Christmas',     bg:'#CCDBC5', card:'#F4F8EE', text:'#14301E', accent:'#A81C2B', meta:'#CCDBC5'},
+  {id:'royal',     name:'Royal blue',    bg:'#14307F', card:'#1B3F9E', text:'#F6F2E4', accent:'#FFD83A', meta:'#14307F'}
 ];
 const POINTS_PEOPLE = ['Maddy','Ava'];
 const POINT_STEPS = [1,2,3,5];
 const NIGHT_FROM = 22, NIGHT_TO = 6;       // dark 10pm to 6am
 const IDLE_MS = 90 * 1000;                 // back to Today after 90s
 const POLL_WALL = 60 * 1000, POLL_PHONE = 30 * 1000;
-const SCRIPT_VERSION_NEEDED = 2;
+const SCRIPT_VERSION_NEEDED = 3;
 
 /* ---------------- storage ---------------- */
 const store = {
@@ -767,7 +809,7 @@ if(!PALETTES[themePick]) themePick = 'dark';
 let seasonal = store.get('fp.seasonal', !isPhone);   // the wall follows the seasons; phones keep their own pick
 let theme = themePick;
 const colorOf = n => (PALETTES[theme] || PALETTES.dark)[n] || '#7F8A8F';
-const isLight = () => !(theme === 'dark' || theme === 'halloween');
+const isLight = () => !(theme === 'dark' || theme === 'halloween' || theme === 'royal');
 function applyTheme(){
   const s = seasonal ? seasonOf(new Date()) : null;
   theme = s || themePick;
@@ -826,9 +868,18 @@ function setEventTime(ev, op){
     ev.allDay = true; ev.sd = op.date; ev.ed = iso(addDays(fromIso(op.date),1)); delete ev.s; delete ev.e;
   }
 }
+// ids first, in the order given; anything not mentioned keeps its place after them.
+function reorderList(list, ids){
+  const by = {}; list.forEach(i=>{ by[i.id] = i; });
+  const seen = {}, out = [];
+  (ids || []).forEach(id=>{ if(by[id] && !seen[id]){ seen[id] = 1; out.push(by[id]); } });
+  list.forEach(i=>{ if(!seen[i.id]) out.push(i); });
+  return out;
+}
 function applyLocal(s, op){
   switch(op.type){
-    case 'shop.add': if(!s.shopping.some(i=>i.id===op.id)) s.shopping.push({id:op.id, text:op.text, bought:false}); break;
+    case 'shop.add': if(!s.shopping.some(i=>i.id===op.id)){ const it = {id:op.id, text:op.text, bought:false}; if(op.head) it.kind = 'head'; s.shopping.push(it); } break;
+    case 'shop.order': s.shopping = reorderList(s.shopping, op.ids); break;
     case 'shop.bought': s.shopping.forEach(i=>{ if(i.id===op.id) i.bought = op.bought; }); break;
     case 'shop.remove': s.shopping = s.shopping.filter(i=>i.id!==op.id); break;
     case 'shop.clear': s.shopping = s.shopping.filter(i=>!i.bought); break;
@@ -879,13 +930,16 @@ function neededRange(){
   const t = today();
   const g = monthGrid(monthOffset);
   const vd = addDays(t, dayOffset);
-  let s = [g.start, mondayOf(t), addDays(t,-1), vd].reduce((a,b)=>a<b?a:b);
-  let e = [addDays(g.end,1), addDays(t,16), addDays(vd,1)].reduce((a,b)=>a>b?a:b);
+  const ws = weekSpan();
+  let s = [g.start, mondayOf(t), addDays(t,-1), vd, ws[0]].reduce((a,b)=>a<b?a:b);
+  let e = [addDays(g.end,1), addDays(t,16), addDays(vd,1), ws[1]].reduce((a,b)=>a>b?a:b);
   return [iso(s), iso(e)];
 }
 
 // Ops an out-of-date (v1) script would mangle or silently drop. They wait until the script says it is v2.
 const needsV2 = op => op.type === 'event.edit' || (op.type === 'todo.add' && (op.grabs || String(op.who||'').indexOf(',') >= 0));
+// Which script version each change needs. Changes wait on the device until the script is new enough.
+const opNeeds = op => (op.type === 'shop.order' || (op.type === 'shop.add' && op.head)) ? 3 : (needsV2(op) ? 2 : 1);
 
 let syncTimer = null;
 function scheduleSync(ms){ clearTimeout(syncTimer); syncTimer = setTimeout(sync, ms); }
@@ -894,7 +948,7 @@ async function sync(){
   if(!cfg || syncing) return;
   syncing = true; drawStatus();
   const ver = server.version || 1;
-  const ops = outbox.filter(o=>ver >= SCRIPT_VERSION_NEEDED || !needsV2(o)).slice(0, 40);
+  const ops = outbox.filter(o=>ver >= opNeeds(o)).slice(0, 40);
   const [start, end] = neededRange();
   let again = false;
   try{
@@ -908,8 +962,8 @@ async function sync(){
     lastOk = Date.now(); store.set('fp.lastOk', lastOk);
     lastErr = null;
     if(rejected.size) lastErr = 'The Google script didn’t understand '+rejected.size+' change'+(rejected.size===1?'':'s')+'. Redeploy Code.gs from the setup guide.';
-    else if(server.version < SCRIPT_VERSION_NEEDED && outbox.some(needsV2)) lastErr = 'The Google script is out of date, so some changes are waiting. Redeploy Code.gs from the setup guide.';
-    again = outbox.some(o=>server.version >= SCRIPT_VERSION_NEEDED || !needsV2(o));
+    else if(outbox.some(o=>opNeeds(o) > server.version)) lastErr = 'The Google script is out of date, so some changes are waiting. Redeploy Code.gs from the setup guide.';
+    again = outbox.some(o=>server.version >= opNeeds(o));
   }catch(e){
     lastErr = (e && e.name === 'AbortError') ? 'Timed out' : ((e && e.message) || 'Could not connect');
   }
@@ -941,7 +995,8 @@ function demoServer(p){
   (p.ops||[]).forEach(op=>{
     if(db.seen[op.opId]) return; db.seen[op.opId] = 1;
     switch(op.type){
-      case 'shop.add': db.shopping.push({id:op.id,text:op.text,bought:false}); break;
+      case 'shop.add': db.shopping.push(op.head ? {id:op.id,text:op.text,bought:false,kind:'head'} : {id:op.id,text:op.text,bought:false}); break;
+      case 'shop.order': db.shopping = reorderList(db.shopping, op.ids); break;
       case 'shop.bought': db.shopping.forEach(i=>{ if(i.id===op.id) i.bought=!!op.bought; }); break;
       case 'shop.remove': db.shopping = db.shopping.filter(i=>i.id!==op.id); break;
       case 'shop.clear': db.shopping = db.shopping.filter(i=>!i.bought); break;
@@ -968,7 +1023,7 @@ function demoServer(p){
   });
   store.set('fp.demo', db);
   const pts = {}; POINTS_PEOPLE.forEach(n=>pts[n]=0); db.points.forEach(r=>{ pts[r.who]=(pts[r.who]||0)+r.delta; });
-  return new Promise(res=>setTimeout(()=>res({ok:true, version:2, applied:(p.ops||[]).map(o=>o.opId), rejected:[],
+  return new Promise(res=>setTimeout(()=>res({ok:true, version:3, applied:(p.ops||[]).map(o=>o.opId), rejected:[],
     events:db.ev, shopping:db.shopping, todos:db.todos.filter(t=>!t.done), points:pts}), 250));
 }
 
@@ -1073,7 +1128,7 @@ function renderToday(){
   $('pointsMini').innerHTML = POINTS_PEOPLE.map(n=>
     '<div class="m"><div class="n">'+(view.points[n]||0)+'</div><div class="l" style="color:'+colorOf(n)+'">'+esc(n)+'</div></div>').join('');
 
-  const open = view.shopping.filter(i=>!i.bought);
+  const open = view.shopping.filter(i=>!i.bought && i.kind !== 'head');
   $('shc').textContent = open.length ? open.length+' item'+(open.length===1?'':'s') : '';
   $('shopPeek').innerHTML = open.length
     ? open.slice(0,4).map(i=>'<div class="row"><div class="txt">'+esc(i.text)+'</div></div>').join('') + (open.length>4 ? '<div class="more">and '+(open.length-4)+' more</div>' : '')
@@ -1094,12 +1149,53 @@ function renderCols(target, dates){
       '</div><button class="add" data-day="'+ds+'" aria-label="Add to '+dayLabel(ds)+'">+</button></div>';
   }).join('');
 }
+// Weeks: one offset shared by Weekdays, Weekend and 7 days. From Saturday, Weekdays rolls on to next week.
+let weekOffset = 0;
+function weekBases(){
+  const t = today(), m = mondayOf(t), wd = t.getDay();
+  return {
+    work: addDays(wd === 0 || wd === 6 ? addDays(m,7) : m, weekOffset*7),
+    wknd: addDays(addDays(m,5), weekOffset*7),
+    week: addDays(t, weekOffset*7)
+  };
+}
+function weekSpan(){
+  const b = weekBases(), all = [b.work, b.wknd, b.week];
+  const lo = all.reduce((a,c)=>a<c?a:c), hi = all.reduce((a,c)=>a>c?a:c);
+  return [lo, addDays(hi, 7)];
+}
+const WEEK_LEN = {work:5, wknd:2, week:7};
+function rangeText(a, b){
+  const m1 = MON[a.getMonth()].slice(0,3), m2 = MON[b.getMonth()].slice(0,3);
+  return a.getMonth() === b.getMonth() ? a.getDate()+' – '+b.getDate()+' '+m2 : a.getDate()+' '+m1+' – '+b.getDate()+' '+m2;
+}
+function weekRel(start){
+  const n = Math.round((mondayOf(start) - mondayOf(today())) / (7*864e5));
+  if(n === 0) return 'This week'; if(n === 1) return 'Next week'; if(n === -1) return 'Last week';
+  return n > 0 ? 'In '+n+' weeks' : (-n)+' weeks ago';
+}
 function renderWeeks(){
-  const m = mondayOf(today()), t = today();
+  const b = weekBases();
   const range = (from,n) => Array.from({length:n}, (_,i)=>iso(addDays(from,i)));
-  renderCols('workCols', range(m,5));
-  renderCols('wkndCols', range(addDays(m,5),2));
-  renderCols('weekCols', range(t,7));
+  ['work','wknd','week'].forEach(v=>{
+    renderCols(v+'Cols', range(b[v], WEEK_LEN[v]));
+    const a = b[v], z = addDays(a, WEEK_LEN[v]-1), lab = $(v+'Label');
+    if(lab) lab.innerHTML = esc(rangeText(a, z)) + '<small>' + esc(weekRel(a)) + (weekOffset ? ' · tap to reset' : '') + '</small>';
+  });
+}
+function stepWeek(d){
+  weekOffset = d === 0 ? 0 : weekOffset + d;
+  renderWeeks();
+  const el = $(current + 'Cols'); if(el){ el.classList.remove('slide-l','slide-r'); void el.offsetWidth; if(d) el.classList.add(d>0 ? 'slide-l' : 'slide-r'); }
+  const ws = weekSpan(), r = server.range;
+  if(cfg && (!r || iso(ws[0]) < r[0] || iso(ws[1]) > r[1])) scheduleSync(50);
+  placeElf();
+}
+function stepMonth(d){
+  monthOffset = d === 0 ? 0 : monthOffset + d;
+  renderMonth(); scheduleSync(50);
+  const el = $('mgrid'); el.classList.remove('slide-l','slide-r'); void el.offsetWidth; if(d) el.classList.add(d>0 ? 'slide-l' : 'slide-r');
+  placeElf();
 }
 
 let monthOffset = 0;
@@ -1112,7 +1208,7 @@ function monthGrid(off){
 function renderMonth(){
   const g = monthGrid(monthOffset), t = iso(today());
   $('mTitle').textContent = MON[g.first.getMonth()]+' '+g.first.getFullYear();
-  $('mToday').style.visibility = monthOffset ? 'visible' : 'hidden';
+  $('mLabel').innerHTML = esc(MON[g.first.getMonth()]) + (monthOffset ? '<small>Back to this month</small>' : '<small>This month</small>');
   let h = '', count = 0;
   for(let d = g.start; d <= g.end; d = addDays(d,1)){
     const ds = iso(d), evs = dayEvents(ds), out = d.getMonth() !== g.first.getMonth();
@@ -1126,23 +1222,34 @@ function renderMonth(){
   $('mgrid').innerHTML = h;
 }
 
+const GRIP = '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.9"/><circle cx="15" cy="6" r="1.9"/><circle cx="9" cy="12" r="1.9"/><circle cx="15" cy="12" r="1.9"/><circle cx="9" cy="18" r="1.9"/><circle cx="15" cy="18" r="1.9"/></svg>';
+function shopRowHTML(i){
+  const id = esc(i.id);
+  if(i.kind === 'head') return '<div class="shead" data-sid="'+id+'"><span class="stxt">'+esc(i.text)+'</span>'+
+    '<button class="hb" data-hadd="'+id+'" aria-label="Add to '+esc(i.text)+'">+</button>'+
+    '<button class="hb" data-hdel="'+id+'" aria-label="Remove sub-head '+esc(i.text)+'">&times;</button>'+
+    '<div class="grip" data-grip aria-label="Drag to move">'+GRIP+'</div></div>';
+  return '<div class="row shoprow'+(i.bought?' done':'')+'" data-sid="'+id+'"><button class="rowmain" data-shop="'+id+'"><div class="box">'+TICK+'</div><div class="txt">'+esc(i.text)+'</div></button>'+
+    '<div class="grip" data-grip aria-label="Drag to move">'+GRIP+'</div></div>';
+}
+let drag = null, pendingLists = false;
 function renderLists(){
-  const open = view.shopping.filter(i=>!i.bought), got = view.shopping.filter(i=>i.bought);
+  if(drag){ pendingLists = true; return; }
+  const open = view.shopping.filter(i=>!i.bought && i.kind !== 'head'), got = view.shopping.filter(i=>i.bought);
   $('shopSub').textContent = open.length ? open.length+' to get' : '';
   $('clearBought').hidden = !got.length;
   $('clearBought').textContent = 'Clear ticked ('+got.length+')';
-  $('shopList').innerHTML = view.shopping.length
-    ? open.concat(got).map(i=>'<button class="row'+(i.bought?' done':'')+'" data-shop="'+esc(i.id)+'"><div class="box">'+TICK+'</div><div class="txt">'+esc(i.text)+'</div></button>').join('')
-    : '<div class="empty" style="padding:14px 0">Nothing needed.</div>';
+  $('shopList').innerHTML = view.shopping.length ? view.shopping.map(shopRowHTML).join('') : '<div class="empty" style="padding:14px 0">Nothing needed.</div>';
   $('todoList').innerHTML = view.todos.length ? view.todos.map(todoRow).join('') : '<div class="empty" style="padding:14px 0">Nothing to remember.</div>';
   $('todoChips').innerHTML = chipsHTML(tdSel, 'panel');
 }
 
 function renderPoints(){
+  POINTS_PEOPLE.forEach(n=>{ if(!(view.points[n]||0) && msDone[n]){ msDone[n] = 0; store.set('fp.ms', msDone); } });
   $('points').innerHTML = POINTS_PEOPLE.map(n=>{
     const c = colorOf(n);
     return '<div class="pcard" data-person="'+n+'"><div class="pname" style="color:'+c+'">'+esc(n)+'</div>'+
-      '<div class="score" id="score-'+n+'">'+(view.points[n]||0)+'<small>pts</small></div>'+
+      '<div class="score" id="score-'+n+'">'+(holdScore[n] !== undefined ? holdScore[n] : (view.points[n]||0))+'<small>pts</small></div>'+
       '<div class="pbtns">'+POINT_STEPS.map(s=>'<button style="background:'+c+'" data-pts="'+s+'" data-who="'+n+'">+'+s+'</button>').join('')+'</div>'+
       '<div class="pfoot"><button class="minus" data-pts="-1" data-who="'+n+'">−1</button><button data-payout="'+n+'">Reset score</button></div></div>';
   }).join('');
@@ -1173,13 +1280,21 @@ function show(v){
   document.querySelectorAll('#pnav button').forEach(b=>b.classList.toggle('on', b.dataset.v===v));
   poke(); placeElf();
 }
-$('nav').addEventListener('click', e=>{ const t = e.target.closest('.tab'); if(t) show(t.dataset.v); });
-$('pnav').addEventListener('click', e=>{ const t = e.target.closest('button'); if(t) show(t.dataset.v); });
+// The Today tab always lands on today, however far you had stepped.
+function goTab(v){
+  if(v === 'today'){ if(dayOffset) stepDay(0); $('spine').scrollTop = 0; }
+  show(v);
+}
+$('nav').addEventListener('click', e=>{ const t = e.target.closest('.tab'); if(t) goTab(t.dataset.v); });
+$('pnav').addEventListener('click', e=>{ const t = e.target.closest('button'); if(t) goTab(t.dataset.v); });
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-add]')) return;
   const g = e.target.closest('[data-go]'); if(g) show(g.dataset.go);
 });
-$('shopCard').addEventListener('keydown', e=>{ if((e.key==='Enter'||e.key===' ') && e.target===$('shopCard')){ e.preventDefault(); show('lists'); } });
+document.addEventListener('keydown', e=>{
+  if((e.key==='Enter'||e.key===' ') && e.target.matches && e.target.matches('h2[data-go]')){ e.preventDefault(); show(e.target.dataset.go); }
+});
+$('shopCard').addEventListener('keydown', e=>{ if((e.key==='Enter'||e.key===' ') && e.target===$('shopCard')){ e.preventDefault(); show('shop'); } });
 
 function stepDay(d){
   dayOffset = d===0 ? 0 : dayOffset + d;
@@ -1212,15 +1327,42 @@ function poke(){
     if(!cfg) return;
     closeAdd(); closeItem(); closeModal();
     if(monthOffset){ monthOffset = 0; renderMonth(); scheduleSync(100); }
+    if(weekOffset){ weekOffset = 0; renderWeeks(); scheduleSync(100); }
     if(dayOffset){ dayOffset = 0; renderToday(); }
     show('today');
   }, IDLE_MS);
 }
 ['touchstart','mousedown','keydown'].forEach(ev=>document.addEventListener(ev, poke, {passive:true}));
 
-$('mPrev').onclick = ()=>{ monthOffset--; renderMonth(); scheduleSync(50); placeElf(); };
-$('mNext').onclick = ()=>{ monthOffset++; renderMonth(); scheduleSync(50); placeElf(); };
-$('mToday').onclick = ()=>{ monthOffset = 0; renderMonth(); scheduleSync(50); placeElf(); };
+$('mPrev').onclick = ()=>stepMonth(-1);
+$('mNext').onclick = ()=>stepMonth(1);
+$('mLabel').onclick = ()=>{ if(monthOffset) stepMonth(0); };
+// A stepper bar under each week view, built here so the three stay identical.
+['work','wknd','week'].forEach(v=>{
+  const sec = $(v); sec.classList.add('stepview');
+  sec.insertAdjacentHTML('beforeend',
+    '<div class="stepper"><button class="sbtn" data-wstep="-1" aria-label="Previous week"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>'+
+    '<button class="slabel" id="'+v+'Label" data-wstep="0"></button>'+
+    '<button class="sbtn" data-wstep="1" aria-label="Next week"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div>');
+});
+$('month').classList.add('stepview');
+document.addEventListener('click', e=>{
+  const b = e.target.closest('[data-wstep]'); if(!b) return;
+  const d = parseInt(b.dataset.wstep, 10);
+  if(d === 0 && !weekOffset) return;
+  stepWeek(d);
+});
+// Swipe left/right on the week views and Month, like Today.
+function onSwipe(el, fn){
+  let sx = 0, sy = 0, st = 0;
+  el.addEventListener('touchstart', e=>{ const t = e.touches[0]; sx = t.clientX; sy = t.clientY; st = Date.now(); }, {passive:true});
+  el.addEventListener('touchend', e=>{
+    const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
+    if(Date.now() - st < 700 && Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy)*2) fn(dx < 0 ? 1 : -1);
+  }, {passive:true});
+}
+['workCols','wkndCols','weekCols'].forEach(id=>onSwipe($(id), stepWeek));
+onSwipe($('mgrid'), stepMonth);
 
 /* ---------------- toast ---------------- */
 let toastTimer = null, toastUndo = null;
@@ -1261,9 +1403,33 @@ $('clearBought').onclick = ()=>enqueue({type:'shop.clear'});
 function onEnter(input, fn){
   input.addEventListener('keydown', e=>{ if(e.key==='Enter' && !e.isComposing){ e.preventDefault(); fn(); } });
 }
-function addShopText(raw){
+// Adds items to the end of the list, or to the end of one sub-head's section if `section` is given.
+function addShopText(raw, section){
+  const ids = [];
   raw.split(/,|\n/).map(x=>x.trim()).filter(Boolean).forEach(text=>{
-    enqueue({type:'shop.add', id:uid(), text:cap(text)});
+    const id = uid(); ids.push(id);
+    enqueue({type:'shop.add', id, text:cap(text)});
+  });
+  if(!section || !ids.length) return;
+  const order = view.shopping.map(i=>i.id).filter(x=>ids.indexOf(x) < 0);
+  let at = order.indexOf(section); if(at < 0) return;
+  at++;
+  while(at < order.length){ const it = view.shopping.find(i=>i.id === order[at]); if(!it || it.kind === 'head') break; at++; }
+  order.splice.apply(order, [at, 0].concat(ids));
+  enqueue({type:'shop.order', ids:order});
+}
+function addHead(raw){
+  const text = cap(raw.trim()); if(!text) return;
+  enqueue({type:'shop.add', id:uid(), text, head:true});
+}
+function removeHead(id){
+  const h = view.shopping.find(i=>i.id === id); if(!h) return;
+  const ids = view.shopping.map(i=>i.id);
+  enqueue({type:'shop.remove', id});
+  toast('Removed '+h.text, ()=>{
+    const nid = uid();
+    enqueue({type:'shop.add', id:nid, text:h.text, head:true});
+    enqueue({type:'shop.order', ids:ids.map(x=>x === id ? nid : x)});
   });
 }
 // Who/Up-for-grabs choice: tapped chips win; otherwise a name typed at the start of the text.
@@ -1301,15 +1467,18 @@ onEnter($('shopNew'), addShopPanel); $('shopAdd').onclick = ()=>{ addShopPanel()
 onEnter($('todoNew'), addTodoPanel); $('todoAdd').onclick = ()=>{ addTodoPanel(); $('todoNew').focus(); };
 
 /* ---------------- add to To Do / Shopping sheet ---------------- */
-let itemKind = null, itemOpen = false;
-function openItem(kind){
-  itemKind = kind; itemOpen = true; itemSel = {who:[], grabs:false};
-  $('itemLead').textContent = kind === 'todo' ? 'Add to To Do' : 'Add to Shopping';
+let itemKind = null, itemOpen = false, itemSection = null;
+const HEAD_IDEAS = ['Supermarket','Pharmacy','Bunnings'];
+function openItem(kind, section){
+  itemKind = kind; itemOpen = true; itemSel = {who:[], grabs:false}; itemSection = section || null;
+  const head = itemSection ? view.shopping.find(i=>i.id === itemSection) : null;
+  $('itemLead').textContent = kind === 'todo' ? 'Add to To Do' : (kind === 'head' ? 'Add a sub-head' : (head ? 'Add under '+head.text : 'Add to Shopping'));
   $('itemIn').value = '';
-  $('itemIn').placeholder = kind === 'todo' ? 'Wash the car' : 'Milk, bread, eggs';
-  $('itemHint').textContent = kind === 'todo' ? 'Pick who it’s for, or Up for grabs if anyone can do it for extra points.' : 'Separate items with commas to add several at once.';
-  $('itemChips').hidden = kind !== 'todo';
-  $('itemChips').innerHTML = chipsHTML(itemSel, 'sheet');
+  $('itemIn').placeholder = kind === 'todo' ? 'Wash the car' : (kind === 'head' ? 'Pharmacy' : 'Milk, bread, eggs');
+  $('itemHint').textContent = kind === 'todo' ? 'Pick who it’s for, or Up for grabs if anyone can do it for extra points.'
+    : (kind === 'head' ? 'It goes on the end of the list. Items you add after it sit underneath, and you can drag it into place.' : 'Separate items with commas to add several at once.');
+  $('itemChips').hidden = kind === 'shop';
+  $('itemChips').innerHTML = kind === 'head' ? HEAD_IDEAS.map(n=>'<button class="wchip" data-sug="'+esc(n)+'">'+esc(n)+'</button>').join('') : chipsHTML(itemSel, 'sheet');
   $('itemScrim').classList.add('on');
   setTimeout(()=>$('itemIn').focus(), 60);
 }
@@ -1317,10 +1486,81 @@ function closeItem(){ $('itemScrim').classList.remove('on'); itemOpen = false; $
 function saveItem(){
   const raw = $('itemIn').value.trim();
   if(!raw){ closeItem(); return; }
-  if(itemKind === 'todo') submitTodo(raw, itemSel); else addShopText(raw);
+  if(itemKind === 'todo') submitTodo(raw, itemSel); else if(itemKind === 'head') addHead(raw); else addShopText(raw, itemSection);
   closeItem();
-  toast('Added to '+(itemKind === 'todo' ? 'To Do' : 'Shopping'));
+  toast(itemKind === 'head' ? 'Sub-head added' : 'Added to '+(itemKind === 'todo' ? 'To Do' : 'Shopping'));
 }
+$('addHead').onclick = ()=>openItem('head');
+document.addEventListener('click', e=>{
+  const sug = e.target.closest('[data-sug]'); if(sug){ $('itemIn').value = sug.dataset.sug; $('itemIn').focus(); return; }
+  const add = e.target.closest('[data-hadd]'); if(add){ openItem('shop', add.dataset.hadd); return; }
+  const del = e.target.closest('[data-hdel]'); if(del){ removeHead(del.dataset.hdel); }
+});
+
+/* ---- drag to reorder (shopping). A sub-head carries the items under it. ---- */
+$('shopList').addEventListener('pointerdown', e=>{
+  const g = e.target.closest('[data-grip]'); if(!g || drag) return;
+  e.preventDefault(); startDrag(e, g);
+});
+function startDrag(e, grip){
+  const list = $('shopList'), row = grip.closest('[data-sid]'); if(!row) return;
+  const items = view.shopping, ids = items.map(i=>i.id), idx = ids.indexOf(row.dataset.sid); if(idx < 0) return;
+  const isHead = items[idx].kind === 'head';
+  let end = idx + 1; if(isHead) while(end < items.length && items[end].kind !== 'head') end++;
+  const group = ids.slice(idx, end);
+  const all = Array.prototype.slice.call(list.querySelectorAll('[data-sid]'));
+  const groupEls = all.filter(el=>group.indexOf(el.dataset.sid) >= 0), rest = all.filter(el=>group.indexOf(el.dataset.sid) < 0);
+  const rr = row.getBoundingClientRect();
+  const ghost = row.cloneNode(true); ghost.classList.add('srow-ghost');
+  ghost.style.cssText = 'left:'+rr.left+'px;top:'+rr.top+'px;width:'+rr.width+'px;height:'+rr.height+'px;';
+  if(group.length > 1){ const n = document.createElement('div'); n.style.cssText = 'font-size:13px;color:var(--chalk-dim);margin-left:8px;white-space:nowrap'; n.textContent = '+ '+(group.length-1)+' item'+(group.length > 2 ? 's' : ''); ghost.insertBefore(n, ghost.querySelector('.grip')); }
+  document.body.appendChild(ghost);
+  groupEls.forEach(el=>el.classList.add('dragging'));
+  const line = document.createElement('div'); line.className = 'dropline'; list.appendChild(line);
+  drag = {pid:e.pointerId, y:e.clientY, off:e.clientY - rr.top, h:rr.height, ghost, line, rest, group, isHead, before:null, raf:0, grip};
+  try{ grip.setPointerCapture(e.pointerId); }catch(err){}
+  grip.addEventListener('pointermove', onDragMove); grip.addEventListener('pointerup', onDragEnd); grip.addEventListener('pointercancel', onDragEnd);
+  moveDrag(e.clientY);
+  drag.raf = requestAnimationFrame(dragLoop);
+}
+function onDragMove(e){ if(drag) drag.y = e.clientY; moveDrag(e.clientY); }
+function dragLoop(){
+  if(!drag) return;
+  const lr = $('shopList').getBoundingClientRect();
+  if(drag.y < lr.top + 56) $('shopList').scrollTop -= 14; else if(drag.y > lr.bottom - 56) $('shopList').scrollTop += 14;
+  moveDrag(drag.y);
+  drag.raf = requestAnimationFrame(dragLoop);
+}
+function moveDrag(y){
+  const d = drag; if(!d) return;
+  d.ghost.style.top = (y - d.off)+'px';
+  const list = $('shopList'), lr = list.getBoundingClientRect();
+  const cands = d.isHead ? d.rest.filter((el,i)=>i === 0 || el.classList.contains('shead')) : d.rest;
+  let before = null;
+  for(let i=0;i<cands.length;i++){ const r = cands[i].getBoundingClientRect(); if(y < r.top + r.height/2){ before = cands[i]; break; } }
+  d.before = before;
+  let top;
+  if(before) top = before.getBoundingClientRect().top;
+  else { const last = d.rest[d.rest.length-1]; top = last ? last.getBoundingClientRect().bottom : lr.top; }
+  d.line.style.top = (top - lr.top + list.scrollTop - 2)+'px';
+}
+function onDragEnd(e){
+  const d = drag; if(!d) return;
+  cancelAnimationFrame(d.raf);
+  d.grip.removeEventListener('pointermove', onDragMove); d.grip.removeEventListener('pointerup', onDragEnd); d.grip.removeEventListener('pointercancel', onDragEnd);
+  try{ d.grip.releasePointerCapture(d.pid); }catch(err){}
+  d.ghost.remove(); d.line.remove();
+  const before = d.before, canceled = e && e.type === 'pointercancel';
+  const restIds = d.rest.map(el=>el.dataset.sid);
+  const at = before ? restIds.indexOf(before.dataset.sid) : restIds.length;
+  const next = restIds.slice(0, at).concat(d.group, restIds.slice(at));
+  const was = view.shopping.map(i=>i.id);
+  drag = null;
+  if(!canceled && next.join('|') !== was.join('|')){ enqueue({type:'shop.order', ids:next}); sound.tick(); }
+  else renderLists();
+  if(pendingLists){ pendingLists = false; renderLists(); }
+}
+
 $('itemCancel').onclick = closeItem;
 $('itemSave').onclick = saveItem;
 $('itemIn').addEventListener('keydown', e=>{ if(e.key==='Enter' && !e.isComposing){ e.preventDefault(); saveItem(); } });
@@ -1337,6 +1577,7 @@ $('points').addEventListener('click', e=>{
   if(b){
     const who = b.dataset.who, delta = parseInt(b.dataset.pts,10);
     if(delta < 0 && (view.points[who]||0) <= 0) return;
+    const before = view.points[who]||0;
     const id = uid();
     enqueue({type:'points.add', id, who, delta});
     const sc = $('score-'+who); if(sc){ sc.classList.remove('bump'); void sc.offsetWidth; sc.classList.add('bump'); }
@@ -1344,6 +1585,8 @@ $('points').addEventListener('click', e=>{
       const p = centreOf(b);
       celebrate(p.x, p.y, who, delta);
       sound.points(delta);
+      const mile = milestoneCross(who, before, before + delta);
+      if(mile) fireworks(who, mile);
       toast(who+' +'+delta, ()=>enqueue({type:'points.undo', id, who, delta}));
     } else {
       sound.tick();
@@ -1361,9 +1604,10 @@ $('points').addEventListener('click', e=>{
       '<div class="acts"><button class="cancel" data-close>Cancel</button><button class="danger" id="confirmPayout">Reset to 0</button></div>');
     $('confirmPayout').onclick = ()=>{
       closeModal();
+      holdScore[who] = pts; msDone[who] = 0; store.set('fp.ms', msDone);
       enqueue({type:'points.payout', who});
-      celebrate(innerWidth/2, innerHeight*0.5, who, 8);
-      sound.payout();
+      coins(who); countDownScore(who, pts);
+      sound.kaching();
     };
   }
 });
@@ -1548,7 +1792,7 @@ $('statusBtn').onclick = ()=>{
   openModal(
     '<div class="mtitle">Sync</div><div class="stat">'+
     'Connected to: <b>'+(cfg.url==='demo' ? 'Demo (not real data)' : 'Google')+'</b><br>'+
-    'Script version: <b>'+(server.version || 1)+'</b>'+((server.version||1) < SCRIPT_VERSION_NEEDED ? ' <span style="color:var(--danger)">(needs 2)</span>' : '')+'<br>'+
+    'Script version: <b>'+(server.version || 1)+'</b>'+((server.version||1) < SCRIPT_VERSION_NEEDED ? ' <span style="color:var(--danger)">(needs 3)</span>' : '')+'<br>'+
     'Last synced: <b>'+ago(lastOk)+'</b><br>'+
     'Changes waiting to send: <b>'+outbox.length+'</b>'+
     (lastErr ? '<br>Problem: <b style="color:var(--danger)">'+esc(lastErr)+'</b>' : '')+
@@ -1639,12 +1883,16 @@ const sound = (()=>{
       const end = t + steps*0.075;
       tone(c, 2093, end, 0.35, 'triangle', 0.12); tone(c, 2637, end+0.06, 0.4, 'triangle', 0.09);
     },
-    // A whoosh of flame (a rising then falling rush of air) with a little crackle. No boom.
+    // BOOM: a deep sub drop, a blast, a crack, then a long rumble with debris pattering down.
     fire(){
       const c = ac(); if(!c) return; const t = c.currentTime;
-      noise(c, t, 0.75, 220, 3400, 0.5, 0.18);
-      noise(c, t+0.12, 1.1, 3000, 600, 0.3, 0.25);
-      for(let i=0;i<9;i++) noise(c, t+0.25+Math.random()*1.0, 0.04, 2500+Math.random()*3500, 1500, 0.07, 0.004, 'highpass');
+      tone(c, 72, t+0.02, 1.7, 'sine', 0.6, 26);
+      tone(c, 150, t+0.02, 0.5, 'sine', 0.35, 50);
+      noise(c, t, 1.3, 1200, 60, 0.7, 0.01, 'lowpass');
+      noise(c, t+0.03, 0.14, 6000, 800, 0.4, 0.002, 'highpass');
+      noise(c, t+0.15, 3.2, 300, 70, 0.4, 0.6, 'lowpass');
+      noise(c, t+0.5, 1.4, 400, 2800, 0.18, 0.4, 'bandpass');
+      for(let i=0;i<12;i++) noise(c, t+0.8+Math.random()*2.4, 0.05, 2000+Math.random()*3000, 1200, 0.07, 0.004, 'highpass');
     },
     poof(){
       const c = ac(); if(!c) return; const t = c.currentTime;
@@ -1655,17 +1903,41 @@ const sound = (()=>{
       const c = ac(); if(!c) return; const t = c.currentTime;
       [0,4,7,12].forEach((s,i)=>tone(c, 392*Math.pow(2,s/12), t+i*0.1, 0.5, 'triangle', 0.14));
       tone(c, 1568, t+0.45, 0.8, 'sine', 0.1);
+    },
+    // Cash register: a click, a bright bell, then coins clinking as they land.
+    kaching(){
+      const c = ac(); if(!c) return; const t = c.currentTime;
+      noise(c, t, 0.05, 3000, 1500, 0.25, 0.003, 'highpass');
+      tone(c, 1568, t+0.09, 0.9, 'triangle', 0.16); tone(c, 2349, t+0.09, 0.9, 'sine', 0.1); tone(c, 3136, t+0.09, 0.7, 'sine', 0.06);
+      for(let i=0;i<14;i++) tone(c, 2800+Math.random()*2600, t+0.35+Math.random()*1.3, 0.12, 'triangle', 0.05);
+    },
+    // Rocket whistle, thump and crackle for each firework, timed to match the picture.
+    fireworks(times, durs){
+      const c = ac(); if(!c) return; const t = c.currentTime;
+      times.forEach((ms,i)=>{
+        const s = t + ms/1000, d = durs[i]/1000, last = i === times.length-1, b = s + d;
+        noise(c, s, d, 500, 2600, 0.12, 0.2, 'bandpass');
+        noise(c, b, 0.5, 1800, 140, last ? 0.6 : 0.42, 0.01, 'lowpass');
+        tone(c, 90, b, 0.35, 'sine', 0.35, 40);
+        for(let j=0;j<8;j++) noise(c, b+0.12+Math.random()*0.7, 0.04, 3000+Math.random()*4000, 1800, 0.06, 0.004, 'highpass');
+      });
     }
   };
 })();
 
 /* ---------------- effects ---------------- */
-// One canvas over everything. Fire is drawn as flat, cel-shaded vector shapes (anime style):
-// layered teardrop flames, a starburst, speed lines and diamond embers. Confetti is unchanged.
+// One canvas over everything. Everything is drawn in code, in a flat cel-shaded "anime" style:
+//  - To Do done: a full-screen mushroom cloud with inked outlines, starburst, speed lines and embers
+//  - Points: confetti from both corners and the top; fireworks when a score crosses a multiple of 10
+//  - Reset score: a shower of gold coins
+// fxQ is a budget (0.4 to 1) that shrinks if the screen stutters, so a slow iPad drops detail instead of frames.
 const fx = $('fx'), g2 = fx.getContext('2d');
 let parts = [], running = false, dpr = 1, frames = 0, lastT = 0;
 const reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-const MAX_PARTS = 1400, TAU = Math.PI*2;
+const MAX_PARTS = 3200, TAU = Math.PI*2;
+let fxQ = 1, fxFrames = 0, fxSum = 0;
+const holdScore = {};
+let msDone = store.get('fp.ms', {});
 function sizeFx(){
   dpr = Math.min(window.devicePixelRatio || 1, 2); fx.width = innerWidth*dpr; fx.height = innerHeight*dpr; g2.setTransform(dpr,0,0,dpr,0,0);
 }
@@ -1679,7 +1951,7 @@ function room(){ return MAX_PARTS - parts.length; }
 function celebrate(x, y, who, power){
   const H = innerHeight, W = innerWidth, k = H/810;
   const colors = [colorOf(who), '#FFB020', isLight() ? '#1B2328' : '#F1EDE2', colorOf(who), '#EC7099', '#54B6DC', '#A9D84E'];
-  let n = reduced ? 40 : Math.round(220 + power*120);
+  let n = reduced ? 40 : Math.round((420 + power*220) * fxQ);
   n = Math.min(n, room());
   for(let i=0;i<n;i++){
     const left = i % 2 === 0;
@@ -1690,7 +1962,13 @@ function celebrate(x, y, who, power){
       w: rnd(9,17)*k, h: rnd(5,9)*k, rot: rnd(0,6.3), vr: rnd(-0.3,0.3),
       term: rnd(2.2,4.2)*k, sway: rnd(0.8,2.2), ph: rnd(0,6.3), life: 1, color: colors[i % colors.length]});
   }
-  const m = Math.min(reduced ? 10 : 70, room());
+  // a rain from the top as well
+  const top = Math.min(reduced ? 0 : Math.round(n*0.3), room());
+  for(let i=0;i<top;i++){
+    parts.push({k:'c', x:rnd(0,W), y:-rnd(10,160), vx:rnd(-1.2,1.2), vy:rnd(1,4)*k, delay:Math.floor(rnd(0,40)),
+      w: rnd(9,17)*k, h: rnd(5,9)*k, rot: rnd(0,6.3), vr: rnd(-0.3,0.3), term: rnd(2.2,4.2)*k, sway: rnd(0.8,2.2), ph: rnd(0,6.3), life: 1, color: colors[i % colors.length]});
+  }
+  const m = Math.min(reduced ? 10 : Math.round(110*fxQ), room());
   for(let i=0;i<m;i++){
     const a = rnd(0, Math.PI*2), v = rnd(5, 15);
     parts.push({k:'c', x, y, vx: Math.cos(a)*v, vy: Math.sin(a)*v - 4, delay: 0,
@@ -1701,30 +1979,248 @@ function celebrate(x, y, who, power){
   loop();
 }
 
-// To Do done: an anime-style explosion that turns into an inferno, plus a big screen shake.
+// To Do done: an anime-style mushroom cloud that fills the screen, plus a big screen shake.
+// Drawn in the spirit of a black-ink engraving (bubbly cauliflower cap, hatched stem, spiky ground burst), coloured in flat cel bands.
+const INK = '#240808';
+const hexOf = a => '#' + a.map(v=>Math.round(v).toString(16).padStart(2,'0')).join('');
+const rgbOf = h => [1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+function mixHex(a, b, t){ const A = rgbOf(a), B = rgbOf(b); return hexOf(A.map((v,i)=>v + (B[i]-v)*t)); }
+function ramp(stops, t){ t = Math.max(0, Math.min(1, t)); const n = stops.length-1, i = Math.min(n-1, Math.floor(t*n)); return mixHex(stops[i], stops[i+1], t*n - i); }
+// The cloud cools over its life: white-hot, then yellow, orange, red, and finally dark brown, with pale dust round the base.
+const CAP_RAMP = ['#2E100D','#6B1B12','#C23216','#F2641A','#FFB52E','#FFE98A','#FFFBEA'];
+const clamp01 = v => Math.max(0, Math.min(1, v));
+function heatCols(h){ const base = ramp(CAP_RAMP, clamp01(h)); return {base, hi:mixHex(base, '#FFF6D0', .38), sh:mixHex(base, '#2A0806', .45)}; }
+function dustCols(c, k){ return {base:mixHex(c.base, '#CDAA80', k), hi:mixHex(c.hi, '#F1DDBB', k), sh:mixHex(c.sh, '#8E6B47', k)}; }
+function mkLobe(px, py, sz, lv){ return {px, py, sz, lv, ph:rnd(0,TAU), hs:Math.random()}; }
+function buildCloud(){
+  const j = (v, w) => v + rnd(-w, w);
+  const P = (px, py, r, lv) => mkLobe(j(px,.03), j(py,.03), r*rnd(.95,1.05), lv);
+  // back to front: crown, sides, centre, then a lumpy underside so the dome overhangs a narrow stem
+  const cap = [
+    P(0,-.68,.30,.95), P(-.40,-.58,.26,.85), P(.40,-.58,.26,.80),
+    P(-.70,-.34,.24,.66), P(.70,-.34,.24,.62), P(0,-.36,.30,.78),
+    P(-.88,-.02,.20,.40), P(.88,-.02,.20,.38), P(-.50,-.12,.26,.52), P(.50,-.12,.26,.50),
+    P(-.62,.10,.17,.28), P(-.22,.14,.18,.24), P(.22,.14,.18,.24), P(.62,.10,.17,.28)
+  ];
+  const skirt = [P(-.16,.30,.10,.30), P(.16,.30,.10,.28), P(-.14,.52,.085,.22), P(.14,.52,.085,.20)];
+  const baseL = [], nB = 8;
+  for(let i=0;i<nB;i++) baseL.push({xf:-.92 + 1.84*(i/(nB-1)) + rnd(-.05,.05), r:rnd(55,95), up:rnd(.25,.5), lobe:mkLobe(0,0,0, rnd(.1,.9))});
+  for(let i=0;i<4;i++) baseL.push({xf:rnd(-.5,.5), r:rnd(42,65), up:rnd(.9,1.2), lobe:mkLobe(0,0,0, rnd(.4,1))});
+  baseL.sort((x,y)=>y.up - x.up);
+  const spikes = [], hatch = [], horns = [];
+  for(let i=0;i<10;i++) spikes.push({dir:i%2 ? 1 : -1, a:rnd(.14,1.1), len:rnd(.3,.62), w:rnd(.032,.06), off:rnd(20,140)});
+  for(let i=0;i<4;i++) horns.push({dir:i%2 ? 1 : -1, len:rnd(.2,.34), up:rnd(.12,.26), w:rnd(.012,.02), off:rnd(70,170)});
+  for(let i=0;i<14;i++) hatch.push({f:rnd(-1,1), len:rnd(.45,1)});
+  return {cap, skirt, baseL, spikes, hatch, horns};
+}
+function lobeAt(g, x, y, r, c, lw){
+  if(r < 2) return;
+  g.save();
+  g.beginPath(); g.arc(x, y, r, 0, TAU); g.clip();
+  g.fillStyle = c.base; g.fillRect(x-r, y-r, 2*r, 2*r);
+  g.fillStyle = c.sh; g.beginPath(); g.arc(x, y, r, 0, TAU); g.arc(x-.26*r, y-.3*r, r*.96, 0, TAU, true); g.fill('evenodd');
+  g.fillStyle = c.hi; g.beginPath(); g.arc(x, y, r, 0, TAU); g.arc(x+.3*r, y+.34*r, r*.9, 0, TAU, true); g.fill('evenodd');
+  g.restore();
+  g.lineWidth = lw; g.strokeStyle = INK;
+  g.beginPath(); g.arc(x, y, r, 0, TAU); g.stroke();
+  g.lineWidth = lw*.6;
+  g.beginPath(); g.arc(x + .06*r, y + .08*r, r*.66, .12*Math.PI, .9*Math.PI); g.stroke();
+}
+function drawCloud(g, p, now){
+  const u = (now - p.t0) / p.dur;
+  const d = u > .82 ? Math.min(1, (u-.82)/.18) : 0; if(d >= 1) return;
+  const hot = u < .1 ? 1 : 1 - clamp01((u-.1)/.62), cool = 1 - hot;
+  const grow = ease(clamp01((u-.04)/.42)), capG = ease(clamp01((u-.03)/.3)), skG = ease(clamp01((u-.2)/.3)),
+        baseG = ease(clamp01(u/.16)), rise = 1 + .07*clamp01(u/.85);
+  const k = p.k0, cx = p.cx, gy = p.gy, W = innerWidth, H = innerHeight, lw = Math.max(3, 5*k);
+  const stemH = p.stemH*grow*rise, capRx = p.capRx*capG, capY = gy - stemH;
+  g.save(); g.lineJoin = 'round'; g.lineCap = 'round';
+  // at the very end the whole cloud sinks and shrinks away, so nothing goes see-through
+  if(d > 0){ const sc = 1 - d*d*.92; g.translate(cx, gy); g.scale(sc, sc); g.translate(-cx, -gy); }
+  const c1 = heatCols(hot*.7 + .08), c2 = heatCols(hot*.9 + .2);
+  // debris spikes thrown out along the ground
+  p.spikes.forEach(sp=>{
+    const L = sp.len*Math.min(W, H*1.3)*ease(clamp01(u/.14)); if(L < 4) return;
+    const dx = Math.cos(sp.a)*sp.dir, dy = -Math.sin(sp.a), bx = cx + sp.off*sp.dir*k, by = gy - 6*k, hw = sp.w*H;
+    const tri = (len, w, fill, stroke)=>{
+      g.beginPath(); g.moveTo(bx - dy*w, by + dx*w); g.lineTo(bx + dx*len, by + dy*len); g.lineTo(bx + dy*w, by - dx*w); g.closePath();
+      g.fillStyle = fill; g.fill(); if(stroke){ g.lineWidth = lw; g.strokeStyle = INK; g.stroke(); }
+    };
+    tri(L, hw, c1.base, true); tri(L*.82, hw*.45, c2.base, false);
+  });
+  // curling horns, like the tendrils whipping out of the base
+  p.horns.forEach(h=>{
+    const gr = ease(clamp01((u-.04)/.3)), len = h.len*W*gr, up = h.up*H*gr, w = h.w*H;
+    const bx = cx + h.dir*h.off*k, by = gy - 8*k, tx = bx + h.dir*len, ty = by - up;
+    g.beginPath(); g.moveTo(bx, by + w);
+    g.quadraticCurveTo(bx + h.dir*len*.75, by - up*.05 + w*.4, tx, ty);
+    g.quadraticCurveTo(bx + h.dir*len*.4, by - up*.4 - w, bx, by - w); g.closePath();
+    g.fillStyle = c1.base; g.fill(); g.lineWidth = lw*.8; g.strokeStyle = INK; g.stroke();
+  });
+  // stem: a fat column
+  const wb = p.capRx*.34, wn = p.capRx*.15, wt = p.capRx*.2;
+  g.beginPath(); g.moveTo(cx - wb, gy);
+  g.bezierCurveTo(cx - wn*1.05, gy - stemH*.25, cx - wn, gy - stemH*.6, cx - wt, gy - stemH);
+  g.lineTo(cx + wt, gy - stemH);
+  g.bezierCurveTo(cx + wn, gy - stemH*.6, cx + wn*1.05, gy - stemH*.25, cx + wb, gy); g.closePath();
+  const gr = g.createLinearGradient(0, gy, 0, gy - Math.max(1, stemH));
+  gr.addColorStop(0, dustCols(heatCols(hot*.65), cool*.8).base);
+  gr.addColorStop(.5, dustCols(heatCols(hot*.8 + .08), cool*.5).base);
+  gr.addColorStop(1, heatCols(hot*.95 + .1).base);
+  g.fillStyle = gr; g.fill(); g.lineWidth = lw; g.strokeStyle = INK; g.stroke();
+  if(hot > .02){
+    g.fillStyle = 'rgba(255,226,122,'+(.75*hot).toFixed(3)+')';
+    g.beginPath(); g.moveTo(cx - wb*.35, gy); g.lineTo(cx - wt*.35, gy - stemH*.96); g.lineTo(cx + wt*.2, gy - stemH*.96); g.lineTo(cx + wb*.25, gy); g.closePath(); g.fill();
+  }
+  g.strokeStyle = INK; g.lineWidth = Math.max(1.4, 2*k); g.globalAlpha = .55;
+  p.hatch.forEach(h=>{
+    g.beginPath(); g.moveTo(cx + h.f*wb*.92, gy - 4*k);
+    g.quadraticCurveTo(cx + h.f*wn*1.05, gy - stemH*h.len*.55, cx + h.f*wt*.9, gy - stemH*h.len); g.stroke();
+  });
+  g.globalAlpha = 1;
+  // small puffs hugging the stem
+  p.skirt.forEach(l=>lobeAt(g, cx + l.px*capRx, gy - stemH*l.py, l.sz*capRx*skG*(1 + .04*Math.sin(now*.004 + l.ph)), dustCols(heatCols(hot*.75 + l.lv*.2), cool*.5), lw));
+  // cap: one thick ink silhouette first, then the big puffs on top with their own creases
+  const cp = p.cap.map(l=>({x:cx + l.px*capRx, y:capY + l.py*capRx*.92, r:l.sz*capRx*(1 + .035*Math.sin(now*.004 + l.ph))}));
+  g.fillStyle = INK;
+  cp.forEach(c=>{ g.beginPath(); g.arc(c.x, c.y, c.r + lw*.8, 0, TAU); g.fill(); });
+  p.cap.forEach((l,i)=>lobeAt(g, cp[i].x, cp[i].y, cp[i].r, heatCols(l.lv*.35 + hot*.7), lw));
+  // billowing base across the whole width: fire at first, then pale dust
+  p.baseL.forEach(b=>{
+    const r = b.r*k*baseG*(1 + .04*Math.sin(now*.005 + b.lobe.ph));
+    lobeAt(g, cx + b.xf*W*.5*baseG, gy - r*b.up, r, dustCols(heatCols(hot*.75 + .08 + b.lobe.lv*.1), cool*.9), lw);
+  });
+  g.restore();
+}
+
+// Ground shockwave: a thin white-hot streak with a soft glow and a flare in the middle.
+function drawStreak(g, p, now){
+  const u = (now - p.t0)/p.dur, grow = ease(clamp01(u/.12)), fade = u > .7 ? Math.max(0, 1 - (u-.7)/.3) : 1;
+  const W = innerWidth, k = p.k0, y = p.gy - 5*k, w = W*.62*grow, cx = p.cx; if(w < 2) return;
+  g.save(); g.globalAlpha = fade;
+  g.save(); g.translate(0, y); g.scale(1, .12); g.translate(0, -y);
+  const gl = g.createRadialGradient(cx, y, 0, cx, y, w);
+  gl.addColorStop(0, 'rgba(255,236,170,.9)'); gl.addColorStop(1, 'rgba(255,200,90,0)');
+  g.fillStyle = gl; g.beginPath(); g.arc(cx, y, w, 0, TAU); g.fill(); g.restore();
+  const lg = g.createLinearGradient(cx - w, 0, cx + w, 0);
+  lg.addColorStop(0, 'rgba(255,255,255,0)'); lg.addColorStop(.5, 'rgba(255,255,255,1)'); lg.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = lg; g.fillRect(cx - w, y - 4*k, 2*w, 8*k);
+  const f = 70*k*(.8 + .2*Math.sin(now*.03));
+  g.fillStyle = '#FFFFFF'; g.beginPath();
+  g.moveTo(cx, y - f); g.lineTo(cx + f*.12, y - f*.12); g.lineTo(cx + f*1.9, y); g.lineTo(cx + f*.12, y + f*.12);
+  g.lineTo(cx, y + f); g.lineTo(cx - f*.12, y + f*.12); g.lineTo(cx - f*1.9, y); g.lineTo(cx - f*.12, y - f*.12); g.closePath(); g.fill();
+  g.restore();
+}
+// Ring racing out along the ground.
+function drawRing(g, p, now){
+  const u = (now - p.t0)/p.dur, e = ease(clamp01(u)), W = innerWidth, k = p.k0, y = p.gy - 4*k;
+  const rx = e*W*.7, ry = Math.max(1, rx*.07); if(rx < 2) return;
+  g.save(); g.globalAlpha = Math.max(0, 1 - u); g.lineJoin = 'round';
+  g.lineWidth = Math.max(4, 9*k); g.strokeStyle = '#FFF4C8'; g.beginPath(); g.ellipse(p.cx, y, rx, ry, 0, 0, TAU); g.stroke();
+  g.lineWidth = Math.max(2, 4*k); g.strokeStyle = '#FF8A1F'; g.beginPath(); g.ellipse(p.cx, y, rx*.96, ry*.96, 0, 0, TAU); g.stroke();
+  g.restore();
+}
+// The sky goes golden after the flash, then clears.
+function drawTint(g, p, now){
+  const ms = now - p.t0, u = ms/p.dur;
+  const a = .11*Math.min(1, ms/700)*(u > .25 ? Math.max(0, 1 - (u-.25)/.45) : 1);
+  g.globalAlpha = a; g.fillStyle = '#FFB84A'; g.fillRect(0, 0, innerWidth, innerHeight);
+}
+// A long white-out: full white for a beat, then it burns off.
+function drawFlash(g, p, now){
+  const ms = now - p.t0, a = ms < 500 ? 1 : 1 - ease(clamp01((ms-500)/900));
+  if(a <= 0) return;
+  g.globalAlpha = a; g.fillStyle = '#FFFDF2'; g.fillRect(-60, -60, innerWidth + 120, innerHeight + 120);
+}
+
+// Shudder: a violent jolt that rumbles on and dies away over a few seconds.
+const shk = {x:0, y:0};
+function shudder(dur){
+  if(reduced) return;
+  const els = [document.querySelector('.top'), $('nav'), document.querySelector('main')].filter(Boolean), t0 = performance.now();
+  (function f(now){
+    const u = (now - t0)/dur;
+    if(u >= 1){ els.forEach(e=>{ e.style.transform = ''; }); shk.x = shk.y = 0; return; }
+    const a = u < .06 ? 26*u/.06 : 26*Math.pow(1 - u, 1.7);
+    shk.x = (Math.random()*2 - 1)*a + Math.sin(now*.045)*a*.35; shk.y = (Math.random()*2 - 1)*a*.7;
+    els.forEach(e=>{ e.style.transform = 'translate('+shk.x.toFixed(1)+'px,'+shk.y.toFixed(1)+'px)'; });
+    requestAnimationFrame(f);
+  })(t0);
+}
 function fire(x, y){
-  const k = Math.max(0.5, Math.min(innerWidth, innerHeight)/810), t = performance.now(), q = reduced ? 0.3 : 1;
+  const W = innerWidth, H = innerHeight, k = Math.max(0.45, Math.min(W, H)/810), t = performance.now(), q = (reduced ? 0.3 : 1) * fxQ;
   const add = o => { if(parts.length < MAX_PARTS) parts.push(o); };
-  // 1. impact starburst
-  add({k:'B', x, y, t0:t, dur:640, R:250*k, spikes:16, seed:rnd(0,TAU), jit:Array.from({length:32}, ()=>rnd(.82,1.12))});
-  // 2. speed lines
-  const nr = Math.round(32*q);
-  for(let i=0;i<nr;i++) add({k:'R', x, y, t0:t+rnd(0,70), dur:rnd(380,640), a:i/nr*TAU+rnd(-.08,.08), r0:rnd(50,110)*k, r1:rnd(380,860)*k, w:rnd(.025,.07), col:i%3 ? '#FFF6D6' : '#FFD84A'});
-  // 3. flame tongues: tall centre, then mid, then small, so the small ones sit in front
-  const tongues = (n, hMin, hMax, spread, delay) => {
-    for(let i=0;i<Math.ceil(n*q);i++){
-      const h = rnd(hMin, hMax)*k, w = h*rnd(.27,.4);
-      add({k:'T', x:x + rnd(-spread, spread)*k, y:y + rnd(0,26)*k, t0:t + delay + rnd(0,200), dur:rnd(1150,1750), h, w, ph:rnd(0,TAU), lean:rnd(-.5,.5)*w, lw:Math.max(2, 3.2*k)});
-    }
-  };
-  tongues(7, 360, 520, 70, 40); tongues(9, 230, 360, 190, 90); tongues(10, 110, 230, 300, 140);
-  // a fiery bed in front of the flame bases, so they read as one inferno rather than separate drops
-  add({k:'F', x, y:y+10*k, t0:t+30, dur:1700, rx:330*k, ry:46*k, lw:Math.max(2, 3.2*k)});
-  // 4. diamond embers
-  const ne = Math.round(46*q);
-  for(let i=0;i<ne;i++) add({k:'D', x:x+rnd(-200,200)*k, y:y+rnd(-20,30)*k, vx:rnd(-1.4,1.4), vy:-rnd(2.5,7)*k, g:-0.02, t0:t+rnd(0,500), dur:rnd(1100,2200), s:rnd(5,11)*k, ph:rnd(0,TAU), col:['#FFD23F','#FF7A1A','#FFF3C4','#FF4A1C'][i%4]});
-  if(!reduced){ document.body.classList.remove('shake'); void document.body.offsetWidth; document.body.classList.add('shake'); setTimeout(()=>document.body.classList.remove('shake'), 550); }
+  const capRx = Math.min(.45*W, .52*H), gy = H*.985, stemH = Math.max(.25*H, gy - .30*H), cx = W/2;
+  const total = reduced ? 2200 : 4700;
+  add({k:'T', t0:t, dur:total - 400});
+  add({k:'L', t0:t, dur:1400});                      // 1. white-out
+  for(let i=0;i<40;i++) add({k:'X', x:cx, y:gy - stemH*.45, t0:t + rnd(0,40), dur:rnd(300,520), a:i/40*TAU + rnd(-.05,.05), r0:rnd(60,140)*k, r1:rnd(800,1500)*k, w:rnd(.012,.04), col:'#1A0A0A'});
+  // 2. as the white burns off: colour starburst and speed lines
+  add({k:'B', x:cx, y:gy - stemH*.6, t0:t + 350, dur:800, R:.6*Math.max(W,H), spikes:18, seed:rnd(0,TAU), jit:Array.from({length:36}, ()=>rnd(.82,1.12))});
+  const nr = Math.round(30*q);
+  for(let i=0;i<nr;i++) add({k:'R', x:cx, y:gy - stemH*.6, t0:t + 350 + rnd(0,70), dur:rnd(380,640), a:i/nr*TAU + rnd(-.08,.08), r0:rnd(50,110)*k, r1:rnd(500,1100)*k, w:rnd(.025,.07), col:i%3 ? '#FFF6D6' : '#FFD84A'});
+  // 3. ground shockwave and the cloud itself
+  add({k:'G', t0:t + 60, dur:total - 300, cx, gy, k0:k});
+  add({k:'E', t0:t + 250, dur:1500, cx, gy, k0:k});
+  add(Object.assign({k:'M', t0:t + 80, dur:total - 80, cx, gy, capRx, stemH, k0:k}, buildCloud()));
+  const ne = Math.round(70*q);
+  for(let i=0;i<ne;i++) add({k:'D', x:rnd(0,W), y:gy - rnd(0, .3)*H, vx:rnd(-1.4,1.4), vy:-rnd(3,9)*k, g:-0.02, t0:t + rnd(500,2200), dur:rnd(1100,2200), s:rnd(5,11)*k, ph:rnd(0,TAU), col:['#FFD23F','#FF7A1A','#FFF3C4','#FF4A1C'][i%4]});
+  shudder(reduced ? 0 : 3600);
   loop();
+}
+
+// Points milestone: only when a score crosses a multiple of 10 going up, and only once per milestone until it is reset.
+function milestoneCross(who, before, after){
+  const m = Math.floor(after/10)*10;
+  if(m < 10 || Math.floor(after/10) <= Math.floor(before/10)) return 0;
+  if(m <= (msDone[who]||0)) return 0;
+  msDone[who] = m; store.set('fp.ms', msDone);
+  return m;
+}
+const FW_TIMES = [0, 380, 800, 1250, 1700, 2150, 2650, 3250];
+const FW_DURS  = [620,620,620,620,620,620,620,700];
+function fireworks(who, m){
+  const W = innerWidth, H = innerHeight, t = performance.now(), q = (reduced ? 0.3 : 1) * fxQ;
+  const pal = isLight() ? ['#E8231C','#F28A00','#1766D6','#C2188C','#0E9F6E','#7A2BD0'] : ['#FFD83A','#FF5C8A','#5CE1FF','#9DFF6A','#FFFFFF','#FF9A3C','#C79BFF'];
+  parts.push({k:'V', t0:t, dur:4500});
+  FW_TIMES.forEach((dt,i)=>{
+    const last = i === FW_TIMES.length-1;
+    parts.push({k:'W', x0:last ? W/2 : W*rnd(.2,.8), y0:H+10, tx:last ? W/2 : W*rnd(.14,.86), ty:last ? H*.34 : H*rnd(.14,.5), t0:t+dt, dur:FW_DURS[i],
+      big:last, n:Math.round((last ? 280 : 130 + rnd(0,50))*q), col:pal[i%pal.length], c2:pal[(i+3)%pal.length]});
+  });
+  const card = document.createElement('div'); card.className = 'mscard';
+  card.innerHTML = '<b>'+esc(String(m))+'</b><span style="color:#fff">'+esc(who)+'</span>';
+  document.body.appendChild(card); setTimeout(()=>card.remove(), 3700);
+  sound.fireworks(FW_TIMES, FW_DURS);
+  loop();
+}
+function explode(p, now, alive){
+  const k = Math.max(.45, Math.min(innerWidth, innerHeight)/810);
+  for(let i=0;i<p.n;i++){
+    if(alive.length >= MAX_PARTS) break;
+    const a = rnd(0, TAU), v = (p.big ? 10 : 7.5)*k*Math.sqrt(rnd(.08,1));
+    alive.push({k:'S', x:p.tx, y:p.ty, vx:Math.cos(a)*v, vy:Math.sin(a)*v, g:.07*k, t0:now, dur:rnd(1400,2300), col:i%2 ? p.col : p.c2, ph:rnd(0,TAU), w:Math.max(2.2, 4*k)});
+  }
+}
+
+// Reset score: gold coins rain from the top and spray up from the score.
+function coins(who){
+  const W = innerWidth, H = innerHeight, k = Math.max(.5, Math.min(W,H)/810);
+  let n = reduced ? 30 : Math.round(200*fxQ); n = Math.min(n, room());
+  for(let i=0;i<n;i++) parts.push({k:'K', x:rnd(0,W), y:-rnd(20,H*.9), vx:rnd(-.8,.8), vy:rnd(1,4)*k, g:.34*k, term:rnd(9,15)*k, r:rnd(15,26)*k, ph:rnd(0,TAU), vr:rnd(.08,.22)});
+  const sc = $('score-'+who), c = sc ? centreOf(sc) : {x:W/2, y:H/2};
+  const m = Math.min(reduced ? 0 : Math.round(50*fxQ), room());
+  for(let i=0;i<m;i++) parts.push({k:'K', x:c.x + rnd(-30,30), y:c.y, vx:rnd(-6,6)*k, vy:-rnd(12,22)*k, g:.5*k, term:rnd(10,16)*k, r:rnd(15,24)*k, ph:rnd(0,TAU), vr:rnd(.1,.25)});
+  loop();
+}
+function countDownScore(who, from){
+  const t0 = performance.now(), dur = Math.min(1600, 500 + from*40);
+  (function tick(now){
+    const u = Math.min(1, (now - t0)/dur), v = Math.round(from*(1-u)), el = $('score-'+who);
+    holdScore[who] = v;
+    if(el && el.firstChild) el.firstChild.nodeValue = v;
+    if(u < 1) requestAnimationFrame(tick); else { delete holdScore[who]; renderPoints(); }
+  })(t0);
 }
 
 // Elf vanishing: a cartoon puff of smoke with a few gold sparkles.
@@ -1738,50 +2234,6 @@ function puff(x, y){
   loop();
 }
 
-function tonguePath(g, x, y, w, h, bend){
-  g.beginPath();
-  g.moveTo(x - w/2, y);
-  g.bezierCurveTo(x - w/2 - w*0.18, y - h*0.35, x + bend*0.4 - w*0.12, y - h*0.7, x + bend, y - h);
-  g.bezierCurveTo(x + bend*0.4 + w*0.30, y - h*0.62, x + w/2 + w*0.2, y - h*0.32, x + w/2, y);
-  g.quadraticCurveTo(x, y + w*0.28, x - w/2, y);
-  g.closePath();
-}
-const FLAME_LAYERS = [['#E0301E',1,1],['#FF7A1A',.74,.8],['#FFC21F',.5,.58],['#FFF3C4',.26,.34]];
-function drawTongue(g, p, now){
-  const u = (now - p.t0) / p.dur;
-  const grow = u < .2 ? ease(u/.2) : 1;
-  const fade = u > .6 ? Math.max(0, 1 - (u-.6)/.4) : 1;
-  const h = p.h * grow * (.45 + .55*fade) * (1 + .09*Math.sin(now*.012 + p.ph));
-  const w = p.w * (.6 + .4*grow) * (.5 + .5*fade);
-  const bend = Math.sin(now*.007 + p.ph*1.7)*w*.5 + p.lean*u;
-  g.globalAlpha = Math.min(1, fade*1.6);
-  FLAME_LAYERS.forEach((l, i)=>{
-    tonguePath(g, p.x, p.y + i*w*.05, w*l[1], h*l[2], bend*l[2]);
-    g.fillStyle = l[0]; g.fill();
-    if(i === 0){ g.lineWidth = p.lw; g.strokeStyle = '#6E0E0E'; g.lineJoin = 'round'; g.stroke(); }
-  });
-}
-function drawBed(g, p, now){
-  const u = (now - p.t0) / p.dur;
-  const grow = ease(Math.min(1, u/.15));
-  const fade = u > .62 ? Math.max(0, 1 - (u-.62)/.38) : 1;
-  g.globalAlpha = Math.min(1, fade*1.6);
-  const N = 16;
-  [['#E0301E',1,1],['#FF7A1A',.82,.74],['#FFC21F',.56,.48]].forEach((l, i)=>{
-    const rx = p.rx*grow*l[1], ry = p.ry*grow*l[2]*(.4 + .6*fade), y0 = p.y - i*p.ry*.08;
-    g.beginPath();
-    for(let n=0;n<=N;n++){
-      const t = n/N, x = p.x - rx + 2*rx*t, env = Math.sqrt(Math.max(0, 1 - Math.pow(2*t-1, 2)));
-      const spike = (n%2 ? .5 : 1) * (.82 + .18*Math.sin(now*.011 + n*1.9 + i));
-      const y = y0 - ry*1.5*env*spike;
-      if(n) g.lineTo(x, y); else g.moveTo(x, y0);
-    }
-    g.quadraticCurveTo(p.x, y0 + ry*.55, p.x - rx, y0);
-    g.closePath();
-    g.fillStyle = l[0]; g.fill();
-    if(i === 0){ g.lineWidth = p.lw; g.strokeStyle = '#6E0E0E'; g.lineJoin = 'round'; g.stroke(); }
-  });
-}
 function drawRay(g, p, now){
   const u = (now - p.t0) / p.dur;
   const tip = p.r0 + (p.r1 - p.r0) * ease(Math.min(1, u*1.6));
@@ -1812,8 +2264,8 @@ function drawBurst(g, p, now){
 }
 
 function step(now){
-  frames++;
-  const W = innerWidth, H = innerHeight, dtf = Math.min(2.5, Math.max(0, (now - lastT)/16.667)); lastT = now;
+  frames++; fxFrames++;
+  const W = innerWidth, H = innerHeight, dtf = Math.min(2.5, Math.max(0, (now - lastT)/16.667)); lastT = now; fxSum += dtf*16.667;
   g2.setTransform(dpr,0,0,dpr,0,0);
   g2.clearRect(0,0,W,H);
   g2.globalCompositeOperation = 'source-over';
@@ -1828,16 +2280,48 @@ function step(now){
       p.life -= 0.0022; if(p.life <= 0) continue;
       alive.push(p); continue;
     }
+    if(p.k === 'K'){
+      p.vy = Math.min(p.vy + p.g*dtf, p.term); p.x += p.vx*dtf; p.y += p.vy*dtf; p.ph += p.vr*dtf;
+      if(p.y > H + 50 && p.vy > 0) continue;
+      alive.push(p); continue;
+    }
+    if(p.k === 'W'){
+      if(now >= p.t0 && (now - p.t0)/p.dur >= 1){ explode(p, now, alive); continue; }
+      alive.push(p); continue;
+    }
     const u = (now - p.t0) / p.dur;
     if(u >= 1) continue;
+    if(u >= 0 && p.k === 'S'){ p.x += p.vx*dtf; p.y += p.vy*dtf; p.vy += p.g*dtf; p.vx *= Math.pow(.972, dtf); p.vy *= Math.pow(.985, dtf); }
     if(u >= 0 && (p.k === 'D' || p.k === 'P')){ p.x += p.vx*dtf; p.y += p.vy*dtf; if(p.g) p.vy += p.g*dtf; p.vx *= Math.pow(.99, dtf); }
     alive.push(p);
   }
   const live = k => alive.filter(p=>p.k === k && now >= p.t0);
+  live('V').forEach(p=>{
+    const u = (now - p.t0)/p.dur;
+    g2.globalAlpha = .6*(u < .08 ? u/.08 : (u > .8 ? Math.max(0,(1-u)/.2) : 1)); g2.fillStyle = '#070B2E'; g2.fillRect(0, 0, W, H);
+  });
+  live('T').forEach(p=>drawTint(g2, p, now));
   live('B').forEach(p=>drawBurst(g2, p, now));
   live('R').forEach(p=>drawRay(g2, p, now));
-  live('T').forEach(p=>drawTongue(g2, p, now));
-  live('F').forEach(p=>drawBed(g2, p, now));
+  g2.save(); g2.translate(shk.x, shk.y);
+  live('M').forEach(p=>drawCloud(g2, p, now));
+  live('E').forEach(p=>drawRing(g2, p, now));
+  live('G').forEach(p=>drawStreak(g2, p, now));
+  g2.restore(); g2.globalAlpha = 1;
+  live('L').forEach(p=>drawFlash(g2, p, now));
+  live('X').forEach(p=>drawRay(g2, p, now));
+  live('W').forEach(p=>{
+    const u = (now - p.t0)/p.dur, at = v => { const e = 1 - Math.pow(1 - Math.max(0,v), 2); return [p.x0 + (p.tx - p.x0)*e, p.y0 + (p.ty - p.y0)*e]; };
+    const a = at(u), b = at(u - .08);
+    g2.globalAlpha = 1; g2.strokeStyle = '#FFE9A8'; g2.lineWidth = 3; g2.lineCap = 'round';
+    g2.beginPath(); g2.moveTo(b[0], b[1]); g2.lineTo(a[0], a[1]); g2.stroke();
+    g2.fillStyle = '#FFFFFF'; g2.beginPath(); g2.arc(a[0], a[1], 3.5, 0, TAU); g2.fill();
+  });
+  live('S').forEach(p=>{
+    const u = (now - p.t0)/p.dur;
+    g2.globalAlpha = Math.max(0, 1 - u*u*u)*(.82 + .18*Math.sin(now*.03 + p.ph)); g2.strokeStyle = p.col; g2.lineWidth = p.w; g2.lineCap = 'round';
+    g2.beginPath(); g2.moveTo(p.x - p.vx*3.4, p.y - p.vy*3.4); g2.lineTo(p.x, p.y); g2.stroke();
+  });
   live('P').forEach(p=>{
     const u = (now - p.t0)/p.dur, r = p.r0 + (p.r1 - p.r0)*ease(u);
     g2.globalAlpha = .92*(1-u); g2.fillStyle = p.col;
@@ -1849,6 +2333,16 @@ function step(now){
     g2.globalAlpha = u < .7 ? 1 : 1 - (u-.7)/.3; g2.fillStyle = p.col;
     g2.beginPath(); g2.moveTo(p.x, p.y - s); g2.lineTo(p.x + s*.6, p.y); g2.lineTo(p.x, p.y + s); g2.lineTo(p.x - s*.6, p.y); g2.closePath(); g2.fill();
   });
+  // gold coins
+  for(const p of alive){
+    if(p.k !== 'K') continue;
+    const sx = Math.max(.14, Math.abs(Math.cos(p.ph))), r = p.r;
+    g2.globalAlpha = 1; g2.fillStyle = '#FFC21F'; g2.strokeStyle = '#7A3F00'; g2.lineWidth = Math.max(2, r*.14);
+    g2.beginPath(); g2.ellipse(p.x, p.y, r*sx, r, 0, 0, TAU); g2.fill(); g2.stroke();
+    g2.strokeStyle = '#E39A0C'; g2.lineWidth = Math.max(1.5, r*.1);
+    g2.beginPath(); g2.ellipse(p.x, p.y, r*.68*sx, r*.68, 0, 0, TAU); g2.stroke();
+    if(sx > .45){ g2.fillStyle = '#FFF0A0'; g2.beginPath(); g2.ellipse(p.x - r*.28*sx, p.y - r*.3, r*.16*sx, r*.34, .5, 0, TAU); g2.fill(); }
+  }
   // confetti on top
   for(const p of alive){
     if(p.k !== 'c' || p.delay > 0) continue;
@@ -1861,7 +2355,12 @@ function step(now){
   g2.setTransform(dpr,0,0,dpr,0,0);
   g2.globalAlpha = 1;
   parts = alive;
-  if(parts.length) requestAnimationFrame(step); else { running = false; g2.clearRect(0,0,W,H); }
+  if(parts.length) requestAnimationFrame(step);
+  else {
+    running = false; g2.clearRect(0,0,W,H);
+    if(fxFrames > 20){ const avg = fxSum/fxFrames; if(avg > 24) fxQ = Math.max(.4, fxQ*.75); else if(avg < 17.5) fxQ = Math.min(1, fxQ*1.12); }
+    fxFrames = 0; fxSum = 0;
+  }
 }
 function loop(){
   if(running) return; running = true; lastT = performance.now();
