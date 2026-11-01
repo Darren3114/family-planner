@@ -1993,50 +1993,55 @@ function heatCols(h){ const base = ramp(CAP_RAMP, clamp01(h)); return {base, hi:
 function dustCols(c, k){ return {base:mixHex(c.base, '#CDAA80', k), hi:mixHex(c.hi, '#F1DDBB', k), sh:mixHex(c.sh, '#8E6B47', k)}; }
 function mkLobe(px, py, sz, lv){ return {px, py, sz, lv, ph:rnd(0,TAU), hs:Math.random()}; }
 function buildCloud(){
-  const j = (v, w) => v + rnd(-w, w);
-  const P = (px, py, r, lv) => mkLobe(j(px,.03), j(py,.03), r*rnd(.95,1.05), lv);
-  // back to front: crown, sides, centre, then a lumpy underside so the dome overhangs a narrow stem
-  const cap = [
-    P(0,-.68,.30,.95), P(-.40,-.58,.26,.85), P(.40,-.58,.26,.80),
-    P(-.70,-.34,.24,.66), P(.70,-.34,.24,.62), P(0,-.36,.30,.78),
-    P(-.88,-.02,.20,.40), P(.88,-.02,.20,.38), P(-.50,-.12,.26,.52), P(.50,-.12,.26,.50),
-    P(-.62,.10,.17,.28), P(-.22,.14,.18,.24), P(.22,.14,.18,.24), P(.62,.10,.17,.28)
-  ];
-  const skirt = [P(-.16,.30,.10,.30), P(.16,.30,.10,.28), P(-.14,.52,.085,.22), P(.14,.52,.085,.20)];
-  const baseL = [], nB = 8;
-  for(let i=0;i<nB;i++) baseL.push({xf:-.92 + 1.84*(i/(nB-1)) + rnd(-.05,.05), r:rnd(55,95), up:rnd(.25,.5), lobe:mkLobe(0,0,0, rnd(.1,.9))});
-  for(let i=0;i<4;i++) baseL.push({xf:rnd(-.5,.5), r:rnd(42,65), up:rnd(.9,1.2), lobe:mkLobe(0,0,0, rnd(.4,1))});
-  baseL.sort((x,y)=>y.up - x.up);
-  const spikes = [], hatch = [], horns = [];
+  // Each mass is the UNION of many overlapping circles of mixed size, filled as ONE shape.
+  // Only the scalloped edge shows, like a cauliflower, so it reads as one billowing cloud, not a pile of balls.
+  const cap = [], inner = [], stem = [], base = [], spikes = [], hatch = [], horns = [];
+  const N = 26;
+  for(let i=0;i<N;i++){
+    const a = -.42 + (Math.PI + .84)*(i/(N-1)), top = Math.max(0, Math.sin(a)), R = rnd(.84,.97);
+    cap.push({px:Math.cos(a)*R*1.04, py:-Math.sin(a)*R*.74, r:rnd(.10,.16) + top*rnd(.02,.07), ph:rnd(0,TAU)});
+  }
+  [[0,-.32,.44],[-.42,-.26,.36],[.42,-.26,.36],[0,-.56,.32],[-.68,-.1,.26],[.68,-.1,.26]].forEach(f=>cap.push({px:f[0], py:f[1], r:f[2], ph:rnd(0,TAU)}));
+  for(let i=0;i<7;i++) cap.push({px:-.72 + 1.44*(i/6) + rnd(-.05,.05), py:rnd(.05,.15), r:rnd(.09,.14), ph:rnd(0,TAU)});   // lumpy underside
+  for(let i=0;i<9;i++){
+    const a = rnd(.05, Math.PI-.05), rr = rnd(.3,.7);
+    inner.push({px:Math.cos(a)*rr, py:-Math.sin(a)*rr*.7 - .02, r:rnd(.16,.26), ph:rnd(0,TAU), a0:rnd(.05,.4)*Math.PI, a1:0});
+  }
+  const M = 12;
+  for(let i=0;i<M;i++){
+    const t = i/(M-1), prof = t < .5 ? .34 - .19*(t/.5) : .15 + .07*((t-.5)/.5);
+    stem.push({t, px:rnd(-.015,.015), r:prof*rnd(.93,1.07), ph:rnd(0,TAU)});
+  }
+  for(let i=0;i<9;i++) base.push({xf:-.95 + 1.9*(i/8) + rnd(-.04,.04), r:rnd(58,98), up:rnd(.3,.55), ph:rnd(0,TAU)});
+  for(let i=0;i<5;i++) base.push({xf:rnd(-.6,.6), r:rnd(40,68), up:rnd(.95,1.3), ph:rnd(0,TAU)});
   for(let i=0;i<10;i++) spikes.push({dir:i%2 ? 1 : -1, a:rnd(.14,1.1), len:rnd(.3,.62), w:rnd(.032,.06), off:rnd(20,140)});
   for(let i=0;i<4;i++) horns.push({dir:i%2 ? 1 : -1, len:rnd(.2,.34), up:rnd(.12,.26), w:rnd(.012,.02), off:rnd(70,170)});
   for(let i=0;i<14;i++) hatch.push({f:rnd(-1,1), len:rnd(.45,1)});
-  return {cap, skirt, baseL, spikes, hatch, horns};
+  return {cap, inner, stem, base, spikes, hatch, horns};
 }
-function lobeAt(g, x, y, r, c, lw){
-  if(r < 2) return;
-  g.save();
-  g.beginPath(); g.arc(x, y, r, 0, TAU); g.clip();
-  g.fillStyle = c.base; g.fillRect(x-r, y-r, 2*r, 2*r);
-  g.fillStyle = c.sh; g.beginPath(); g.arc(x, y, r, 0, TAU); g.arc(x-.26*r, y-.3*r, r*.96, 0, TAU, true); g.fill('evenodd');
-  g.fillStyle = c.hi; g.beginPath(); g.arc(x, y, r, 0, TAU); g.arc(x+.3*r, y+.34*r, r*.9, 0, TAU, true); g.fill('evenodd');
+// one filled shape from many circles
+function unionPath(list, f){
+  const P = new Path2D();
+  list.forEach(c=>{ const o = f(c); P.moveTo(o.x + o.r, o.y); P.arc(o.x, o.y, o.r, 0, TAU); });
+  return P;
+}
+// ink outline, then flat colour bands (each band a shrunk, shifted copy of the same shape, clipped inside it)
+function paintMass(g, path, lw, cx0, cy0, cols, specs){
+  g.lineWidth = lw*2; g.strokeStyle = INK; g.stroke(path);
+  g.save(); g.clip(path);
+  g.fillStyle = cols[0]; g.fill(path);
+  specs.forEach((sp, i)=>{
+    g.save(); g.translate(cx0 + sp.dx, cy0 + sp.dy); g.scale(sp.sx, sp.sy); g.translate(-cx0, -cy0);
+    g.fillStyle = cols[i+1]; g.fill(path); g.restore();
+  });
   g.restore();
-  g.lineWidth = lw; g.strokeStyle = INK;
-  g.beginPath(); g.arc(x, y, r, 0, TAU); g.stroke();
-  g.lineWidth = lw*.6;
-  g.beginPath(); g.arc(x + .06*r, y + .08*r, r*.66, .12*Math.PI, .9*Math.PI); g.stroke();
 }
-function drawCloud(g, p, now){
-  const u = (now - p.t0) / p.dur;
-  const d = u > .82 ? Math.min(1, (u-.82)/.18) : 0; if(d >= 1) return;
+function paintCloud(g, p, now, u){
   const hot = u < .1 ? 1 : 1 - clamp01((u-.1)/.62), cool = 1 - hot;
-  const grow = ease(clamp01((u-.04)/.42)), capG = ease(clamp01((u-.03)/.3)), skG = ease(clamp01((u-.2)/.3)),
-        baseG = ease(clamp01(u/.16)), rise = 1 + .07*clamp01(u/.85);
+  const grow = ease(clamp01((u-.04)/.42)), capG = ease(clamp01((u-.03)/.3)), baseG = ease(clamp01(u/.16)), rise = 1 + .07*clamp01(u/.85);
   const k = p.k0, cx = p.cx, gy = p.gy, W = innerWidth, H = innerHeight, lw = Math.max(3, 5*k);
   const stemH = p.stemH*grow*rise, capRx = p.capRx*capG, capY = gy - stemH;
   g.save(); g.lineJoin = 'round'; g.lineCap = 'round';
-  // at the very end the whole cloud sinks and shrinks away, so nothing goes see-through
-  if(d > 0){ const sc = 1 - d*d*.92; g.translate(cx, gy); g.scale(sc, sc); g.translate(-cx, -gy); }
   const c1 = heatCols(hot*.7 + .08), c2 = heatCols(hot*.9 + .2);
   // debris spikes thrown out along the ground
   p.spikes.forEach(sp=>{
@@ -2048,7 +2053,7 @@ function drawCloud(g, p, now){
     };
     tri(L, hw, c1.base, true); tri(L*.82, hw*.45, c2.base, false);
   });
-  // curling horns, like the tendrils whipping out of the base
+  // curling horns whipping out of the base
   p.horns.forEach(h=>{
     const gr = ease(clamp01((u-.04)/.3)), len = h.len*W*gr, up = h.up*H*gr, w = h.w*H;
     const bx = cx + h.dir*h.off*k, by = gy - 8*k, tx = bx + h.dir*len, ty = by - up;
@@ -2057,39 +2062,70 @@ function drawCloud(g, p, now){
     g.quadraticCurveTo(bx + h.dir*len*.4, by - up*.4 - w, bx, by - w); g.closePath();
     g.fillStyle = c1.base; g.fill(); g.lineWidth = lw*.8; g.strokeStyle = INK; g.stroke();
   });
-  // stem: a fat column
-  const wb = p.capRx*.34, wn = p.capRx*.15, wt = p.capRx*.2;
-  g.beginPath(); g.moveTo(cx - wb, gy);
-  g.bezierCurveTo(cx - wn*1.05, gy - stemH*.25, cx - wn, gy - stemH*.6, cx - wt, gy - stemH);
-  g.lineTo(cx + wt, gy - stemH);
-  g.bezierCurveTo(cx + wn, gy - stemH*.6, cx + wn*1.05, gy - stemH*.25, cx + wb, gy); g.closePath();
-  const gr = g.createLinearGradient(0, gy, 0, gy - Math.max(1, stemH));
-  gr.addColorStop(0, dustCols(heatCols(hot*.65), cool*.8).base);
-  gr.addColorStop(.5, dustCols(heatCols(hot*.8 + .08), cool*.5).base);
-  gr.addColorStop(1, heatCols(hot*.95 + .1).base);
-  g.fillStyle = gr; g.fill(); g.lineWidth = lw; g.strokeStyle = INK; g.stroke();
-  if(hot > .02){
-    g.fillStyle = 'rgba(255,226,122,'+(.75*hot).toFixed(3)+')';
-    g.beginPath(); g.moveTo(cx - wb*.35, gy); g.lineTo(cx - wt*.35, gy - stemH*.96); g.lineTo(cx + wt*.2, gy - stemH*.96); g.lineTo(cx + wb*.25, gy); g.closePath(); g.fill();
-  }
-  g.strokeStyle = INK; g.lineWidth = Math.max(1.4, 2*k); g.globalAlpha = .55;
+  // stem: one wavy column
+  const stemPath = unionPath(p.stem, c=>({x:cx + c.px*p.capRx, y:gy - stemH*c.t, r:c.r*p.capRx*(1 + .03*Math.sin(now*.004 + c.ph))}));
+  paintMass(g, stemPath, lw, cx, gy - stemH*.5, [
+    dustCols(heatCols(hot*.55), cool*.7).base, dustCols(heatCols(hot*.7 + .03), cool*.5).base, heatCols(hot*.9 + .06).base
+  ], [{dx:-.025*p.capRx, dy:0, sx:.74, sy:1}, {dx:-.035*p.capRx, dy:0, sx:.42, sy:1}]);
+  g.strokeStyle = INK; g.lineWidth = Math.max(1.3, 1.8*k); g.globalAlpha = .4;
   p.hatch.forEach(h=>{
-    g.beginPath(); g.moveTo(cx + h.f*wb*.92, gy - 4*k);
-    g.quadraticCurveTo(cx + h.f*wn*1.05, gy - stemH*h.len*.55, cx + h.f*wt*.9, gy - stemH*h.len); g.stroke();
+    const wb = p.capRx*.3, wn = p.capRx*.13, wt = p.capRx*.18;
+    g.beginPath(); g.moveTo(cx + h.f*wb*.8, gy - 6*k);
+    g.quadraticCurveTo(cx + h.f*wn, gy - stemH*h.len*.55, cx + h.f*wt*.8, gy - stemH*h.len); g.stroke();
   });
   g.globalAlpha = 1;
-  // small puffs hugging the stem
-  p.skirt.forEach(l=>lobeAt(g, cx + l.px*capRx, gy - stemH*l.py, l.sz*capRx*skG*(1 + .04*Math.sin(now*.004 + l.ph)), dustCols(heatCols(hot*.75 + l.lv*.2), cool*.5), lw));
-  // cap: one thick ink silhouette first, then the big puffs on top with their own creases
-  const cp = p.cap.map(l=>({x:cx + l.px*capRx, y:capY + l.py*capRx*.92, r:l.sz*capRx*(1 + .035*Math.sin(now*.004 + l.ph))}));
-  g.fillStyle = INK;
-  cp.forEach(c=>{ g.beginPath(); g.arc(c.x, c.y, c.r + lw*.8, 0, TAU); g.fill(); });
-  p.cap.forEach((l,i)=>lobeAt(g, cp[i].x, cp[i].y, cp[i].r, heatCols(l.lv*.35 + hot*.7), lw));
-  // billowing base across the whole width: fire at first, then pale dust
-  p.baseL.forEach(b=>{
-    const r = b.r*k*baseG*(1 + .04*Math.sin(now*.005 + b.lobe.ph));
-    lobeAt(g, cx + b.xf*W*.5*baseG, gy - r*b.up, r, dustCols(heatCols(hot*.75 + .08 + b.lobe.lv*.1), cool*.9), lw);
-  });
+  // cap: one big scalloped mass with banded colour, a few billow creases on top
+  const cp = c=>({x:cx + c.px*capRx, y:capY + c.py*capRx*.92, r:c.r*capRx*(1 + .03*Math.sin(now*.004 + c.ph))});
+  const capPath = unionPath(p.cap.concat(p.inner), cp);
+  paintMass(g, capPath, lw, cx, capY - .2*capRx, [
+    heatCols(hot*.5 - .02).base, heatCols(hot*.68 + .08).base, heatCols(hot*.85 + .2).base, heatCols(hot + .34).base
+  ], [{dx:-.015*capRx, dy:-.03*capRx, sx:.96, sy:.95}, {dx:-.03*capRx, dy:-.07*capRx, sx:.82, sy:.8}, {dx:-.04*capRx, dy:-.1*capRx, sx:.55, sy:.5}]);
+  
+  // billowing dust base across the whole width: fire at first, then pale dust
+  const basePath = unionPath(p.base, b=>{ const r = b.r*k*baseG*(1 + .04*Math.sin(now*.005 + b.ph)); return {x:cx + b.xf*W*.5*baseG, y:gy - r*b.up, r}; });
+  paintMass(g, basePath, lw, cx, gy - 50*k, [
+    dustCols(heatCols(hot*.6), cool*.9).base, dustCols(heatCols(hot*.8 + .15), cool*.7).base
+  ], [{dx:0, dy:-22*k, sx:.92, sy:.8}]);
+  g.restore();
+}
+
+// The ending: everything fades together as ONE picture (so overlapping parts never show through each other),
+// drifting up a little, and the last thing you see is a soft blurred bloom of the explosion dying away.
+let cloudBuf = null, cloudBufG = null;
+function drawCloud(g, p, now){
+  const u = (now - p.t0) / p.dur, d = u > .6 ? clamp01((u - .6)/.28) : 0;
+  if(d === 0) paintCloud(g, p, now, u);
+  else if(d < 1){
+    if(!cloudBuf || cloudBuf.width !== fx.width || cloudBuf.height !== fx.height){
+      cloudBuf = document.createElement('canvas'); cloudBuf.width = fx.width; cloudBuf.height = fx.height; cloudBufG = cloudBuf.getContext('2d');
+    }
+    cloudBufG.setTransform(1,0,0,1,0,0); cloudBufG.clearRect(0, 0, cloudBuf.width, cloudBuf.height);
+    cloudBufG.setTransform(dpr,0,0,dpr,0,0);
+    paintCloud(cloudBufG, p, now, u);
+    const e = d*d*(3 - 2*d), W = innerWidth, H = innerHeight;
+    g.save();
+    g.globalAlpha = 1 - e;
+    g.translate(p.cx, p.gy); g.scale(1 + .05*e, 1 + .04*e); g.translate(0, -H*.04*e); g.translate(-p.cx, -p.gy);
+    g.drawImage(cloudBuf, 0, 0, W, H);
+    g.restore();
+  }
+  drawBloom(g, p, u);
+}
+// One last soft blur of light and heat where the cloud was: swells fast, fades slowly. No hard edges.
+function drawBloom(g, p, u){
+  const b = clamp01((u - .8)/.2); if(b <= 0) return;
+  const a = b < .22 ? b/.22 : 1 - ease((b - .22)/.78);
+  if(a <= 0) return;
+  const W = innerWidth, H = innerHeight, R = Math.max(W, H), r = R*(.12 + .62*ease(b));
+  g.save();
+  const blob = (x, y, rad, alpha)=>{
+    const gr = g.createRadialGradient(x, y, 0, x, y, rad);
+    gr.addColorStop(0, 'rgba(255,244,200,1)'); gr.addColorStop(.3, 'rgba(255,176,76,.8)');
+    gr.addColorStop(.65, 'rgba(226,78,34,.32)'); gr.addColorStop(1, 'rgba(150,30,20,0)');
+    g.globalAlpha = alpha; g.fillStyle = gr; g.fillRect(-60, -60, W + 120, H + 120);
+  };
+  blob(p.cx, H*.34, r, .75*a);
+  blob(p.cx, p.gy - 20, r*.85, .45*a);
   g.restore();
 }
 
